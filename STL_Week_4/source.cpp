@@ -1,27 +1,38 @@
 /*
- * 2022. 03. 16
+ * 2022. 03. 23
  * STL Class
- * Week 3
+ * Week 4
  * 
- * 오늘 - C++ 컴파일러가 값을 아는 시점
- *	1. 실행전	- constexpr
- *	2. 실행중	- dynamic allocation
+ * 호출가능타입(Callable type) - sort를 통해 알아본다
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
  */
 
 #include <iostream>
-#include <fstream>
-#include <algorithm>
-#include <array>
 #include "save.h"
 
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+// 메모리 마지막 동네 소개
+//
+//
+
+void f() {
+	std::cout << "f" << std::endl;
+}
+
 int main() {
+	void(*const ptr)(void) = f;
 
-	std::ifstream in{ "int 1000개.txt", std::ios::binary };
+	(*ptr)();
 
-	int num[1000];
+	std::cout << std::addressof(f) << std::endl;
+	std::cout << std::addressof(main) << std::endl;
+	std::cout << std::addressof(save) << std::endl;
 
-	in.read((char*)&num, sizeof(int) * 1000);
-	std::cout << *std::max_element(std::begin(num), std::end(num));
-
+	save("source.cpp");
 }
 

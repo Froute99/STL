@@ -10,6 +10,7 @@
 #include <chrono>
 #include <vector>
 #include <algorithm>
+#include <string_view>
 #include "save.h"
 
 void save(std::string_view fileName) {
@@ -17,7 +18,7 @@ void save(std::string_view fileName) {
 	std::ifstream in{ fileName.data() };
 
 	// 쓸 파일도 연다
-	std::ofstream out{ "2022년 1학기 STL 1주 강의저장.txt", std::ios::app };
+	std::ofstream out{ "2022년 1학기 STL 4주 강의저장.txt", std::ios::app };
 
 	out << "\n\n";
 
