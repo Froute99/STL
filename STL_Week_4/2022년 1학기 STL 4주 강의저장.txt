@@ -1005,3 +1005,1325 @@ int main() {
 	save("source.cpp");
 }
 
+
+
+파일이름: source.cpp
+파일크기: 687
+2022-03-24 13:36:37 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type) - sort를 통해 알아본다
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+// 메모리 마지막 동네 소개
+
+
+void foo() {
+	std::cout << "foo" << std::endl;
+}
+
+int main() {
+	// 함수이름이란? - 명령어들의 집합인 함수가 기록되어 있는 CODE 세그먼트의
+	// 시작번지이다
+	// 함수의 이름의 자료형(data type)은 무엇입니까?
+
+	auto x = main;
+	std::cout << typeid(x).name() << std::endl;
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 705
+2022-03-24 13:39:18 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type) - sort를 통해 알아본다
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+// 메모리 마지막 동네 소개
+
+
+void foo() {
+	std::cout << "foo" << std::endl;
+}
+
+int main() {
+	// 함수이름이란? - 명령어들의 집합인 함수가 기록되어 있는 CODE 세그먼트의
+	// 시작번지이다
+	// 함수의 이름의 자료형(data type)은 무엇입니까?
+
+	//auto x = main;
+
+	int x[100];
+	std::cout << typeid(x).name() << std::endl;
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 689
+2022-03-24 13:39:43 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type) - sort를 통해 알아본다
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+// 메모리 마지막 동네 소개
+
+
+void foo() {
+	std::cout << "foo" << std::endl;
+}
+
+int main() {
+	// 함수이름이란? - 명령어들의 집합인 함수가 기록되어 있는 CODE 세그먼트의
+	// 시작번지이다
+	// 함수의 이름의 자료형(data type)은 무엇입니까?
+
+	auto x = main;
+	std::cout << typeid(foo).name() << std::endl;
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 831
+2022-03-24 13:57:24 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+void foo() {
+	std::cout << "foo" << std::endl;
+}
+
+void bar() {
+	std::cout << "bar" << std::endl;
+}
+
+
+int main() {
+	save("source.cpp");
+
+	void(*p)(void) = foo;
+
+	int count{};
+	while (true) {
+		p();
+		using namespace std::literals;
+		std::this_thread::sleep_for(1s);
+
+		// toggle every 3 seconds
+		if ((++count % 3) == 0) {
+			if (p == foo) {
+				p = bar;
+			}
+			else {
+				p = foo;
+			}
+		}
+	}
+
+}
+
+
+
+파일이름: source.cpp
+파일크기: 804
+2022-03-24 14:02:43 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+void foo() {
+	std::cout << "foo" << std::endl;
+}
+
+int g;
+
+int main() {
+	save("source.cpp");
+
+	void(*p)(void) = foo;
+
+	int count{};
+
+	int* f = new int;
+
+	std::cout << "CODE - ";
+	std::cout << "DATA - ";
+	std::cout << "STACK - f" << std::addressof(f) << std::endl;
+	std::cout << "STACK - p" << std::addressof(p) << std::endl;
+	std::cout << "Free Store - " << std::addressof(*f);
+
+}
+
+
+
+파일이름: source.cpp
+파일크기: 1159
+2022-03-24 14:06:29 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+void foo() {
+	std::cout << "foo" << std::endl;
+}
+
+int g;
+
+int main() {
+	save("source.cpp");
+
+	void(*p)(void) = foo;
+
+	int count{};
+
+	int* f = new int;
+
+	std::cout << "CODE		 - foo    " << std::addressof(foo) << std::endl;
+	std::cout << "CODE		 - main   " << std::addressof(main) << std::endl;
+	std::cout << "CODE		 - save   " << std::addressof(save) << std::endl;
+	std::cout << "CODE		 - pfoo   " << std::endl;
+	std::cout << std::endl;
+	std::cout << "DATA		 - g   " << std::endl;
+	std::cout << std::endl;
+	std::cout << "STACK		 - f	" << std::addressof(f) << std::endl;
+	std::cout << "STACK		 - p " << std::addressof(p) << std::endl;
+	std::cout << std::endl;
+	std::cout << "Free Store - *f" << std::addressof(*f) << std::endl;
+
+}
+
+
+
+파일이름: source.cpp
+파일크기: 1180
+2022-03-24 14:07:06 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+void foo() {
+	std::cout << "foo" << std::endl;
+}
+
+int g;
+
+int main() {
+	save("source.cpp");
+
+	void(*p)(void) = foo;
+
+	int count{};
+
+	int* f = new int;
+
+	std::cout << "CODE		 - foo    " << std::addressof(foo) << std::endl;
+	std::cout << "CODE		 - main   " << std::addressof(main) << std::endl;
+	std::cout << "CODE		 - save   " << std::addressof(save) << std::endl;
+	std::cout << "CODE		 - pfoo   " << std::endl;
+	std::cout << std::endl;
+	std::cout << "DATA		 - g   " << std::addressof(g) << std::endl;
+	std::cout << std::endl;
+	std::cout << "STACK		 - f	" << std::addressof(f) << std::endl;
+	std::cout << "STACK		 - p " << std::addressof(p) << std::endl;
+	std::cout << std::endl;
+	std::cout << "Free Store - *f" << std::addressof(*f) << std::endl;
+
+}
+
+
+
+파일이름: source.cpp
+파일크기: 1198
+2022-03-24 14:08:14 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+void foo() {
+	std::cout << "foo" << std::endl;
+}
+
+int g;
+
+int main() {
+	save("source.cpp");
+
+	void(*p)(void) = foo;
+
+	int count{};
+
+	int* f = new int;
+
+	std::cout << "CODE		 - foo		" << std::addressof(foo) << std::endl;
+	std::cout << "CODE		 - main		" << std::addressof(main) << std::endl;
+	std::cout << "CODE		 - save		" << std::addressof(save) << std::endl;
+	std::cout << "CODE		 - *p		" << std::addressof(*p) << std::endl;
+	std::cout << std::endl;
+	std::cout << "DATA		 - g		" << std::addressof(g) << std::endl;
+	std::cout << std::endl;
+	std::cout << "STACK		 - f		" << std::addressof(f) << std::endl;
+	std::cout << "STACK		 - p		" << std::addressof(p) << std::endl;
+	std::cout << std::endl;
+	std::cout << "Free Store - *f		" << std::addressof(*f) << std::endl;
+
+}
+
+
+
+파일이름: source.cpp
+파일크기: 1198
+2022-03-24 14:08:24 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+void foo() {
+	std::cout << "foo" << std::endl;
+}
+
+int g;
+
+int main() {
+	save("source.cpp");
+
+	void(*p)(void) = foo;
+
+	int count{};
+
+	int* f = new int;
+
+	std::cout << "CODE		 - foo		" << std::addressof(foo) << std::endl;
+	std::cout << "CODE		 - main		" << std::addressof(main) << std::endl;
+	std::cout << "CODE		 - save		" << std::addressof(save) << std::endl;
+	std::cout << "CODE		 - *p		" << std::addressof(*p) << std::endl;
+	std::cout << std::endl;
+	std::cout << "DATA		 - g		" << std::addressof(g) << std::endl;
+	std::cout << std::endl;
+	std::cout << "STACK		 - f		" << std::addressof(f) << std::endl;
+	std::cout << "STACK		 - p		" << std::addressof(p) << std::endl;
+	std::cout << std::endl;
+	std::cout << "Free Store - *f		" << std::addressof(*f) << std::endl;
+
+}
+
+
+
+파일이름: source.cpp
+파일크기: 520
+2022-03-24 14:16:08 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda)
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+int main() {
+	[]() {
+		std::cout << "hi" << std::endl;
+		
+	};
+
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 522
+2022-03-24 14:16:31 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda)
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+int main() {
+	[]() {
+		std::cout << "hi" << std::endl;
+		
+	}();
+
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 551
+2022-03-24 14:19:10 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda)
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+int main() {
+	
+	
+	std::cout << typeid([]() {std::cout << "hi" << std::endl; }()).name();
+
+	
+
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 576
+2022-03-24 14:21:00 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda)
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+int main() {
+	
+	
+	auto x = []() {std::cout << "hi" << std::endl; };
+
+	std::cout << typeid(x).name() << std::endl;
+	
+
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 610
+2022-03-24 14:22:17 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda)
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+int main() {
+	
+	
+	auto x = []() {std::cout << "hi" << std::endl; };
+
+	std::cout << typeid(x).name() << std::endl;
+	
+	class Dog {};
+
+	std::cout << typeid(Dog).name();
+
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 613
+2022-03-24 14:23:09 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda)
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+class Dog {};
+
+
+int main() {
+	
+	
+	auto x = []() {std::cout << "hi" << std::endl; };
+
+	std::cout << typeid(x).name() << std::endl;
+	
+
+	std::cout << typeid(Dog).name();
+
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 610
+2022-03-24 14:23:23 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda)
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+int main() {
+	
+	
+	auto x = []() {std::cout << "hi" << std::endl; };
+
+	std::cout << typeid(x).name() << std::endl;
+	
+	class Dog {};
+
+	std::cout << typeid(Dog).name();
+
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 612
+2022-03-24 14:23:45 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda)
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+auto x = []() {std::cout << "hi" << std::endl; };
+class Dog {};
+
+
+int main() {
+	
+	
+
+	std::cout << typeid(x).name() << std::endl;
+	
+
+	std::cout << typeid(Dog).name();
+
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 612
+2022-03-24 14:23:48 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda)
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+auto x = []() {std::cout << "hi" << std::endl; };
+class Dog {};
+
+
+int main() {
+	
+	
+
+	std::cout << typeid(x).name() << std::endl;
+	
+
+	std::cout << typeid(Dog).name();
+
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 831
+2022-03-24 14:37:52 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda) - 컴파일러가 만들어주는 class이다. (? class가 호출가능 타입?)
+ * 3. ()을 오버로딩한 class ()는 함수호출 연산자
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+class Dog {};
+
+
+int main() {
+
+	// 람다는 어디서 어떻게 사용해야되나
+	std::array<int, 5> a{ 3,1,5,2,4 };
+
+	std::sort(a.begin(), a.end(), [](int a, int b) { return a > b; });
+
+	for (int n : a) {
+		std::cout << n << " " << std::endl;
+	}
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 818
+2022-03-24 14:38:02 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda) - 컴파일러가 만들어주는 class이다. (? class가 호출가능 타입?)
+ * 3. ()을 오버로딩한 class ()는 함수호출 연산자
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+class Dog {};
+
+
+int main() {
+
+	// 람다는 어디서 어떻게 사용해야되나
+	std::array<int, 5> a{ 3,1,5,2,4 };
+
+	std::sort(a.begin(), a.end(), [](int a, int b) { return a > b; });
+
+	for (int n : a) {
+		std::cout << n << " ";
+	}
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 916
+2022-03-24 14:44:22 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda) - 컴파일러가 만들어주는 class이다. (? class가 호출가능 타입?)
+ * 3. ()을 오버로딩한 class ()는 함수호출 연산자
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+class Dog {
+public:
+	void operator()() { std::cout << "Dog" << std::endl; }
+};
+
+
+
+int main() {
+
+	// 람다는 어디서 어떻게 사용해야되나
+	//std::array<int, 5> a{ 3,1,5,2,4 };
+
+	//std::sort(a.begin(), a.end(), [](int a, int b) { return a > b; });
+
+	//for (int n : a) {
+	//	std::cout << n << " ";
+	//}
+
+	Dog d;
+	d();
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 710
+2022-03-24 14:45:05 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda) - 컴파일러가 만들어주는 class이다. (? class가 호출가능 타입?)
+ * 3. ()을 오버로딩한 class ()는 함수호출 연산자
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+class Dog {
+public:
+	bool operator()(int a, int b) {
+		return a > b;
+	}
+};
+
+
+
+int main() {
+
+	Dog dog;
+	dog(1,2);
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 818
+2022-03-24 14:46:38 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda) - 컴파일러가 만들어주는 class이다. (? class가 호출가능 타입?)
+ * 3. ()을 오버로딩한 class ()는 함수호출 연산자
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+
+//std::random_device rd;
+//std::default_random_engine dre(rd());
+//std::uniform_int_distribution<int> uid(1, 100);
+
+
+class Dog {
+public:
+	bool operator()(int a, int b) {
+		return a > b;
+	}
+};
+
+
+
+int main() {
+
+	std::array<int, 5> a{ 3,1,5,2,4 };
+
+	std::sort(a.begin(), a.end(), Dog{});
+
+	for (int n : a) {
+		std::cout << n << " ";
+	}
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 1107
+2022-03-24 15:06:40 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda) - 컴파일러가 만들어주는 class이다. (? class가 호출가능 타입?)
+ * 3. ()을 오버로딩한 class ()는 함수호출 연산자
+ * 4. 멤버함수(method) 포인터
+ * 
+ * 호출가능한 타입은 무한개이다(람다때문)
+ * --> 모든 호출가능타입을 통일된 방식으로 표현할 수 있는 클래스, function
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <functional>
+#include "save.h"
+
+// drmemory, makefile
+// 앞으로 사용할 class STRING 작성 시작(RAII)
+// 문제: main()이 문제없이 실행되게 하자
+// 관찰할 수 있도록 special 함수에 출력메시지를 추가한다
+
+class STRING {
+public:
+	STRING(const char* c)
+		: c(c) {}
+	friend std::ostream& operator<<(std::ostream& os, STRING c) {
+		os << c;
+		return os;
+	}
+private:
+	const char* c;
+};
+
+int main() {
+
+	STRING a{ "2022 3 24" };
+	STRING b{ "STL STRING 작성 시작" };
+	
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 1177
+2022-03-24 15:08:24 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda) - 컴파일러가 만들어주는 class이다. (? class가 호출가능 타입?)
+ * 3. ()을 오버로딩한 class ()는 함수호출 연산자
+ * 4. 멤버함수(method) 포인터
+ * 
+ * 호출가능한 타입은 무한개이다(람다때문)
+ * --> 모든 호출가능타입을 통일된 방식으로 표현할 수 있는 클래스, function
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+#include <iostream>
+#include <functional>
+#include "save.h"
+
+// drmemory, makefile
+// 앞으로 사용할 class STRING 작성 시작(RAII)
+// 문제: main()이 문제없이 실행되게 하자
+// 관찰할 수 있도록 special 함수에 출력메시지를 추가한다
+
+class STRING {
+public:
+	STRING(const char* c);
+	friend std::ostream& operator<<(std::ostream& os, STRING c) {
+		os << c;
+		return os;
+	}
+private:
+	const char* memory;
+};
+
+STRING::STRING(const char* c) {
+	memory = new char[10];
+	memory = c;
+}
+
+int main() {
+
+	STRING a{ "2022 3 24" };
+	STRING b{ "STL STRING 작성 시작" };
+	
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 1551
+2022-03-24 15:20:13 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda) - 컴파일러가 만들어주는 class이다. (? class가 호출가능 타입?)
+ * 3. ()을 오버로딩한 class ()는 함수호출 연산자
+ * 4. 멤버함수(method) 포인터
+ * 
+ * 호출가능한 타입은 무한개이다(람다때문)
+ * --> 모든 호출가능타입을 통일된 방식으로 표현할 수 있는 클래스, function
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+
+
+ // drmemory, makefile
+ // 앞으로 사용할 class STRING 작성 시작(RAII)
+ // 문제: main()이 문제없이 실행되게 하자
+ // 관찰할 수 있도록 special 함수에 출력메시지를 추가한다
+ // 객체가 생성될때마다 고유번호를 준다
+
+
+
+#include <iostream>
+#include <functional>
+#include "save.h"
+
+class STRING {
+public:
+	STRING(const char* s) : num(strlen(s)), p{ new char[num] } {
+		id = ++gid;
+		memcpy(p, s, num);
+		// 관찰메시지 on
+		std::cout << "ctor [" << id << "] 주소: " << this << std::endl;
+	}
+	~STRING() {
+		// 관찰메시지 on
+		std::cout << "dtor [" << id << "] 주소: " << this << std::endl;
+		delete[] p;
+	}
+
+
+	friend std::ostream& operator<<(std::ostream& os, const STRING& string);
+
+private:
+	int num;
+	char* p;
+	int id;
+	static int gid;
+};
+
+std::ostream& operator<<(std::ostream& os, const STRING& string);
+
+int STRING::gid{};
+
+
+int main() {
+
+	STRING a{ "2022 3 24" };
+	STRING b{ "STL STRING 작성 시작" };
+	
+	//std::cout << a << std::endl;
+	//std::cout << b << std::endl;
+
+	save("source.cpp");
+}
+
+
+
+파일이름: source.cpp
+파일크기: 1592
+2022-03-24 15:21:20 GMT+9
+
+/*
+ * 2022. 03. 24
+ * STL Class
+ * Week 4
+ * 
+ * 호출가능타입(Callable type)
+ * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+ * 2. 람다(lambda) - 컴파일러가 만들어주는 class이다. (? class가 호출가능 타입?)
+ * 3. ()을 오버로딩한 class ()는 함수호출 연산자
+ * 4. 멤버함수(method) 포인터
+ * 
+ * 호출가능한 타입은 무한개이다(람다때문)
+ * --> 모든 호출가능타입을 통일된 방식으로 표현할 수 있는 클래스, function
+ * 
+ * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ */
+
+
+
+ // drmemory, makefile
+ // 앞으로 사용할 class STRING 작성 시작(RAII)
+ // 문제: main()이 문제없이 실행되게 하자
+ // 관찰할 수 있도록 special 함수에 출력메시지를 추가한다
+ // 객체가 생성될때마다 고유번호를 준다
+
+
+
+#include <iostream>
+#include <functional>
+#include "save.h"
+
+class STRING {
+public:
+	STRING(const char* s) : num(strlen(s)), p{ new char[num] } {
+		id = ++gid;
+		memcpy(p, s, num);
+		// 관찰메시지 on
+		std::cout << "ctor [" << id << "] 주소: " << this << std::endl;
+	}
+	~STRING() {
+		// 관찰메시지 on
+		std::cout << "dtor [" << id << "] 주소: " << this << std::endl;
+		delete[] p;
+	}
+
+
+	friend std::ostream& operator<<(std::ostream& os, const STRING& string);
+
+private:
+	int num;
+	char* p;
+	int id;
+	static int gid;
+};
+
+std::ostream& operator<<(std::ostream& os, const STRING& string) {
+	std::cout << *string.p;
+	return os;
+}
+
+int STRING::gid{};
+
+
+int main() {
+
+	STRING a{ "2022 3 24" };
+	STRING b{ "STL STRING 작성 시작" };
+	
+	std::cout << a << std::endl;
+	//std::cout << b << std::endl;
+
+	save("source.cpp");
+}
+
