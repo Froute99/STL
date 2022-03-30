@@ -3,8 +3,10 @@
   <ItemGroup>
     <ClCompile Include="save.cpp" />
     <ClCompile Include="source.cpp" />
+    <ClCompile Include="STRING.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="save.h" />
+    <ClInclude Include="STRING.h" />
   </ItemGroup>
 </Project>

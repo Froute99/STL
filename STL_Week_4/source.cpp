@@ -1,18 +1,9 @@
 /*
- * 2022. 03. 24
+ * 2022. 03. 30
  * STL Class
- * Week 4
+ * Week 5
  * 
- * 호출가능타입(Callable type)
- * 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
- * 2. 람다(lambda) - 컴파일러가 만들어주는 class이다. (? class가 호출가능 타입?)
- * 3. ()을 오버로딩한 class ()는 함수호출 연산자
- * 4. 멤버함수(method) 포인터
- * 
- * 호출가능한 타입은 무한개이다(람다때문)
- * --> 모든 호출가능타입을 통일된 방식으로 표현할 수 있는 클래스, function
- * 
- * 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+ * STRING 클래스 파일 분리
  */
 
 
@@ -26,49 +17,28 @@
 
 
 #include <iostream>
-#include <functional>
+#include <array>
+#include <algorithm>
 #include "save.h"
 
-class STRING {
-public:
-	STRING(const char* s) : num(strlen(s)), p{ new char[num] } {
-		id = ++gid;
-		memcpy(p, s, num);
-		// 관찰메시지 on
-		std::cout << "ctor [" << id << "] 주소: " << this << std::endl;
-	}
-	~STRING() {
-		// 관찰메시지 on
-		std::cout << "dtor [" << id << "] 주소: " << this << std::endl;
-		delete[] p;
-	}
-
-
-	friend std::ostream& operator<<(std::ostream& os, const STRING& string);
-
-private:
-	int num;
-	char* p;
-	int id;
-	static int gid;
-};
-
-std::ostream& operator<<(std::ostream& os, const STRING& string) {
-
-	return os;
-}
-
-int STRING::gid{};
-
+#include "STRING.h"
+extern bool printMsg;
 
 int main() {
+	//printMsg = true;
 
-	STRING a{ "2022 3 24" };
-	STRING b{ "STL STRING 작성 시작" };
+	std::array<STRING, 3> a{ "2022", "3", "30" };
 	
-	//std::cout << a << std::endl;
-	//std::cout << b << std::endl;
+	// 길이 오름차순으로 a를 정렬한 후 출력
 
+	sort(a.begin(), a.end(), [](STRING& a, STRING& b) {
+		return a.getNumber() < b.getNumber();
+		});
+
+	for (const auto& x : a) {
+		std::cout << x;
+	}
+	
 	save("source.cpp");
 }
 
