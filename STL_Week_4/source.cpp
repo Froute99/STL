@@ -3,9 +3,13 @@
  * STL Class
  * Week 5
  * 
- * STRING 클래스 파일 분리
+ * 1. Sequence container
+ *		array				- replace []
+ *		vector
+ *		deque
+ *		forward_list
+ *		list
  */
-
 
 
  // drmemory, makefile
@@ -14,31 +18,44 @@
  // 관찰할 수 있도록 special 함수에 출력메시지를 추가한다
  // 객체가 생성될때마다 고유번호를 준다
 
+// using STRING::value_type = char;
+
+
+// 시험 fileIO 나옴 fstream
+
+/*
+문제 단어를 입력받아
+오름차순 정렬한 후
+화면에 출력
+*/
+
+
 
 
 #include <iostream>
-#include <array>
+#include <vector>
 #include <algorithm>
+#include <fstream>
 #include "save.h"
 
 #include "STRING.h"
 extern bool printMsg;
 
 int main() {
-	//printMsg = true;
 
-	std::array<STRING, 3> a{ "2022", "3", "30" };
-	
-	// 길이 오름차순으로 a를 정렬한 후 출력
+	std::vector<std::string> v;
 
-	sort(a.begin(), a.end(), [](STRING& a, STRING& b) {
-		return a.getNumber() < b.getNumber();
-		});
-
-	for (const auto& x : a) {
-		std::cout << x;
+	std::string in;
+	while (std::cin >> in) {
+		v.push_back(in);
 	}
 	
+	sort(v.begin(), v.end());			// 5주 2 과제설명/내림차순
+
+	for (auto x : v) {
+		std::cout << x << ' ';
+	}
+
 	save("source.cpp");
 }
 
