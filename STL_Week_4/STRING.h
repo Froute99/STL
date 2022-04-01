@@ -1,11 +1,10 @@
-/*
- * 2022. 03. 30
- * STL Class
- * Week 5
- *
- * STRING	- STL 내부 동작을 관찰하려고 만든 자원을 관리하는 클래스
- *			- std::string 동작 대부분을 직접 구현하며 STL 동작방식을 이해
- */
+/**************************************************************************************
+ *	File Name		: STRING.h
+ *	Date			: 2022 03 30
+ *	Author			: JH Kim
+ *	Instruction		: STL 내부 동작을 관찰하려고 만든 자원을 관리하는 클래스
+ *					: std::string 동작 대부분을 직접 구현하며 STL 동작방식을 이해
+ **************************************************************************************/
 
 #pragma once
 
@@ -21,6 +20,9 @@ public:
 	STRING& operator=(const STRING& other);
 	STRING operator+(const STRING& rhs) const;
 
+	//char operator[](const int index);
+	//bool operator==(const STRING& other);
+	
 	size_t getNumber() const { return num; }
 
 	void print(const char* s) const;
