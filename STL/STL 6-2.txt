@@ -1,0 +1,1617 @@
+
+
+파일이름: source.cpp
+파일크기: 674
+2022-04-13 17:35:55 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *		deque
+ *		forward_list
+ *		list
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 794
+2022-04-13 17:40:49 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *		deque
+ *		forward_list
+ *		list
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <array>
+#include <algorithm>
+#include "save.h"
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	std::ifstream in{ "source.cpp" };
+
+	std::array<int, 26> alphas;
+	char c;
+	while (in >> c) {
+		alphas[tolower(c) - 'a']++;
+	}
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 664
+2022-04-13 17:48:59 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void ShowVector(const std::vector<STRING>& v) {
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	std::vector<STRING> v{ "1", "22", "4444", "55555" };
+
+	ShowVector(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 855
+2022-04-13 17:53:51 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void ShowVector(const std::vector<STRING>& v) {
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	std::vector<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	v.insert(v.begin() + 2, "333");
+
+	//v.insert(std::find_if(v.begin(), v.end(),
+	//	[](const STRING& s) {
+	//		return s.
+	//	})
+
+	ShowVector(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 885
+2022-04-13 17:57:48 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void ShowVector(const std::vector<STRING>& v) {
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	std::vector<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	v.insert(v.begin() + 2, "333");
+
+
+
+	//v.insert(std::find_if(v.begin(), v.end(),
+	//	[](const STRING& s) {
+	//		return s.GetName() == "22";
+	//	}, "333");
+
+	ShowVector(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 832
+2022-04-13 17:58:56 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void ShowVector(const std::vector<STRING>& v) {
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	std::vector<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	v.insert(v.begin() + 2, "333");
+
+	auto it = std::find(v.begin(), v.end(), "22");
+
+	v.insert(it ,"333");
+
+	ShowVector(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 834
+2022-04-13 17:59:03 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void ShowVector(const std::vector<STRING>& v) {
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	std::vector<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	//v.insert(v.begin() + 2, "333");
+
+	auto it = std::find(v.begin(), v.end(), "22");
+
+	v.insert(it ,"333");
+
+	ShowVector(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 838
+2022-04-13 17:59:12 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void ShowVector(const std::vector<STRING>& v) {
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	std::vector<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	//v.insert(v.begin() + 2, "333");
+
+	auto it = std::find(v.begin(), v.end(), "22");
+
+	v.insert(it + 1 ,"333");
+
+	ShowVector(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 996
+2022-04-13 18:03:20 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void Show(const std::vector<int>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+void Show(const std::vector<STRING>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	std::vector<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	//v.insert(v.begin() + 2, "333");
+
+	auto it = std::find(v.begin(), v.end(), "22");
+
+	v.insert(it + 1 ,"333");
+
+	Show(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1034
+2022-04-13 18:09:56 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void Show(const std::vector<int>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+void Show(const std::vector<STRING>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	//v.insert(v.begin() + 2, "333");
+
+	v.insert(std::find(v.begin(), v.end(), "22"), "333");
+
+	Show(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1034
+2022-04-13 18:14:27 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void Show(const std::vector<int>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+void Show(const std::vector<STRING>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	//v.insert(v.begin() + 2, "333");
+
+	v.insert(std::find(v.begin(), v.end(), "22"), "333");
+
+	Show(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1051
+2022-04-13 18:15:51 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void Show(const std::vector<int>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+void Show(const std::vector<STRING>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	isMessageToggle = true;
+
+	std::list<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	//v.insert(v.begin() + 2, "333");
+
+	v.insert(std::find(v.begin(), v.end(), "22"), "333");
+
+	//Show(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1051
+2022-04-13 18:16:00 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void Show(const std::vector<int>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+void Show(const std::vector<STRING>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	isMessageToggle = true;
+
+	std::list<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	//v.insert(v.begin() + 2, "333");
+
+	v.insert(std::find(v.begin(), v.end(), "22"), "333");
+
+	//Show(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1120
+2022-04-13 18:17:12 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void Show(const std::vector<int>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+void Show(const std::vector<STRING>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	isMessageToggle = true;
+
+	std::list<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	v.insert(++++v.cbegin(), "333");
+
+	for (const STRING& s : v) {
+		std::cout << s << std::endl;
+	}
+
+	//v.insert(std::find(v.begin(), v.end(), "22"), "333");
+
+	//Show(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1120
+2022-04-13 18:17:32 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void Show(const std::vector<int>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+void Show(const std::vector<STRING>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+	isMessageToggle = true;
+
+	std::list<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	v.insert(++++v.cbegin(), "333");
+
+	for (const STRING& s : v) {
+		std::cout << s << std::endl;
+	}
+
+	//v.insert(std::find(v.begin(), v.end(), "22"), "333");
+
+	//Show(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1120
+2022-04-13 18:19:31 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] "소스.cpp"를 읽어 영문자 갯수를 세라
+// 다음과 같이 출력하라
+// 대소문자 구분하지 않음		tolower()
+// [a] - 10
+// [b] - 5
+
+void Show(const std::vector<int>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+void Show(const std::vector<STRING>& v) {
+	size_t size = v.size();
+	for (int i = 0; i < size; ++i) {
+		std::cout << v.at(i) << std::endl;
+	}
+}
+
+int main() {
+	// 여기에 들어갈 코드를 답지에 적어라. z의 갯수를 답지에도 적어라.
+
+
+	std::list<STRING> v{ "1", "22", "4444", "55555" };
+
+	// [문제] "22" 와 "4444" 사이에 "333"을 끼워 넣어라
+
+	isMessageToggle = true;
+	v.insert(++++v.cbegin(), "333");
+
+	for (const STRING& s : v) {
+		std::cout << s << std::endl;
+	}
+
+	//v.insert(std::find(v.begin(), v.end(), "22"), "333");
+
+	//Show(v);
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 574
+2022-04-13 18:22:26 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	std::deque<int> d;
+
+	std::cout << sizeof(d) << std::endl;
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 762
+2022-04-13 18:42:42 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[1024];
+public:
+	void Show() const {
+		std::cout << this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<int> d;
+	std::vector<Test> v(10);
+
+	std::cout << v.size();
+
+	d.emplace_back(1);
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 796
+2022-04-13 18:43:09 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[1024];
+public:
+	void Show() const {
+		std::cout << this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<int> d;
+	std::vector<Test> v(10);
+
+	for (int i = 0; i < v.size(); ++i) {
+		v[i].Show();
+	}
+
+	d.emplace_back(1);
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 796
+2022-04-13 18:43:25 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[1024];
+public:
+	void Show() const {
+		std::cout << this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<int> d;
+	std::vector<Test> v(10);
+
+	for (int i = 0; i < v.size(); ++i) {
+		v[i].Show();
+	}
+
+	d.emplace_back(1);
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 797
+2022-04-13 18:44:08 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[10000];
+public:
+	void Show() const {
+		std::cout << this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<int> d;
+	std::vector<Test> v(10);
+
+	for (int i = 0; i < v.size(); ++i) {
+		v[i].Show();
+	}
+
+	d.emplace_back(1);
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 802
+2022-04-13 18:44:33 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[10000];
+public:
+	void Show() const {
+		std::cout << (int)this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<int> d;
+	std::vector<Test> v(10);
+
+	for (int i = 0; i < v.size(); ++i) {
+		v[i].Show();
+	}
+
+	d.emplace_back(1);
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 808
+2022-04-13 18:44:41 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[10000];
+public:
+	void Show() const {
+		std::cout << (long long)this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<int> d;
+	std::vector<Test> v(10);
+
+	for (int i = 0; i < v.size(); ++i) {
+		v[i].Show();
+	}
+
+	d.emplace_back(1);
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 807
+2022-04-13 18:44:56 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[1024];
+public:
+	void Show() const {
+		std::cout << (long long)this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<int> d;
+	std::vector<Test> v(10);
+
+	for (int i = 0; i < v.size(); ++i) {
+		v[i].Show();
+	}
+
+	d.emplace_back(1);
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 780
+2022-04-13 18:45:52 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[1024];
+public:
+	void Show() const {
+		std::cout << this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<Test> d(10);
+	std::vector<Test> v(10);
+
+	for (int i = 0; i < v.size(); ++i) {
+		v[i].Show();
+	}
+
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 780
+2022-04-13 18:46:08 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[1024];
+public:
+	void Show() const {
+		std::cout << this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<Test> d(10);
+	std::vector<Test> v(10);
+
+	for (int i = 0; i < d.size(); ++i) {
+		d[i].Show();
+	}
+
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 814
+2022-04-13 18:47:22 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[1024];
+public:
+	void Show() const {
+		std::cout << this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<int> d(10);
+	std::vector<Test> v(10);
+
+	for (int i = 0; i < d.size(); ++i) {
+		std::cout << std::addressof(d[i]) << std::endl;
+	}
+
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 854
+2022-04-13 18:50:18 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[1024];
+public:
+	void Show() const {
+		std::cout << this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<int> d(10);
+	std::vector<Test> v(10);
+
+	d.push_front(10);
+	d.push_front(10);
+	for (int i = 0; i < d.size(); ++i) {
+		std::cout << std::addressof(d[i]) << std::endl;
+	}
+
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 885
+2022-04-13 18:55:32 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[1024];
+public:
+	void Show() const {
+		std::cout << this << std::endl;
+	}
+};
+
+int main() {
+	std::deque<int> d(10);
+	std::vector<Test> v(10);
+
+	d.push_front(10);
+	d.push_front(10);
+	for (int i = 0; i < d.size(); ++i) {
+		std::cout << std::addressof(d[i]) << std::endl;
+	}
+	// deque 는 연속되어 있지 않다
+
+
+	//d.shrink_to_fit();
+
+	save("source.cpp", "STL 6-2.txt");
+}
+
+=======================================================

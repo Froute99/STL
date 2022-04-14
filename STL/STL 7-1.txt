@@ -1,0 +1,957 @@
+
+
+파일이름: source.cpp
+파일크기: 822
+2022-04-14 13:31:44 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+class Test {
+	char c[1024];
+public:
+	void Show() const {
+		std::cout << this << std::endl;
+	}
+};
+
+int main() {
+	// vector보다 deque가 더 많은 원소를 저장한다고?
+	// deque 가 vector 보다 많이 저장
+
+
+	// [문제] "source.cpp"의 단어를 deque에 저장하라
+	// 오름차순 정렬하라
+	// 출력하라
+
+
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 852
+2022-04-14 13:37:51 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// vector보다 deque가 더 많은 원소를 저장한다고?
+	// deque 가 vector 보다 많이 저장
+
+
+	// [문제] "source.cpp"의 단어를 deque에 저장하라
+	// 오름차순 정렬하라
+	// 출력하라
+
+	std::ifstream in{ "source.cpp" };
+
+	std::deque<std::string> d;
+
+
+	std::string s;
+	while (in >> s) {
+		d.push_back(s);
+	}
+
+
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1013
+2022-04-14 13:43:14 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// vector보다 deque가 더 많은 원소를 저장한다고?
+	// deque 가 vector 보다 많이 저장
+
+
+	// [문제] "source.cpp"의 단어를 deque에 저장하라
+	// 오름차순 정렬하라
+	// 출력하라
+
+	std::ifstream in{ "source.cpp" };
+
+	std::deque<std::string> d;
+
+
+	std::string s;
+	while (in >> s) {
+		d.push_back(s);
+	}
+	
+	std::sort(d.begin(), d.end());			// default ascending order
+
+	for (const std::string& s : d) {
+		std::cout << s << std::endl;
+	}
+	
+
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 779
+2022-04-14 13:51:00 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// vector보다 deque가 더 많은 원소를 저장한다고?
+	// deque 가 vector 보다 많이 저장
+
+
+	// [문제] "source.cpp"의 단어를 deque에 저장하라
+	// 오름차순 정렬하라
+	// 출력하라
+
+	std::ofstream out{ "연습.txt" };
+	
+
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 859
+2022-04-14 14:01:55 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::deque<std::string> d{ std::istream_iterator<std::string>{in}, {} };
+	
+	std::sort(d.begin(), d.end());
+
+	std::copy(d.begin(), d.end(), std::ostream_iterator<std::string>{std::cout, "\n"});
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 935
+2022-04-14 14:03:56 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::deque<std::string> d{ std::istream_iterator<std::string>{in}, {} };
+	
+	std::sort(d.begin(), d.end());
+
+	for (std::string& s : d) {
+		std::sort(s.begin(), s.end());
+	}
+
+	std::copy(d.begin(), d.end(),
+		
+		std::ostream_iterator<std::string>{std::cout, "\n"});
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 809
+2022-04-14 14:08:33 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::deque<std::string> d{ std::istream_iterator<std::string>{in}, {} };
+	
+	std::cout << *std::find(d.begin(), d.end(), "dynamic") << std::endl;
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 834
+2022-04-14 14:12:28 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::deque<std::string> d{ std::istream_iterator<std::string>{in}, {} };
+	
+	std::cout << std::distance(d.begin(), std::find(d.begin(), d.end(), "dynamic")) << std::endl;
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 831
+2022-04-14 14:13:38 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::deque<std::string> d{ std::istream_iterator<std::string>{in}, {} };
+	
+	std::cout << std::distance(d.begin(), std::find(d.begin(), d.end(), "asdf")) << std::endl;
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 792
+2022-04-14 14:35:30 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list			- 객체마다 2개 사용하여 삽입삭제 O(1)
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <list>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::list<std::string> cont;
+
+	std::cout << sizeof(cont) << std::endl;
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1002
+2022-04-14 14:40:42 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list			- 객체마다 2개 사용하여 삽입삭제 O(1)
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <list>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::list<std::string> cont;
+
+	std::cout << sizeof(cont) << std::endl;
+
+	std::string s;
+
+	while (in >> s) {
+		cont.push_back(s);
+	}
+	// [문제] 정렬하라
+
+	// [문제] 앞에서부터 10개 단어만 출력하라
+	for (const std::string& s : cont) {
+		std::cout << s << std::endl;
+	}
+
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 958
+2022-04-14 14:41:03 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list			- 객체마다 2개 사용하여 삽입삭제 O(1)
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <list>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::list<std::string> cont;
+
+	std::string s;
+
+	while (in >> s) {
+		cont.push_back(s);
+	}
+	// [문제] 정렬하라
+
+	// [문제] 앞에서부터 10개 단어만 출력하라
+	for (const std::string& s : cont) {
+		std::cout << s << std::endl;
+	}
+
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 973
+2022-04-14 14:41:32 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list			- 객체마다 2개 사용하여 삽입삭제 O(1)
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <list>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::list<std::string> cont;
+
+	std::string s;
+
+	while (in >> s) {
+		cont.push_back(s);
+	}
+	// [문제] 정렬하라
+	cont.sort();
+
+	// [문제] 앞에서부터 10개 단어만 출력하라
+	for (const std::string& s : cont) {
+		std::cout << s << std::endl;
+	}
+
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1003
+2022-04-14 14:54:19 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list			- 객체마다 2개 사용하여 삽입삭제 O(1)
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <list>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::list<std::string> cont;
+
+	std::string s;
+
+	while (in >> s) {
+		cont.push_back(s);
+	}
+	// [문제] 정렬하라
+	cont.sort();
+	
+
+	// [문제] 앞에서부터 10개 단어만 출력하라
+	auto p = cont.crbegin();
+
+	for (int i = 0; i < 10; ++i) {
+		std::cout << *p++ << std::endl;
+	}
+
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1090
+2022-04-14 15:00:49 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list			- 객체마다 2개 사용하여 삽입삭제 O(1)
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <list>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::list<std::string> cont;
+
+	std::string s;
+
+	while (in >> s) {
+		cont.push_back(s);
+	}
+	
+	
+	// [문제] "dynamic"은 몇 번째 단어인가 출력하라
+	auto found = std::find(cont.begin(), cont.end(), "dynamic");
+
+	if (found == cont.end()) {
+		std::cout << "못찾음" << std::endl;
+		return -1;
+	}
+
+	std::cout << std::distance(cont.begin(), found) + 1 << std::endl;
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 905
+2022-04-14 15:13:46 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list			- 객체마다 2개 사용하여 삽입삭제 O(1)
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <list>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::list<char> cont;
+
+	char c;
+	while (in >> c) {
+		cont.push_back(c);
+	}
+	
+	// [문제] a가 몇개 있나 출력
+	
+	std::cout << std::count(cont.begin(), cont.end(), 'a') << std::endl;
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1014
+2022-04-14 15:18:44 GMT+9
+
+/*
+ * 2022. 04. 13
+ * STL Class
+ *
+ * 중간시험 확정 - 4.20 수
+ * 
+ * 
+ *  * 1. Sequence container
+ *		array			- 유일하게 크기가 고정, [] 대체
+ *		vector			- dynamic size array, O(1) - random access
+ *						- 중간에 insert하는 동작의 댓가를 알아봤다.
+ *		deque		
+ *		forward_list
+ *		list			- 객체마다 2개 사용하여 삽입삭제 O(1)
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <fstream>
+#include <deque>
+#include <list>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] "연습.txt"의 단어를 읽어 오름차순 정렬 후 출력하라
+
+	std::ifstream in{ "연습.txt" };
+	
+	std::list<std::string> cont;
+	
+	std::string s;
+	while (in >> s) {
+		cont.push_back(s);
+	}
+
+	// [문제] 글자수가 5개인것만 출력
+
+	std::copy_if(cont.begin(), cont.end(), std::ostream_iterator<std::string>{std::cout, "\n"},
+		[](const std::string& s) {
+			return s.size() == 5;
+		});
+	
+
+
+	save("source.cpp", "STL 7-1.txt");
+}
+
+=======================================================
