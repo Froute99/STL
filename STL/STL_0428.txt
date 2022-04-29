@@ -1,0 +1,772 @@
+
+
+파일이름: source.cpp
+파일크기: 949
+2022-04-28 14:21:01 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+
+	std::ifstream in{ "소스.cpp" };
+	
+	// [문제] 실행되게 하라
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 949
+2022-04-28 14:21:05 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+
+	std::ifstream in{ "소스.cpp" };
+	
+	// [문제] 실행되게 하라
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1004
+2022-04-28 14:21:25 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+
+	std::ifstream in{ "소스.cpp" };
+	
+	// [문제] 실행되게 하라
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	for (auto s : v) {
+		std::cout << s << std::endl;
+	}
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1004
+2022-04-28 14:21:40 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+
+	std::ifstream in{ "소스.cpp" };
+	
+	// [문제] 실행되게 하라
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	for (auto s : v) {
+		std::cout << s << std::endl;
+	}
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1004
+2022-04-28 14:21:45 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+
+	std::ifstream in{ "소스.cpp" };
+	
+	// [문제] 실행되게 하라
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	for (auto s : v) {
+		std::cout << s << std::endl;
+	}
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1004
+2022-04-28 14:22:09 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+
+	std::ifstream in{ "소스.cpp" };
+	
+	// [문제] 실행되게 하라
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	for (auto s : v) {
+		std::cout << s << std::endl;
+	}
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1004
+2022-04-28 14:22:13 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+
+	std::ifstream in{ "소스.cpp" };
+	
+	// [문제] 실행되게 하라
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	for (auto s : v) {
+		std::cout << s << std::endl;
+	}
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1010
+2022-04-28 14:25:49 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+
+	std::ifstream in{ "source.cpp" };
+	
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	// [문제] v를 정렬하라
+	
+
+	for (auto s : v) {
+		std::cout << s << std::endl;
+	}
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1215
+2022-04-28 14:43:54 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+bool operator<(const STRING& a, const STRING& b) {
+	// 사전식 정렬
+	
+	return std::string(a.begin(), a.end()) < std::string(b.begin(), b.end());
+}
+
+int main() {
+
+	std::ifstream in{ "source.cpp" };
+	
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	// [문제] v를 정렬하라
+	
+	std::sort(v.begin(), v.end());
+
+	std::cout << v.at(1);
+
+	//for (auto s : v) {
+	//	std::cout << s;
+	//}
+
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1062
+2022-04-28 14:48:21 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+int main() {
+
+	std::ifstream in{ "source.cpp" };
+	
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	// [문제] v를 정렬하라
+	
+	std::sort(v.begin(), v.end());
+
+	std::cout << v.at(1);
+
+	//for (auto s : v) {
+	//	std::cout << s;
+	//}
+
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1149
+2022-04-28 14:50:12 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+int main() {
+
+	std::ifstream in{ "source.cpp" };
+	
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	// [문제] v를 정렬하라. 람다에서 길이오름차순
+	
+	std::sort(v.begin(), v.end(),
+		[](const STRING& a, const STRING& b) {
+			return a.getNumber() < b.getNumber();
+		});
+
+	//for (auto s : v) {
+	//	std::cout << s;
+	//}
+
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1144
+2022-04-28 14:52:33 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+int main() {
+
+	std::ifstream in{ "sourceX.cpp" };
+	
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	// [문제] v를 정렬하라. 람다에서 길이오름차순
+	
+	std::sort(v.begin(), v.end(),
+		[](const STRING& a, const STRING& b) {
+			return a.getNumber() < b.getNumber();
+		});
+
+	for (auto s : v) {
+		std::cout << s;
+	}
+
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1096
+2022-04-28 14:54:03 GMT+9
+
+/*
+ * 2022. 04. 28
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ *  reverse iterator -	반드시 class로 만들어야 한다
+ *						++연산이 실제로는 왼쪽으로 가야되기 때문
+ * 
+ * 
+ *	5.5 수업
+ */
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+int main() {
+
+	std::ifstream in{ "sourceX.cpp" };
+	
+	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
+
+	// [문제] v의 각 원소를 오름차순으로 정렬하라
+	
+	for (STRING& s : v) {
+		std::sort(s.begin(), s.end());
+	}
+
+	for (auto s : v) {
+		std::cout << s << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0428.txt");
+}
+
+=======================================================

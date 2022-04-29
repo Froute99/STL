@@ -329,7 +329,6 @@ int main() {
 	}
 
 	std::copy(d.begin(), d.end(),
-		
 		std::ostream_iterator<std::string>{std::cout, "\n"});
 
 

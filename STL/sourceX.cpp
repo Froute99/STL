@@ -1,0 +1,6 @@
+(CNN)Russian tanks with their tops blown off are just the latest sign that Russia's invasion of Ukraine isn't going to plan.
+
+Hundreds of Russian tanks are thought to have been destroyed since Moscow launched its offensive, with British Defense Secretary Ben Wallace on Monday estimating it had lost as many as 580.
+But Moscow's problems go beyond the sheer number of tanks it has lost. Experts say battlefield images show Russian tanks are suffering from a defect that Western militaries have known about for decades and refer to as the "jack-in-the-box effect." Moscow, they say, should have seen the problem coming.
+The problem relates to how the tanks' ammunition is stored. Unlike modern Western tanks, Russian ones carry multiple shells within their turrets. This makes them highly vulnerable as even an indirect hit can start a chain reaction that explodes their entire ammunition store of up to 40 shells.
+The resulting shockwave can be enough to blast the tank's turret as high as a two-story building, as can be seen in a recent video on social media.

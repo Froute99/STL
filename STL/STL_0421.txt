@@ -1,0 +1,960 @@
+
+
+파일이름: source.cpp
+파일크기: 611
+2022-04-21 14:47:26 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	std::ostream_iterator<char> p{ std::cout };
+	std::istream_iterator<char> a{ std::cin };
+	
+
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 580
+2022-04-21 14:47:49 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	std::ostream_iterator<char> p{ std::cout };
+	
+
+	*p = 'A';
+
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 616
+2022-04-21 14:48:12 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	std::ostream_iterator<char> p{ std::cout };
+	
+
+	*p = 'a';
+	++p;
+	*p = 'b';
+	++p;
+	*p = 'c';
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 620
+2022-04-21 14:48:21 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	std::ostream_iterator<char> p{ std::cout };
+	
+
+	*p++ = 'a';
+	//++p;
+	*p = 'b';
+	++p;
+	*p = 'c';
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 606
+2022-04-21 14:48:30 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	std::ostream_iterator<char> p{ std::cout };
+	
+
+	*p++ = 'a';
+	*p++ = 'b';
+	*p = 'c';
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 589
+2022-04-21 14:49:35 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	std::ostream_iterator<char> p{ std::cout };
+	
+
+	p.operator*() = 'a';
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 597
+2022-04-21 14:51:53 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	std::ostream_iterator<char> p{ std::cout };
+	
+
+	p = 'a';
+	p = 'b';
+	p = 'c';
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 678
+2022-04-21 14:58:05 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(Iter).name() << std::endl;
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(v.begin());
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 673
+2022-04-21 14:58:43 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(Iter).name() << std::endl;
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(main);
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 670
+2022-04-21 15:00:19 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(Iter).name() << std::endl;
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(v);
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 679
+2022-04-21 15:00:36 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(Iter).name() << std::endl;
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(v.rbegin());
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 679
+2022-04-21 15:00:43 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(Iter).name() << std::endl;
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(v.cbegin());
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 678
+2022-04-21 15:00:50 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(Iter).name() << std::endl;
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(v.begin());
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 721
+2022-04-21 15:07:17 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(v.begin());
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 721
+2022-04-21 15:07:40 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(v.begin());
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 741
+2022-04-21 15:07:56 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(std::istream_iterator<char>());
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 734
+2022-04-21 15:08:37 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::value_type).name() << std::endl;
+
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(std::istream_iterator<char>());
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 960
+2022-04-21 15:10:57 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <forward_list>
+#include <list>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+	std::vector<int> v;
+	
+	show(std::istream_iterator<char>());
+	show(std::forward_list<char>::iterator{});
+	show(std::list<char>::iterator{});
+	show(std::deque<char>::iterator{});
+	show(std::vector<char>::iterator{});
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 689
+2022-04-21 15:13:03 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+	int* p = nullptr;
+	show(p);
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 741
+2022-04-21 15:19:44 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+
+	STRING s{ "asdf" };
+
+	for (char c : s) {
+		std::cout << c << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 728
+2022-04-21 15:19:54 GMT+9
+
+/*
+ * 2022. 04. 21
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  iterator -	iterators are a generalization of pointers
+ *				that allow a C++ program to work with differnt data structures
+ *				(for example, container sand ranges) in a uniform manner.
+ * 
+ *	5.5 수업
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class Iter>
+void show(Iter xxx) {
+	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
+
+}
+
+
+int main() {
+
+	STRING s{ "asdf" };
+
+	for (char c : s) {
+		std::cout << c;
+	}
+
+
+	save("source.cpp", "STL_0421.txt");
+}
+
+=======================================================
