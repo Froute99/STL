@@ -1,0 +1,594 @@
+
+
+파일이름: 소스.cpp
+파일크기: 1500
+2022-03-02 18:47:26 GMT+9
+
+
+
+파일이름: 소스.cpp
+파일크기: 1500
+2022-03-02 18:48:28 GMT+9
+
+
+
+파일이름: 소스.cpp
+파일크기: 1604
+2022-03-02 18:52:52 GMT+9
+
+
+
+파일이름: 소스.cpp
+파일크기: 1607
+2022-03-02 18:54:40 GMT+9
+
+
+
+파일이름: 소스.cpp
+파일크기: 1741
+2022-03-02 18:57:44 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.2 수910          수910목56                  (1주 1일)
+//
+// - 강의소개
+// - 교과서 - 사이트 : cppreference.com
+// - 코딩스타일 : google coding convention
+// - 프로젝트 환경 : Release/x64
+//		메뉴 - 프로젝트 - 설정 - C++언어(초안기능)
+// 
+// - save 파일 만들기
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <string_view>
+#include <filesystem>
+#include <chrono>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+using namespace std;		// 이걸 안써야 하겠다
+
+void save( string_view );
+
+int main( ) 
+{
+	// string과 string_view의 크기를 출력하라
+	cout << "string의 크기 - " << sizeof( string ) << endl;
+	cout << "string_view의 크기 - " << sizeof( string_view ) << endl;
+
+	save( "소스.cpp" );
+}
+
+void save( string_view fname )
+{
+	// 읽을 파일을 연다
+	ifstream in { fname.data()};
+
+	// 쓸 파일도 연다
+	ofstream out{ "2022년 1학기 STL 수910목56 강의저장.txt", ios::app };
+
+
+
+	out << endl << endl;
+
+	// 저장할 파일의 이름을 파일에 출력한다
+	out << "파일이름: " << fname << endl;
+
+	// 저장할 파일의 크기를 출력한다(C++17)
+	out << "파일크기: " << filesystem::file_size( fname ) << endl;
+
+	// 현재 날짜와 시간을 출력한다(C++20)
+	auto time = floor<chrono::seconds>(chrono::system_clock::now( ));
+	out << chrono::zoned_time( "Asia/Seoul", time ) << endl;
+	out << endl;
+
+
+	// 읽을 파일의 정보를 읽어 쓸 파일에 덧붙여 쓴다
+	// 1. 파일의 내용을 벡터로 읽어온다
+	vector<char> v{ istreambuf_iterator<char>{in}, {} };
+
+	// 2. 벡터에 있는 내용을 파일에 복사한다.
+	copy( v.begin( ), v.end( ), ostream_iterator<char>{ out } );
+}
+
+파일이름: 소스.cpp
+파일크기: 1796
+2022-03-03 13:37:17 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.3 목56          수910목56                  (1주 2일)
+//
+// - 강의소개
+// - 교과서 - 사이트 : cppreference.com
+// - 코딩스타일 : google coding convention
+// - 프로젝트 환경 : Release/x64
+//		메뉴 - 프로젝트 - 설정 - C++언어(초안기능)
+// 
+// - save 파일 만들기
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <string_view>
+#include <filesystem>
+#include <chrono>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+using namespace std;		// 이걸 안써야 하겠다
+
+void save( string_view );
+
+int main( ) 
+{
+	// string과 string_view의 크기를 출력하라
+	cout << "string의 크기 - " << sizeof( string ) << endl;
+	cout << "string_view의 크기 - " << sizeof( string_view ) << endl;
+
+	save( "소스.cpp" );
+}
+
+void save( string_view fname )
+{
+	// 읽을 파일을 연다
+	ifstream in { fname.data()};
+
+	// 쓸 파일도 연다
+	ofstream out{ "2022년 1학기 STL 수910목56 강의저장.txt", ios::app };
+
+
+
+	out << endl << endl;
+
+	// 저장할 파일의 이름을 파일에 출력한다
+	out << "파일이름: " << fname << endl;
+
+	// 저장할 파일의 크기를 출력한다(C++17)
+	out << "파일크기: " << filesystem::file_size( fname ) << endl;
+
+	// 현재 날짜와 시간을 출력한다(C++20)
+	auto time = floor<chrono::seconds>(chrono::system_clock::now( ));
+	out << chrono::zoned_time( "Asia/Seoul", time ) << endl;
+	out << endl;
+
+
+	// 읽을 파일의 정보를 읽어 쓸 파일에 덧붙여 쓴다
+
+	// 1. 컨테이너(자료구조) 파일의 내용을 벡터로 읽어온다
+	vector<char> v{ istreambuf_iterator<char>{in}, {} };
+
+	// 2. 알고리즘을 사용하여 벡터에 있는 내용을 파일에 복사(copy 알고리즘)한다.
+	copy( v.begin( ), v.end( ), ostream_iterator<char>{ out } );
+}
+
+파일이름: 소스.cpp
+파일크기: 422
+2022-03-03 14:00:20 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.3 목56          수910목56                  (1주 2일)
+//
+// save 함수를 save.h와 save.cpp로 옮겨라.
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+//---------
+int main( )
+//---------
+{
+	save( "소스.cpp" );
+}
+
+
+
+
+파일이름: save.h
+파일크기: 70
+2022-03-03 14:01:24 GMT+9
+
+#pragma once
+#include <string_view>
+
+void save( std::string_view );
+
+파일이름: save.cpp
+파일크기: 1482
+2022-03-03 14:01:24 GMT+9
+
+//-----------------------------------------------------------------------------
+// SAVE.CPP
+// 
+// 함수 save에 파일이름을 알려주면 강의를 저장하는
+// "2022년 1학기 STL 수910목56 강의저장.txt"에 덧붙여 기록한다
+//
+// 2022. 3. 3                                        programmed by wulong
+//-----------------------------------------------------------------------------
+#include <fstream>
+#include <filesystem>
+#include <chrono>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+
+void save( std::string_view fname )
+{
+	// 읽을 파일을 연다
+	std::ifstream in{ fname.data( ) };
+
+	// 쓸 파일도 연다
+	std::ofstream out{ "2022년 1학기 STL 수910목56 강의저장.txt", std::ios::app };
+
+	out << std::endl << std::endl;
+
+	// 저장할 파일의 이름을 파일에 출력한다
+	out << "파일이름: " << fname << std::endl;
+
+	// 저장할 파일의 크기를 출력한다(C++17)
+	out << "파일크기: " << std::filesystem::file_size( fname ) << std::endl;
+
+	// 현재 날짜와 시간을 출력한다(C++20)
+	auto time = floor<std::chrono::seconds>( std::chrono::system_clock::now( ) );
+	out << std::chrono::zoned_time( "Asia/Seoul", time ) << std::endl;
+	out << std::endl;
+
+	// 읽을 파일의 정보를 읽어 쓸 파일에 덧붙여 쓴다
+
+	// 1. 컨테이너(자료구조) 파일의 내용을 벡터로 읽어온다
+	std::vector<char> v{ std::istreambuf_iterator<char>{in}, {} };
+
+	// 2. 알고리즘을 사용하여 벡터에 있는 내용을 파일에 복사(copy 알고리즘)한다.
+	copy( v.begin( ), v.end( ), std::ostream_iterator<char>{ out } );
+}
+
+파일이름: 소스.cpp
+파일크기: 464
+2022-03-03 14:01:24 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.3 목56          수910목56                  (1주 2일)
+//
+// save 함수를 save.h와 save.cpp로 옮겨라.
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+//---------
+int main( )
+//---------
+{
+	save( "save.h" );
+	save( "save.cpp" );
+	save( "소스.cpp" );
+}
+
+
+
+
+파일이름: 소스.cpp
+파일크기: 536
+2022-03-03 14:10:29 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.3 목56          수910목56                  (1주 2일)
+//
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+
+// [문제] main() 수정하면 안된다.
+// a와 b의 값을 교환하라.    2, 1
+
+//---------
+int main( )
+//---------
+{
+	int a{ 1 };
+	int b{ 2 };
+
+	swap( a, b );
+
+	cout << a << ", " << b << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+
+파일이름: 소스.cpp
+파일크기: 650
+2022-03-03 14:18:32 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.3 목56          수910목56                  (1주 2일)
+//
+// &의 의미
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] main() 수정하면 안된다.
+// a와 b의 값을 교환하라.    2, 1
+
+void change( int&, int& );
+
+//---------
+int main( )
+//---------
+{
+	int a{ 1 };
+	int b{ 2 };
+
+	change( a, b );
+
+	cout << a << ", " << b << endl;
+
+	save( "소스.cpp" );
+}
+
+void change( int& a, int& b )
+{
+	int temp{ a };
+	a = b;
+	b = temp;
+}
+
+파일이름: 소스.cpp
+파일크기: 656
+2022-03-03 14:19:32 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.3 목56          수910목56                  (1주 2일)
+//
+// &의 의미
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] main() 수정하면 안된다.
+// a와 b의 값을 교환하라.    2, 1
+
+void change( int*, int* );
+
+//---------
+int main( )
+//---------
+{
+	int a{ 1 };
+	int b{ 2 };
+
+	change( &a, &b );
+
+	cout << a << ", " << b << endl;
+
+	save( "소스.cpp" );
+}
+
+void change( int* a, int* b )
+{
+	int temp{ *a };
+	*a = *b;
+	*b = temp;
+}
+
+파일이름: 소스.cpp
+파일크기: 650
+2022-03-03 14:20:26 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.3 목56          수910목56                  (1주 2일)
+//
+// &의 의미
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] main() 수정하면 안된다.
+// a와 b의 값을 교환하라.    2, 1
+
+void change( int&, int& );
+
+//---------
+int main( )
+//---------
+{
+	int a{ 1 };
+	int b{ 2 };
+
+	change( a, b );
+
+	cout << a << ", " << b << endl;
+
+	save( "소스.cpp" );
+}
+
+void change( int& a, int& b )
+{
+	int temp{ a };
+	a = b;
+	b = temp;
+}
+
+파일이름: 소스.cpp
+파일크기: 684
+2022-03-03 14:45:41 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.3 목56          수910목56                  (1주 2일)
+//
+// &의 의미
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] main() 수정하면 안된다.
+// a와 b의 값을 교환하라.    2, 1
+// 답지에 써라
+
+void change( int&, int& );
+using Dog = int;
+
+//---------
+int main( )
+//---------
+{
+	Dog a{ 1 };
+	Dog b{ 2 };
+
+	change( a, b );
+
+	cout << a << ", " << b << endl;
+
+	save( "소스.cpp" );
+}
+
+void change( int& a, int& b )
+{
+	int temp{ a };
+	a = b;
+	b = temp;
+}
+
+파일이름: 소스.cpp
+파일크기: 1048
+2022-03-03 15:11:59 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.3 목56          수910목56                  (1주 2일)
+//
+// &의 의미
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] main() 수정하면 안된다.
+// a와 b의 값을 교환하라.    2, 1
+// 답지에 써라
+
+
+class Dog {
+	int num;
+
+public:
+	Dog( int i ) : num { i } {
+	}
+
+	friend ostream& operator<<( ostream&, const Dog& );
+};
+
+ostream& operator<<( ostream& os, const Dog& dog )
+{
+	os << dog.num;
+	return os;
+};
+
+
+
+void change( int&, int& );
+void change( Dog&, Dog& );
+
+
+//---------
+int main( )
+//---------
+{
+	Dog a{ 1 };
+	Dog b{ 2 };
+
+	change( a, b );
+
+	cout << a << ", " << b << endl;
+	// operator<<(cout, a);
+
+
+	save( "소스.cpp" );
+}
+
+void change( int& a, int& b )
+{
+	int temp{ a };
+	a = b;
+	b = temp;
+}
+
+void change( Dog& a, Dog& b )
+{
+	Dog temp{ a };
+	a = b;			// a.operator(b);
+	b = temp;
+}
+
+파일이름: 소스.cpp
+파일크기: 936
+2022-03-03 15:15:55 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.3 목56          수910목56                  (1주 2일)
+//
+// &의 의미
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] main() 수정하면 안된다.
+// a와 b의 값을 교환하라.    2, 1
+// 답지에 써라
+
+
+class Dog {
+	int num;
+
+public:
+	Dog( int i ) : num { i } {
+	}
+
+	operator int( ) {
+		return num;
+	}
+};
+
+
+
+void change( int&, int& );
+void change( Dog&, Dog& );
+
+
+//---------
+int main( )
+//---------
+{
+	Dog a{ 1 };
+	Dog b{ 2 };
+
+	change( a, b );
+
+	cout << (int)(Dog)a << ", " << (int)(Dog)b << endl;
+
+
+	save( "소스.cpp" );
+}
+
+void change( int& a, int& b )
+{
+	int temp{ a };
+	a = b;
+	b = temp;
+}
+
+void change( Dog& a, Dog& b )
+{
+	Dog temp{ a };
+	a = b;			// a.operator(b);
+	b = temp;
+}

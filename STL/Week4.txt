@@ -1,0 +1,2139 @@
+
+
+파일이름: 소스.cpp
+파일크기: 640
+저장시간: 2022-03-23 17:47:57 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 소문자를 대문자로 바꿔
+// "소스 대문자.cpp"로 저장하라
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+
+	char ch;
+
+	while (in >> ch )
+		cout << ch;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 658
+저장시간: 2022-03-23 17:48:53 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 소문자를 대문자로 바꿔
+// "소스 대문자.cpp"로 저장하라
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+
+	char ch;
+
+	in >> noskipws;
+	while (in >> ch )
+		cout << ch;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 708
+저장시간: 2022-03-23 17:52:52 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 소문자를 대문자로 바꿔
+// "소스 대문자.cpp"로 저장하라
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+
+	char ch;
+
+	in >> noskipws;
+	while (in >> ch) {
+		if (islower(ch) )
+			ch = toupper( ch );
+		cout << ch;
+	}
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 686
+저장시간: 2022-03-23 17:53:47 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 소문자를 대문자로 바꿔
+// "소스 대문자.cpp"로 저장하라
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+
+	char ch;
+
+	in >> noskipws;
+	while (in >> ch) {
+		ch = toupper( ch );
+		cout << ch;
+	}
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 720
+저장시간: 2022-03-23 17:54:27 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 소문자를 대문자로 바꿔
+// "소스 대문자.cpp"로 저장하라
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+	ofstream out{ "소스 대문자.cpp" };
+
+	char ch;
+
+	in >> noskipws;
+	while (in >> ch) {
+		ch = toupper( ch );
+		out << ch;
+	}
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 783
+저장시간: 2022-03-23 18:08:55 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 소문자를 대문자로 바꿔
+// "소스 대문자.cpp"로 저장하라
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+	ofstream out{ "소스 대문자.cpp" };
+
+	transform( istreambuf_iterator<char>{in}, {}, ostreambuf_iterator<char>{cout},
+		[]( char c ) {
+			return toupper( c );
+		});
+	
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 782
+저장시간: 2022-03-23 18:09:10 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 소문자를 대문자로 바꿔
+// "소스 대문자.cpp"로 저장하라
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+	ofstream out{ "소스 대문자.cpp" };
+
+	transform( istreambuf_iterator<char>{in}, {}, ostreambuf_iterator<char>{out},
+		[]( char c ) {
+			return toupper( c );
+		});
+	
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 784
+저장시간: 2022-03-23 18:15:26 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 숫자를 *로 바꿔
+// 화면에 출력하라.
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+	ofstream out{ "소스 대문자.cpp" };
+
+	transform( istreambuf_iterator<char>{in}, {}, ostreambuf_iterator<char>{out},
+		[]( char c ) {
+			if (isdigit( c ))
+				c = '*';
+			return c;
+		});
+	
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 748
+저장시간: 2022-03-23 18:15:45 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 숫자를 *로 바꿔
+// 화면에 출력하라.
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+
+	transform( istreambuf_iterator<char>{in}, {}, ostreambuf_iterator<char>{cout},
+		[]( char c ) {
+			if (isdigit( c ))
+				c = '*';
+			return c;
+		});
+	
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 724
+저장시간: 2022-03-23 18:16:31 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 숫자를 *로 바꿔
+// 화면에 출력하라.
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+
+	transform( istreambuf_iterator<char>{in}, {}, ostreambuf_iterator<char>{cout},
+		[]( char c ) {
+			c += 1;
+			return c;
+		});
+	
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 724
+저장시간: 2022-03-23 18:16:50 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 숫자를 *로 바꿔
+// 화면에 출력하라.
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+
+	transform( istreambuf_iterator<char>{in}, {}, ostreambuf_iterator<char>{cout},
+		[]( char c ) {
+			c += 1;
+			return c;
+		});
+	
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 747
+저장시간: 2022-03-23 18:17:16 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] "소스.cpp"를 읽어서
+// 숫자를 *로 바꿔
+// 화면에 출력하라.
+
+//---------
+int main( )
+//---------
+{
+	ifstream in{ "소스.cpp" };			// RAII
+
+	transform( istreambuf_iterator<char>{in}, {}, ostreambuf_iterator<char>{cout},
+		[]( char c ) {
+			if ( isalnum(c ))
+				c += 1;
+			return c;
+		});
+	
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 816
+저장시간: 2022-03-23 18:37:24 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// [문제] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid;
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int i{}; i < numbers.size( ); ++i)
+		numbers[i] = uid( dre );
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 885
+저장시간: 2022-03-23 18:39:15 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// [문제] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid;
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int& number : numbers)
+		number = uid( dre );
+
+	cout << "정렬하기 전" << endl;
+	for (int number : numbers)
+		cout << number;
+
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 893
+저장시간: 2022-03-23 18:39:26 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// [문제] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid;
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int& number : numbers)
+		number = uid( dre );
+
+	cout << "정렬하기 전" << endl;
+	for (int number : numbers)
+		cout << number << "\t";
+
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 923
+저장시간: 2022-03-23 18:40:22 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include <format>
+#include "save.h"
+using namespace std;
+
+// [문제] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid;
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int& number : numbers)
+		number = uid( dre );
+
+	cout << "정렬하기 전" << endl;
+	for (int number : numbers)
+		cout << format( "{:20}", number );
+
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 1105
+저장시간: 2022-03-23 18:41:54 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include <format>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid;
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int& number : numbers)
+		number = uid( dre );
+
+	cout << "정렬하기 전" << endl;
+	for (int number : numbers)
+		cout << format( "{:20}", number );
+
+	sort( numbers.begin( ), numbers.end( ) );
+
+	cout << endl;
+	cout << "정렬한 후" << endl;
+	for (int number : numbers)
+		cout << format( "{:20}", number );
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 1122
+저장시간: 2022-03-23 18:44:58 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include <format>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] [1, 100] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid{ 1, 100 };
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int& number : numbers)
+		number = uid( dre );
+
+	cout << "정렬하기 전" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	sort( numbers.begin( ), numbers.end( ) );
+
+	cout << endl;
+	cout << "정렬한 후" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 1122
+저장시간: 2022-03-23 18:46:25 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include <format>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] [1, 100] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid{ 1, 100 };
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int& number : numbers)
+		number = uid( dre );
+
+	cout << "정렬하기 전" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	sort( numbers.begin( ), numbers.end( ) );
+
+	cout << endl;
+	cout << "정렬한 후" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 1122
+저장시간: 2022-03-23 18:54:58 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include <format>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] [1, 100] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid{ 1, 100 };
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int& number : numbers)
+		number = uid( dre );
+
+	cout << "정렬하기 전" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	sort( numbers.begin( ), numbers.end( ) );
+
+	cout << endl;
+	cout << "정렬한 후" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 1165
+저장시간: 2022-03-23 19:01:23 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include <format>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] [1, 100] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid{ 1, 100 };
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int& number : numbers)
+		number = uid( dre );
+
+	cout << "정렬하기 전" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	sort( numbers.begin( ), numbers.end( ), [](int a, int b) { 
+		return a > b;
+		} );
+
+	cout << endl;
+	cout << "정렬한 후" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 1160
+저장시간: 2022-03-23 19:02:32 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include <format>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] [1, 100] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid{ 1, 100 };
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int& number : numbers)
+		number = uid( dre );
+
+	cout << "정렬하기 전" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	sort( &numbers[0], &numbers[100], []( int a, int b ) {
+		return a > b;
+		} );
+
+	cout << endl;
+	cout << "정렬한 후" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 1183
+저장시간: 2022-03-23 19:05:12 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include <format>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// [문제] [1, 100] 랜덤 int 100개를 생성하라
+// 오름차순으로 정렬하라. sort
+// 정렬한 int 100개를 생성하라. (10분간)
+
+
+default_random_engine dre;
+uniform_int_distribution uid{ 1, 100 };
+
+
+bool 내림( int a, int b )
+{
+	return a > b;
+}
+
+
+
+//---------
+int main( )
+//---------
+{
+	array<int, 100> numbers;
+
+	for (int& number : numbers)
+		number = uid( dre );
+
+	cout << "정렬하기 전" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	sort( numbers.begin(), numbers.end(), 내림 );
+
+	cout << endl;
+	cout << "정렬한 후" << endl;
+	for (int number : numbers)
+		cout << format( "{:4}", number );
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 664
+저장시간: 2022-03-23 19:06:47 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include <format>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// 메모리 마지막 동네 소개
+
+void f( ) {
+	cout << "f 호출" << endl;
+}
+
+//---------
+int main( )
+//---------
+{
+	f( );
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 778
+저장시간: 2022-03-23 19:14:12 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.23 수910          수910목56                 (3주 2일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <random>
+#include <format>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// 메모리 마지막 동네 소개
+
+void f( ) {
+	cout << "f 호출" << endl;
+}
+
+//---------
+int main( )
+//---------
+{
+	f( );
+	save( "소스.cpp" );
+
+
+	cout << addressof( f ) << endl;
+	cout << addressof( main ) << endl;
+	cout << addressof( save ) << endl;
+
+}
+
+
+파일이름: 소스.cpp
+파일크기: 705
+저장시간: 2022-03-24 13:37:06 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+//---------
+int main( )
+//---------
+{
+	// 함수이름이란? - 명령어들의 집합인 함수가 기록되어 있는 CODE 세그먼트의
+	// 시작번지이다.
+	// 함수의 이름의 자료형(data type)은 무엇입니까?
+
+	auto x = main;
+	cout << typeid(x).name( ) << endl;
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 659
+저장시간: 2022-03-24 13:39:13 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+//---------
+int main( )
+//---------
+{
+	// 함수의 이름의 자료형(data type)은 무엇입니까?
+
+	int n;
+	double a;
+	class Dog {};
+	Dog d;
+
+	int aa[100];
+	cout << typeid(aa).name( ) << endl;
+
+
+	save( "소스.cpp" );
+}
+
+
+파일이름: 소스.cpp
+파일크기: 805
+저장시간: 2022-03-24 13:55:02 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+
+void jump( ) {
+	cout << "점프" << endl;
+}
+
+void slide( ) {
+	cout << "슬라이드" << endl;
+}
+
+//---------
+int main( )
+//---------
+{
+	save( "소스.cpp" );
+
+	void(*p)(void) = jump;
+
+	while (true) {
+		p( );
+
+		this_thread::sleep_for( 1s );
+	}
+}
+
+
+파일이름: 소스.cpp
+파일크기: 935
+저장시간: 2022-03-24 13:56:29 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+
+void jump( ) {
+	cout << "점프" << endl;
+}
+
+void slide( ) {
+	cout << "슬라이드" << endl;
+}
+
+//---------
+int main( )
+//---------
+{
+	save( "소스.cpp" );
+
+	void(*p)(void) = jump;
+
+	while (true) {
+		p( );
+
+		this_thread::sleep_for( 1s );
+
+		// 3초마다 toggle
+		int cnt{};
+		if ((++cnt % 3) == 0) {
+			if (p == jump)
+				p = slide;
+			else
+				p = jump;
+		}
+
+	}
+}
+
+
+파일이름: 소스.cpp
+파일크기: 934
+저장시간: 2022-03-24 13:57:35 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+
+void jump( ) {
+	cout << "점프" << endl;
+}
+
+void slide( ) {
+	cout << "슬라이드" << endl;
+}
+
+//---------
+int main( )
+//---------
+{
+	save( "소스.cpp" );
+
+	void(*p)(void) = jump;
+
+	int cnt{};
+	while (true) {
+		p( );
+
+		this_thread::sleep_for( 1s );
+
+		// 3초마다 toggle
+		if ((++cnt % 3) == 0) {
+			if (p == jump)
+				p = slide;
+			else
+				p = jump;
+		}
+
+	}
+}
+
+
+파일이름: 소스.cpp
+파일크기: 926
+저장시간: 2022-03-24 14:02:41 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+
+void jump( ) {
+	cout << "점프" << endl;
+}
+
+int g;
+
+//---------
+int main( )
+//---------
+{
+	save( "소스.cpp" );
+
+	void(*p)(void) = jump;
+
+	int cnt{};
+
+	int* f = new int;
+
+	cout << "CODE - ";
+	cout << "DATA - " ;
+	cout << "STACK - p" << addressof( p ) << endl;
+	cout << "STACK - f" << addressof( f ) << endl;
+	cout << "Free Store - *f" << addressof( *f );
+
+}
+
+
+파일이름: 소스.cpp
+파일크기: 1230
+저장시간: 2022-03-24 14:06:24 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+
+void jump( ) {
+	cout << "점프" << endl;
+}
+
+int g;
+
+//---------
+int main( )
+//---------
+{
+	save( "소스.cpp" );
+
+	void(*p)(void) = jump;
+
+	int cnt{};
+
+	int* f = new int;
+
+	cout << "CODE       -  jump " << addressof(jump ) << endl;
+	cout << "CODE       -  main " << addressof(main ) << endl;
+	cout << "CODE       -  save " << addressof(save ) << endl;
+	cout << "CODE       -  p점프" << endl;
+	cout << endl;
+	cout << "DATA       -  g    " << addressof( g );
+	cout << endl;
+	cout << "STACK      -  p    " << addressof( p ) << endl;
+	cout << "STACK      -  f    " << addressof( f ) << endl;
+	cout << endl;
+	cout << "Free Store - *f    " << addressof( *f );
+
+}
+
+
+파일이름: 소스.cpp
+파일크기: 1238
+저장시간: 2022-03-24 14:07:43 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+
+void jump( ) {
+	cout << "점프" << endl;
+}
+
+int g;
+
+//---------
+int main( )
+//---------
+{
+	save( "소스.cpp" );
+
+	void(*p)(void) = jump;
+
+	int cnt{};
+
+	int* f = new int;
+
+	cout << "CODE       -  jump " << addressof(jump ) << endl;
+	cout << "CODE       -  main " << addressof(main ) << endl;
+	cout << "CODE       -  save " << addressof(save ) << endl;
+	cout << "CODE       -  p점프" << endl;
+	cout << endl;
+	cout << "DATA       -  g    " << addressof( g ) << endl;
+	cout << endl;
+	cout << "STACK      -  p    " << addressof( p ) << endl;
+	cout << "STACK      -  f    " << addressof( f ) << endl;
+	cout << endl;
+	cout << "Free Store - *f    " << addressof( *f );
+
+}
+
+
+파일이름: 소스.cpp
+파일크기: 1255
+저장시간: 2022-03-24 14:08:12 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+
+void jump( ) {
+	cout << "점프" << endl;
+}
+
+int g;
+
+//---------
+int main( )
+//---------
+{
+	save( "소스.cpp" );
+
+	void(*p)(void) = jump;
+
+	int cnt{};
+
+	int* f = new int;
+
+	cout << "CODE       -  jump " << addressof(jump ) << endl;
+	cout << "CODE       -  main " << addressof(main ) << endl;
+	cout << "CODE       -  save " << addressof(save ) << endl;
+	cout << "CODE       -  *p   " << addressof(*p) << endl;
+	cout << endl;
+	cout << "DATA       -  g    " << addressof( g ) << endl;
+	cout << endl;
+	cout << "STACK      -  p    " << addressof( p ) << endl;
+	cout << "STACK      -  f    " << addressof( f ) << endl;
+	cout << endl;
+	cout << "Free Store - *f    " << addressof( *f );
+
+}
+
+
+파일이름: 소스.cpp
+파일크기: 714
+저장시간: 2022-03-24 14:16:41 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda)
+
+//---------
+int main( )
+//---------
+{
+	[]( ) {
+		cout << "반가워! 난 람다라고 해! 사이좋게 지내!" << endl;
+	}();
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 735
+저장시간: 2022-03-24 14:17:22 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda)
+
+//---------
+int main( )
+//---------
+{
+	(   
+		[]( ) {
+		cout << "반가워! 난 람다라고 해! 사이좋게 지내!" << endl;
+		}
+	 )
+		
+	();
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 756
+저장시간: 2022-03-24 14:19:14 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda)
+
+//---------
+int main( )
+//---------
+{
+	cout << typeid(
+		[]( ) {
+			cout << "반가워! 난 람다라고 해! 사이좋게 지내!" << endl;
+		}
+	).name() << endl;
+		
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 762
+저장시간: 2022-03-24 14:20:39 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda)
+
+//---------
+int main( )
+//---------
+{
+	auto x = []( ) {
+		cout << "반가워! 난 람다라고 해! 사이좋게 지내!" << endl;
+	};
+		
+	cout << typeid(x).name( ) << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 762
+저장시간: 2022-03-24 14:21:01 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda)
+
+//---------
+int main( )
+//---------
+{
+	auto x = []( ) {
+		cout << "반가워! 난 람다라고 해! 사이좋게 지내!" << endl;
+	};
+		
+	cout << typeid(x).name( ) << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 825
+저장시간: 2022-03-24 14:22:24 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda)
+
+//---------
+int main( )
+//---------
+{
+	auto x = []( ) {
+		cout << "반가워! 난 람다라고 해! 사이좋게 지내!" << endl;
+	};
+		
+	cout << typeid(x).name( ) << endl;
+
+
+	class Dog {};
+
+	cout << typeid(Dog).name( ) << endl;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 822
+저장시간: 2022-03-24 14:23:22 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda)
+
+class Dog {};
+
+//---------
+int main( )
+//---------
+{
+	auto x = []( ) {
+		cout << "반가워! 난 람다라고 해! 사이좋게 지내!" << endl;
+	};
+		
+	cout << typeid(x).name( ) << endl;
+
+	cout << typeid(Dog).name( ) << endl;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 762
+저장시간: 2022-03-24 14:23:53 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <thread>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda)
+
+auto x = []( ) {
+	cout << "반가워! 난 람다라고 해! 사이좋게 지내!" << endl;
+};
+
+//---------
+int main( )
+//---------
+{
+	
+	cout << typeid(x).name( ) << endl;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 946
+저장시간: 2022-03-24 14:37:48 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda) - 컴파일러가 만드는 class이다. (? class가 호출가능?)
+// 3. ()을 오버로딩한 class;
+
+//---------
+int main( )
+//---------
+{
+	// 람다는 어디서 어떻게 사용되나?
+	array<int, 5 > a{ 3, 1, 5, 2, 4 };
+
+	sort( a.begin( ), a.end( ), []( int a, int b ) {
+		return a > b;
+		} );
+
+	for (int n : a)
+		cout << n << ' ';
+	cout << endl;
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 1008
+저장시간: 2022-03-24 14:40:30 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda) - 컴파일러가 만드는 class이다. (? class가 호출가능?)
+// 3. ()을 오버로딩한 class;
+
+//---------
+int main( )
+//---------
+{
+	// 람다는 어디서 어떻게 사용되나?
+	array<int, 5 > a{ 3, 1, 5, 2, 4 };
+
+	sort( a.begin( ), a.end( ), []( int a, int b ) {
+		cout << "람다를 이용해서 " << a << " - " << b << endl;
+		return a > b;
+		} );
+
+	for (int n : a)
+		cout << n << ' ';
+	cout << endl;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 1008
+저장시간: 2022-03-24 14:41:04 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda) - 컴파일러가 만드는 class이다. (? class가 호출가능?)
+// 3. ()을 오버로딩한 class;
+
+//---------
+int main( )
+//---------
+{
+	// 람다는 어디서 어떻게 사용되나?
+	array<int, 5 > a{ 5, 4, 3, 2, 1 };
+
+	sort( a.begin( ), a.end( ), []( int a, int b ) {
+		cout << "람다를 이용해서 " << a << " - " << b << endl;
+		return a > b;
+		} );
+
+	for (int n : a)
+		cout << n << ' ';
+	cout << endl;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 1162
+저장시간: 2022-03-24 14:45:32 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda) - 컴파일러가 만드는 class이다. (? class가 호출가능?)
+// 3. ()을 오버로딩한 class;
+
+class Dog {
+public:
+	bool operator()( int a, int b ) {
+		return a < b;
+	}
+};
+
+
+//---------
+int main( )
+//---------
+{
+	Dog dog;
+
+	cout << boolalpha << dog( 1, 2 ) << endl;
+
+
+
+
+
+	// 람다는 어디서 어떻게 사용되나?
+	array<int, 5 > a{ 5, 4, 3, 2, 1 };
+
+	sort( a.begin( ), a.end( ), []( int a, int b ) {
+		cout << "람다를 이용해서 " << a << " - " << b << endl;
+		return a > b;
+		} );
+
+	for (int n : a)
+		cout << n << ' ';
+	cout << endl;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 962
+저장시간: 2022-03-24 14:46:44 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda) - 컴파일러가 만드는 class이다. (? class가 호출가능?)
+// 3. ()을 오버로딩한 class;
+
+class Dog {
+public:
+	bool operator()( int a, int b ) {
+		return a < b;
+	}
+};
+
+//---------
+int main( )
+//---------
+{
+	array<int, 5 > a{ 5, 4, 3, 2, 1 };
+
+	sort( a.begin( ), a.end( ), Dog{} );
+
+	for (int n : a)
+		cout << n << ' ';
+	cout << endl;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 980
+저장시간: 2022-03-24 14:47:15 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda) - 컴파일러가 만드는 class이다. (? class가 호출가능?)
+// 3. ()을 오버로딩한 class;
+
+class Dog {
+public:
+	bool operator()( int a, int b ) {
+		cout << "멍!";
+		return a < b;
+	}
+};
+
+//---------
+int main( )
+//---------
+{
+	array<int, 5 > a{ 5, 4, 3, 2, 1 };
+
+	sort( a.begin( ), a.end( ), Dog{} );
+
+	for (int n : a)
+		cout << n << ' ';
+	cout << endl;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 980
+저장시간: 2022-03-24 14:47:50 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda) - 컴파일러가 만드는 class이다. (? class가 호출가능?)
+// 3. ()을 오버로딩한 class;
+
+class Dog {
+public:
+	bool operator()( int a, int b ) {
+		cout << "멍!";
+		return a > b;
+	}
+};
+
+//---------
+int main( )
+//---------
+{
+	array<int, 5 > a{ 5, 4, 3, 2, 1 };
+
+	sort( a.begin( ), a.end( ), Dog{} );
+
+	for (int n : a)
+		cout << n << ' ';
+	cout << endl;
+
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 1015
+저장시간: 2022-03-24 14:48:30 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.24 목56          수910목56                 (4주 1일)
+// 
+// 호출가능타입(Callable type) - sort를 통해 알아본다	
+// 자원을 확보하는 관찰용 클래스 STRING - 컨테이너/반복자/알고리즘
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+using namespace std;
+
+// 호출가능(Callable) 타입(type)
+// 1. 함수포인터 - CODE에서 해당함수의 시작번지를 저장
+// 2. 람다(lambda) - 컴파일러가 만드는 class이다. (? class가 호출가능?)
+// 3. ()을 오버로딩한 class;
+
+class Dog {
+public:
+	bool operator()( int a, int b ) {
+		cout << "멍!";
+		return a > b;
+	}
+};
+
+//---------
+int main( )
+//---------
+{
+	array<int, 20 > a{ 5, 4, 3, 2, 1, 324, 3, 3, 3, 3, 3, 3, 325, 3322 };
+
+	sort( a.begin( ), a.end( ), Dog{} );
+
+	for (int n : a)
+		cout << n << ' ';
+	cout << endl;
+
+
+	save( "소스.cpp" );
+}
+

@@ -1,0 +1,2002 @@
+
+
+파일이름: source.cpp
+파일크기: 609
+2022-04-06 18:17:52 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] 키보드에서 int를 그만 할때까지 입력받아라
+// 합계와 평균 출력
+
+int main() {
+	int num;
+	std::vector<int> v;
+
+	while (std::cin >> num) {
+		v.push_back(num);
+	}
+
+	long long sum{};
+
+	for (int i : v) {
+		sum += num;
+	}
+
+	std::cout << v.max_size();
+
+	//std::cout << "합계: " << sum << std::endl;
+	//std::cout << "평균: " << static_cast<double>(sum) / v.size() << std::endl;
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 377
+2022-04-06 18:22:26 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] 키보드에서 int를 그만 할때까지 입력받아라
+// 합계와 평균 출력
+
+int main() {
+
+	std::vector<int> v{ 1,2,3 };
+	
+	std::cout << sizeof(v) << std::endl;
+
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 498
+2022-04-06 18:32:24 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] 키보드에서 int를 그만 할때까지 입력받아라
+// 합계와 평균 출력
+
+int main() {
+
+	std::vector<int> v{ 1,2,3 };
+
+	std::cout << "원소의 갯수: " << std::endl;
+	std::cout << "데이터위치: " << std::endl;
+	std::cout << "용량(재할당없이 저장할 수 있는 원소): " << std::endl;
+
+
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 506
+2022-04-06 18:33:01 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] 키보드에서 int를 그만 할때까지 입력받아라
+// 합계와 평균 출력
+
+int main() {
+
+	std::vector<int> v{ 1,2,3 };
+
+	std::cout << "원소의 갯수: " << v.size() << std::endl;
+	std::cout << "데이터위치: " << v.data() << std::endl;
+	std::cout << "용량: " << v.capacity() << std::endl;
+
+
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 717
+2022-04-06 18:34:30 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] 키보드에서 int를 그만 할때까지 입력받아라
+// 합계와 평균 출력
+
+int main() {
+
+	std::vector<int> v{ 1,2,3 };
+
+	std::cout << "원소의 갯수: " << v.size() << std::endl;
+	std::cout << "데이터위치: " << v.data() << std::endl;
+	std::cout << "용량: " << v.capacity() << std::endl;
+
+	v.push_back(4);
+
+	std::cout << std::endl;
+	std::cout << "원소의 갯수: " << v.size() << std::endl;
+	std::cout << "데이터위치: " << v.data() << std::endl;
+	std::cout << "용량: " << v.capacity() << std::endl;
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 719
+2022-04-06 18:35:24 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+// [문제] 키보드에서 int를 그만 할때까지 입력받아라
+// 합계와 평균 출력
+
+int main() {
+
+	std::vector<int> v{ 1,2,3,4 };
+
+	std::cout << "원소의 갯수: " << v.size() << std::endl;
+	std::cout << "데이터위치: " << v.data() << std::endl;
+	std::cout << "용량: " << v.capacity() << std::endl;
+
+	v.push_back(5);
+
+	std::cout << std::endl;
+	std::cout << "원소의 갯수: " << v.size() << std::endl;
+	std::cout << "데이터위치: " << v.data() << std::endl;
+	std::cout << "용량: " << v.capacity() << std::endl;
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 357
+2022-04-06 18:49:44 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+
+int main() {
+
+	std::vector<STRING> v;
+
+	std::cout << "sizeof: " << sizeof(v) << std::endl;
+	std::cout << ".size" << v.size() << std::endl;
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 357
+2022-04-06 18:49:49 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+
+int main() {
+
+	std::vector<STRING> v;
+
+	std::cout << "sizeof: " << sizeof(v) << std::endl;
+	std::cout << ".size" << v.size() << std::endl;
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 333
+2022-04-06 18:53:29 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+using namespace std;
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+	std::vector<STRING> v;
+
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 327
+2022-04-06 18:53:46 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+using namespace std;
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	STRING("12345");
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 331
+2022-04-06 18:54:31 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+using namespace std;
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	new STRING("12345");
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 352
+2022-04-06 18:56:14 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "12345" };
+
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 352
+2022-04-06 18:57:21 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "12345" };
+
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 376
+2022-04-06 18:58:06 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "12345" };
+
+	std::cout << v.at(0);
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 358
+2022-04-06 18:58:50 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ STRING("12345") };
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 386
+2022-04-06 19:01:45 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	//std::vector<STRING> v{ "12345" };
+
+	std::cout << sizeof("12345");
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 378
+2022-04-06 19:04:00 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "12345" };
+	v.push_back("1234567");
+
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 381
+2022-04-06 19:09:44 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "12345" };
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 381
+2022-04-06 19:11:49 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "12345" };
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 5주차 2번째.txt");
+}
+
+=======================================================
+
+
+
+파일이름: source.cpp
+파일크기: 373
+2022-04-07 13:31:28 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "12345" };
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 383
+2022-04-07 13:31:39 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "12345" };
+	v.emplace_back(STRING{ "1234567" });
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 373
+2022-04-07 13:50:30 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "12345" };
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 373
+2022-04-07 13:52:17 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "12345" };
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 379
+2022-04-07 13:55:13 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	v.reserve(10);
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 415
+2022-04-07 13:55:34 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	v.reserve(10);
+
+	v.push_back(STRING{ "12345" });
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 439
+2022-04-07 13:55:43 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	v.reserve(10);
+
+	v.emplace_back("1234567");
+	v.emplace_back("1234567");
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 439
+2022-04-07 13:56:26 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	v.reserve(10);
+
+	v.emplace_back("1234567");
+	v.emplace_back("1234567");
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 441
+2022-04-07 13:56:47 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	//v.reserve(10);
+
+	v.emplace_back("1234567");
+	v.emplace_back("1234567");
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 441
+2022-04-07 13:57:23 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	//v.reserve(10);
+
+	v.emplace_back("1234567");
+	v.emplace_back("1234567");
+	v.emplace_back("1234567");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 426
+2022-04-07 13:57:48 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	//v.reserve(10);
+
+	v.emplace_back("1");
+	v.emplace_back("12");
+	v.emplace_back("123");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 426
+2022-04-07 14:07:19 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	//v.reserve(10);
+
+	v.emplace_back("1");
+	v.emplace_back("12");
+	v.emplace_back("123");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 426
+2022-04-07 14:18:02 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	//v.reserve(10);
+
+	v.emplace_back("1");
+	v.emplace_back("12");
+	v.emplace_back("123");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 417
+2022-04-07 14:18:18 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	//v.reserve(10);
+
+	v.push_back("1");
+	v.push_back("12");
+	v.push_back("123");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 417
+2022-04-07 14:18:56 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	//v.reserve(10);
+
+	v.push_back("1");
+	v.push_back("12");
+	v.push_back("123");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 417
+2022-04-07 14:19:22 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	//v.reserve(10);
+
+	v.push_back("1");
+	v.push_back("12");
+	v.push_back("123");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 417
+2022-04-07 14:19:29 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v;
+	//v.reserve(10);
+
+	v.push_back("1");
+	v.push_back("12");
+	v.push_back("123");
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 370
+2022-04-07 14:32:13 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "333", "22", "55555", "4444" };
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 370
+2022-04-07 14:32:31 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "333", "22", "55555", "4444" };
+
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 511
+2022-04-07 14:35:11 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "333", "22", "55555", "4444" };
+
+	std::sort(v.begin(), v.end(), [](const STRING& a, const STRING& b) {
+		return a.getNumber() < b.getNumber();
+		});
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 604
+2022-04-07 14:37:03 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "333", "22", "55555", "4444" };
+
+	std::sort(v.begin(), v.end(), [](const STRING& a, const STRING& b) {
+		return a.getNumber() < b.getNumber();
+		});
+
+	// .Show()
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 604
+2022-04-07 14:37:54 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "333", "22", "55555", "4444" };
+
+	std::sort(v.begin(), v.end(), [](const STRING& a, const STRING& b) {
+		return a.getNumber() < b.getNumber();
+		});
+
+	// .Show()
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 604
+2022-04-07 14:39:44 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "333", "22", "55555", "4444" };
+
+	std::sort(v.begin(), v.end(), [](const STRING& a, const STRING& b) {
+		return a.getNumber() < b.getNumber();
+		});
+
+	// .Show()
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 604
+2022-04-07 14:39:54 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "333", "22", "55555", "4444" };
+
+	std::sort(v.begin(), v.end(), [](const STRING& a, const STRING& b) {
+		return a.getNumber() < b.getNumber();
+		});
+
+	// .Show()
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 604
+2022-04-07 14:39:57 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "333", "22", "55555", "4444" };
+
+	std::sort(v.begin(), v.end(), [](const STRING& a, const STRING& b) {
+		return a.getNumber() < b.getNumber();
+		});
+
+	// .Show()
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 604
+2022-04-07 14:40:28 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector<STRING> v{ "1", "333", "22", "55555", "4444" };
+
+	std::sort(v.begin(), v.end(), [](const STRING& a, const STRING& b) {
+		return a.getNumber() < b.getNumber();
+		});
+
+	// .Show()
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 481
+2022-04-07 14:41:41 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector v{ 1,2,4,5 };
+
+	v.insert(v.begin() + 2, 3);
+
+	// .Show()
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 673
+2022-04-07 14:55:42 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector v{ 1,2,4,5,6,7,8,9,10 };
+
+	// [문제] v에서 짝수를 제거(remove)하라
+	
+	std::remove_if(v.begin(), v.end(), [](int a) {
+		return a % 2 == 0;
+		});
+
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+
+	// .Show()
+	//for (int i = 0; i < v.size(); ++i) {
+	//	std::cout << v[i] << std::endl;
+	//}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 675
+2022-04-07 15:02:07 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// [문제] v에서 짝수를 제거(remove)하라
+	
+	std::remove_if(v.begin(), v.end(), [](int a) {
+		return a % 2 == 0;
+		});
+
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+
+	// .Show()
+	//for (int i = 0; i < v.size(); ++i) {
+	//	std::cout << v[i] << std::endl;
+	//}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 703
+2022-04-07 15:02:48 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// [문제] v에서 짝수를 제거(remove)하라
+	
+	std::remove_if(v.begin(), v.end(), [](int a) {
+		return a % 2 == 0;
+		});
+
+	v.resize(v.size() / 2);
+
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+
+	// .Show()
+	//for (int i = 0; i < v.size(); ++i) {
+	//	std::cout << v[i] << std::endl;
+	//}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 703
+2022-04-07 15:02:59 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// [문제] v에서 짝수를 제거(remove)하라
+	
+	std::remove_if(v.begin(), v.end(), [](int a) {
+		return a % 2 == 0;
+		});
+
+	v.resize(v.size() / 2);
+
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+
+	// .Show()
+	//for (int i = 0; i < v.size(); ++i) {
+	//	std::cout << v[i] << std::endl;
+	//}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 729
+2022-04-07 15:06:37 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// [문제] v에서 짝수를 제거(remove)하라
+	
+	int count;
+
+	std::remove_if(v.begin(), v.end(), [&count](int a) {
+		++count;
+		return a % 2 == 0;
+		});
+
+	v.resize(count);
+
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+
+	// .Show()
+	//for (int i = 0; i < v.size(); ++i) {
+	//	std::cout << v[i] << std::endl;
+	//}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 769
+2022-04-07 15:08:37 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// [문제] v에서 짝수를 제거(remove)하라
+
+	int count = 0;
+	
+	std::remove_if(v.begin(), v.end(), [&count](int a) {
+		if (a % 2 == 0) {
+			++count;
+			return true;
+		}
+		return false; });
+
+	v.resize(count);
+
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+
+	// .Show()
+	//for (int i = 0; i < v.size(); ++i) {
+	//	std::cout << v[i] << std::endl;
+	//}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 714
+2022-04-07 15:14:47 GMT+9
+
+/*
+ * 2022. 04. 06
+ * STL Class
+ *
+ * 중간시험 예정 - 4.27 수
+ */
+
+ // 과제 std::vector<Player>
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	isMessageToggle = true;
+
+	std::vector v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// [문제] v에서 짝수를 제거(remove)하라
+
+	
+	auto p = std::remove_if(v.begin(), v.end(), [](int a) {
+			return a % 2 == 0;
+		});
+
+	v.erase(p, v.end());
+
+
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v[i] << std::endl;
+	}
+
+
+	// .Show()
+	//for (int i = 0; i < v.size(); ++i) {
+	//	std::cout << v[i] << std::endl;
+	//}
+
+	save("source.cpp", "STL 6-1.txt");
+}
+
+=======================================================
+

@@ -1,0 +1,1417 @@
+파일이름: 소스.cpp
+파일크기: 994
+2022-03-10 13:37:10 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// template
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] main() 수정하면 안된다.
+// a와 b의 값을 교환하라.    2, 1
+// 답지에 써라
+
+
+class Dog {
+	int num;
+
+public:
+	Dog( int i ) : num { i } {
+	}
+
+	friend ostream& operator<<( ostream& os, const Dog& d ) {
+		return os << d.num;
+	}
+};
+
+
+void change( int&, int& );
+void change( Dog&, Dog& );
+
+
+//---------
+int main( )
+//---------
+{
+	Dog a{ 1 };
+	Dog b{ 2 };
+
+	change( a, b );
+
+	cout << a << ", " << b << endl;
+
+	save( "소스.cpp" );
+}
+
+void change( int& a, int& b )
+{
+	int temp{ a };
+	a = b;
+	b = temp;
+}
+
+void change( Dog& a, Dog& b )
+{
+	Dog temp{ a };
+	a = b;			// a.operator(b);
+	b = temp;
+}
+
+파일이름: 소스.cpp
+파일크기: 808
+2022-03-10 13:51:27 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// template
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+#include <iostream>
+
+#include <algorithm>
+
+#include "save.h"
+using namespace std;
+
+// [문제] 템플릿 함수 change를 선언하고 정의하라.
+
+template <class T>
+void change( T& a, T& b )
+{
+	T temp{ a };
+	a = b;
+	b = temp;
+}
+
+//---------
+int main( )
+//---------
+{
+	{
+		int a{ 1 }, b{ 2 };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+	{
+		using namespace std::literals;
+		string a{ "1"s }, b{ "2"s };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 802
+2022-03-10 13:51:43 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// template
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+#include <iostream>
+
+#include <algorithm>
+
+#include "save.h"
+using namespace std;
+
+// [문제] 템플릿 함수 change를 선언하고 정의하라.
+
+template <class T>
+void change( T& a, T& b )
+{
+	T temp{ a };
+	a = b;
+	b = temp;
+}
+
+//---------
+int main( )
+//---------
+{
+	{
+		int a{ 1 }, b{ 2 };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+	{
+		using namespace std::literals;
+		string a{ 1 }, b{ 2 };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 808
+2022-03-10 13:52:13 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// template
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+#include <iostream>
+
+#include <algorithm>
+
+#include "save.h"
+using namespace std;
+
+// [문제] 템플릿 함수 change를 선언하고 정의하라.
+
+template <class T>
+void change( T& a, T& b )
+{
+	T temp{ a };
+	a = b;
+	b = temp;
+}
+
+//---------
+int main( )
+//---------
+{
+	{
+		int a{ 1 }, b{ 2 };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+	{
+		using namespace std::literals;
+		string a{ "1"s }, b{ "2"s };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 3641
+2022-03-10 13:58:09 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// template
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+// iostream standard header
+
+// Copyright (c) Microsoft Corporation.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
+#pragma once
+#ifndef _IOSTREAM_
+#define _IOSTREAM_
+#include <yvals_core.h>
+#if _STL_COMPILER_PREPROCESSOR
+#include <istream>
+
+#pragma pack(push, _CRT_PACKING)
+#pragma warning(push, _STL_WARNING_LEVEL)
+#pragma warning(disable : _STL_DISABLED_WARNINGS)
+_STL_DISABLE_CLANG_WARNINGS
+#pragma push_macro("new")
+#undef new
+_STD_BEGIN
+#ifdef _M_CEE_PURE
+__PURE_APPDOMAIN_GLOBAL extern istream cin;
+__PURE_APPDOMAIN_GLOBAL extern ostream cout;
+__PURE_APPDOMAIN_GLOBAL extern ostream cerr;
+__PURE_APPDOMAIN_GLOBAL extern ostream clog;
+__PURE_APPDOMAIN_GLOBAL extern istream* _Ptr_cin;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_cout;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_cerr;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_clog;
+
+__PURE_APPDOMAIN_GLOBAL extern wistream wcin;
+__PURE_APPDOMAIN_GLOBAL extern wostream wcout;
+__PURE_APPDOMAIN_GLOBAL extern wostream wcerr;
+__PURE_APPDOMAIN_GLOBAL extern wostream wclog;
+__PURE_APPDOMAIN_GLOBAL extern wistream* _Ptr_wcin;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wcout;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wcerr;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wclog;
+#else // _M_CEE_PURE
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT istream cin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream cout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream cerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream clog;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT istream* _Ptr_cin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_cout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_cerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_clog;
+
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wistream wcin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wcout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wcerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wclog;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wistream* _Ptr_wcin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wcout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wcerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wclog;
+
+class _CRTIMP2_PURE_IMPORT _Winit {
+public:
+	__thiscall _Winit( );
+	__thiscall ~_Winit( ) noexcept;
+
+private:
+	__PURE_APPDOMAIN_GLOBAL static int _Init_cnt;
+};
+#endif // _M_CEE_PURE
+_STD_END
+#pragma pop_macro("new")
+_STL_RESTORE_CLANG_WARNINGS
+#pragma warning(pop)
+#pragma pack(pop)
+#endif // _STL_COMPILER_PREPROCESSOR
+#endif // _IOSTREAM_
+#pragma once
+#include <string_view>
+
+void save( std::string_view ); 
+using namespace std;
+
+// [문제] 템플릿 함수 change를 선언하고 정의하라.
+
+template <class T>
+void change( T& a, T& b )
+{
+	T temp{ a };
+	a = b;
+	b = temp;
+}
+
+void change( int, int )
+{
+	cout << "이 함수가 무조건 1번 함수" << endl;
+}
+
+//---------
+int main( )
+//---------
+{
+	{
+		int a{ 1 }, b{ 2 };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+	{
+		using namespace std::literals;
+		string a{ "1"s }, b{ "2"s };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 3721
+2022-03-10 13:59:29 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// template
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+// iostream standard header
+
+// Copyright (c) Microsoft Corporation.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
+#pragma once
+#ifndef _IOSTREAM_
+#define _IOSTREAM_
+#include <yvals_core.h>
+#if _STL_COMPILER_PREPROCESSOR
+#include <istream>
+
+#pragma pack(push, _CRT_PACKING)
+#pragma warning(push, _STL_WARNING_LEVEL)
+#pragma warning(disable : _STL_DISABLED_WARNINGS)
+_STL_DISABLE_CLANG_WARNINGS
+#pragma push_macro("new")
+#undef new
+_STD_BEGIN
+#ifdef _M_CEE_PURE
+__PURE_APPDOMAIN_GLOBAL extern istream cin;
+__PURE_APPDOMAIN_GLOBAL extern ostream cout;
+__PURE_APPDOMAIN_GLOBAL extern ostream cerr;
+__PURE_APPDOMAIN_GLOBAL extern ostream clog;
+__PURE_APPDOMAIN_GLOBAL extern istream* _Ptr_cin;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_cout;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_cerr;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_clog;
+
+__PURE_APPDOMAIN_GLOBAL extern wistream wcin;
+__PURE_APPDOMAIN_GLOBAL extern wostream wcout;
+__PURE_APPDOMAIN_GLOBAL extern wostream wcerr;
+__PURE_APPDOMAIN_GLOBAL extern wostream wclog;
+__PURE_APPDOMAIN_GLOBAL extern wistream* _Ptr_wcin;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wcout;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wcerr;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wclog;
+#else // _M_CEE_PURE
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT istream cin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream cout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream cerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream clog;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT istream* _Ptr_cin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_cout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_cerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_clog;
+
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wistream wcin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wcout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wcerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wclog;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wistream* _Ptr_wcin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wcout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wcerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wclog;
+
+class _CRTIMP2_PURE_IMPORT _Winit {
+public:
+	__thiscall _Winit( );
+	__thiscall ~_Winit( ) noexcept;
+
+private:
+	__PURE_APPDOMAIN_GLOBAL static int _Init_cnt;
+};
+#endif // _M_CEE_PURE
+_STD_END
+#pragma pop_macro("new")
+_STL_RESTORE_CLANG_WARNINGS
+#pragma warning(pop)
+#pragma pack(pop)
+#endif // _STL_COMPILER_PREPROCESSOR
+#endif // _IOSTREAM_
+#pragma once
+#include <string_view>
+
+void save( std::string_view ); 
+using namespace std;
+
+// [문제] 템플릿 함수 change를 선언하고 정의하라.
+
+template <class T>
+void change( T& a, T& b )
+{
+	T temp{ a };
+	a = b;
+	b = temp;
+}
+
+void change( int, int )
+{
+	cout << "이 함수가 무조건 1번 함수" << endl;
+}
+void change( int&, int& )
+{
+	cout << "이 함수가 무조건 1번 함수" << endl;
+}
+
+//---------
+int main( )
+//---------
+{
+	{
+		int a{ 1 }, b{ 2 };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+	{
+		using namespace std::literals;
+		string a{ "1"s }, b{ "2"s };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 3707
+2022-03-10 14:01:16 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// template
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+// iostream standard header
+
+// Copyright (c) Microsoft Corporation.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
+#pragma once
+#ifndef _IOSTREAM_
+#define _IOSTREAM_
+#include <yvals_core.h>
+#if _STL_COMPILER_PREPROCESSOR
+#include <istream>
+
+#pragma pack(push, _CRT_PACKING)
+#pragma warning(push, _STL_WARNING_LEVEL)
+#pragma warning(disable : _STL_DISABLED_WARNINGS)
+_STL_DISABLE_CLANG_WARNINGS
+#pragma push_macro("new")
+#undef new
+_STD_BEGIN
+#ifdef _M_CEE_PURE
+__PURE_APPDOMAIN_GLOBAL extern istream cin;
+__PURE_APPDOMAIN_GLOBAL extern ostream cout;
+__PURE_APPDOMAIN_GLOBAL extern ostream cerr;
+__PURE_APPDOMAIN_GLOBAL extern ostream clog;
+__PURE_APPDOMAIN_GLOBAL extern istream* _Ptr_cin;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_cout;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_cerr;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_clog;
+
+__PURE_APPDOMAIN_GLOBAL extern wistream wcin;
+__PURE_APPDOMAIN_GLOBAL extern wostream wcout;
+__PURE_APPDOMAIN_GLOBAL extern wostream wcerr;
+__PURE_APPDOMAIN_GLOBAL extern wostream wclog;
+__PURE_APPDOMAIN_GLOBAL extern wistream* _Ptr_wcin;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wcout;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wcerr;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wclog;
+#else // _M_CEE_PURE
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT istream cin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream cout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream cerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream clog;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT istream* _Ptr_cin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_cout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_cerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_clog;
+
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wistream wcin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wcout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wcerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wclog;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wistream* _Ptr_wcin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wcout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wcerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wclog;
+
+class _CRTIMP2_PURE_IMPORT _Winit {
+public:
+	__thiscall _Winit( );
+	__thiscall ~_Winit( ) noexcept;
+
+private:
+	__PURE_APPDOMAIN_GLOBAL static int _Init_cnt;
+};
+#endif // _M_CEE_PURE
+_STD_END
+#pragma pop_macro("new")
+_STL_RESTORE_CLANG_WARNINGS
+#pragma warning(pop)
+#pragma pack(pop)
+#endif // _STL_COMPILER_PREPROCESSOR
+#endif // _IOSTREAM_
+#pragma once
+#include <string_view>
+
+void save( std::string_view ); 
+using namespace std;
+
+// [문제] 템플릿 함수 change를 선언하고 정의하라.
+
+template <class T>
+void change( T& a, T& b )
+{
+	T temp{ a };
+	a = b;
+	b = temp;
+}
+
+template <>
+void change( int& a, int& b )
+{
+	cout << "컴파일러 이와 유사한 함수를 생성" << endl;
+	int temp{ a };
+	a = b;
+	b = temp;
+}
+
+
+//---------
+int main( )
+//---------
+{
+	{
+		int a{ 1 }, b{ 2 };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+	{
+		using namespace std::literals;
+		string a{ "1"s }, b{ "2"s };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 3863
+2022-03-10 14:02:15 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// template
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+// iostream standard header
+
+// Copyright (c) Microsoft Corporation.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
+#pragma once
+#ifndef _IOSTREAM_
+#define _IOSTREAM_
+#include <yvals_core.h>
+#if _STL_COMPILER_PREPROCESSOR
+#include <istream>
+
+#pragma pack(push, _CRT_PACKING)
+#pragma warning(push, _STL_WARNING_LEVEL)
+#pragma warning(disable : _STL_DISABLED_WARNINGS)
+_STL_DISABLE_CLANG_WARNINGS
+#pragma push_macro("new")
+#undef new
+_STD_BEGIN
+#ifdef _M_CEE_PURE
+__PURE_APPDOMAIN_GLOBAL extern istream cin;
+__PURE_APPDOMAIN_GLOBAL extern ostream cout;
+__PURE_APPDOMAIN_GLOBAL extern ostream cerr;
+__PURE_APPDOMAIN_GLOBAL extern ostream clog;
+__PURE_APPDOMAIN_GLOBAL extern istream* _Ptr_cin;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_cout;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_cerr;
+__PURE_APPDOMAIN_GLOBAL extern ostream* _Ptr_clog;
+
+__PURE_APPDOMAIN_GLOBAL extern wistream wcin;
+__PURE_APPDOMAIN_GLOBAL extern wostream wcout;
+__PURE_APPDOMAIN_GLOBAL extern wostream wcerr;
+__PURE_APPDOMAIN_GLOBAL extern wostream wclog;
+__PURE_APPDOMAIN_GLOBAL extern wistream* _Ptr_wcin;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wcout;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wcerr;
+__PURE_APPDOMAIN_GLOBAL extern wostream* _Ptr_wclog;
+#else // _M_CEE_PURE
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT istream cin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream cout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream cerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream clog;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT istream* _Ptr_cin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_cout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_cerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT ostream* _Ptr_clog;
+
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wistream wcin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wcout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wcerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream wclog;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wistream* _Ptr_wcin;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wcout;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wcerr;
+__PURE_APPDOMAIN_GLOBAL extern _CRTDATA2_IMPORT wostream* _Ptr_wclog;
+
+class _CRTIMP2_PURE_IMPORT _Winit {
+public:
+	__thiscall _Winit( );
+	__thiscall ~_Winit( ) noexcept;
+
+private:
+	__PURE_APPDOMAIN_GLOBAL static int _Init_cnt;
+};
+#endif // _M_CEE_PURE
+_STD_END
+#pragma pop_macro("new")
+_STL_RESTORE_CLANG_WARNINGS
+#pragma warning(pop)
+#pragma pack(pop)
+#endif // _STL_COMPILER_PREPROCESSOR
+#endif // _IOSTREAM_
+#pragma once
+#include <string_view>
+
+void save( std::string_view ); 
+using namespace std;
+
+// [문제] 템플릿 함수 change를 선언하고 정의하라.
+
+template <class T>
+void change( T& a, T& b )
+{
+	T temp{ a };
+	a = b;
+	b = temp;
+}
+
+template <>
+void change( int& a, int& b )
+{
+	cout << "컴파일러 이와 유사한 함수를 생성" << endl;
+	int temp{ a };
+	a = b;
+	b = temp;
+}
+
+template <>
+void change( string& a, string& b )
+{
+	cout << "컴파일러 string일 경우 이 함수를 생성" << endl;
+	string temp{ a };
+	a = b;
+	b = temp;
+}
+
+//---------
+int main( )
+//---------
+{
+	{
+		int a{ 1 }, b{ 2 };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+	{
+		using namespace std::literals;
+		string a{ "1"s }, b{ "2"s };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 784
+2022-03-10 14:05:23 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// template
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] 템플릿 함수 change를 선언하고 정의하라.
+
+template <class T>
+void change( T& a, T& b )
+{
+	T temp{ a };
+	a = b;
+	b = temp;
+}
+
+//---------
+int main( )
+//---------
+{
+	{
+		int a{ 1 }, b{ 2 };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+	{
+		using namespace std::literals;
+		string a{ "1"s }, b{ "2"s };
+		change( a, b );
+		cout << a << ", " << b << endl;
+	}
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 522
+2022-03-10 14:41:58 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] 임의의 값을 갖는(랜덤값을 갖는) int 1000개를 화면에 출력하라
+
+//---------
+int main( )
+//---------
+{
+	cout << rand();
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 522
+2022-03-10 14:42:16 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] 임의의 값을 갖는(랜덤값을 갖는) int 1000개를 화면에 출력하라
+
+//---------
+int main( )
+//---------
+{
+	cout << rand();
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 522
+2022-03-10 14:42:46 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] 임의의 값을 갖는(랜덤값을 갖는) int 1000개를 화면에 출력하라
+
+//---------
+int main( )
+//---------
+{
+	cout << rand();
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 545
+2022-03-10 14:43:35 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] 임의의 값을 갖는(랜덤값을 갖는) int 1000개를 화면에 출력하라
+
+//---------
+int main( )
+//---------
+{
+	srand( time(NULL) );
+	cout << rand();
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 545
+2022-03-10 14:43:43 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] 임의의 값을 갖는(랜덤값을 갖는) int 1000개를 화면에 출력하라
+
+//---------
+int main( )
+//---------
+{
+	srand( time(NULL) );
+	cout << rand();
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 593
+2022-03-10 14:44:18 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] 임의의 값을 갖는(랜덤값을 갖는) int 1000개를 화면에 출력하라
+
+//---------
+int main( )
+//---------
+{
+	srand( time(NULL) );
+
+	for ( int i = 0; i < 1000; ++i )
+		cout << rand() << '\t';
+
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 545
+2022-03-10 14:52:15 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] int의 최댓값을 출력하라
+
+//---------
+int main( )
+//---------
+{
+	int num = 0B1111111'11111111'11111111'11111111;
+
+	cout << "int 최댓값 - " << num << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 519
+2022-03-10 14:53:32 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] int의 최댓값을 출력하라
+
+//---------
+int main( )
+//---------
+{
+	int num = 0x7FFFFFFF;
+
+	cout << "int 최댓값 - " << num << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 519
+2022-03-10 14:53:51 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] int의 최댓값을 출력하라
+
+//---------
+int main( )
+//---------
+{
+	int num = 0xFFFFFFFF;
+
+	cout << "int 최댓값 - " << num << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 528
+2022-03-10 14:54:07 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] int의 최댓값을 출력하라
+
+//---------
+int main( )
+//---------
+{
+	unsigned int num = 0xFFFFFFFF;
+
+	cout << "int 최댓값 - " << num << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 516
+2022-03-10 14:54:42 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// [문제] int의 최댓값을 출력하라
+
+//---------
+int main( )
+//---------
+{
+	int num = INT_MAX;
+
+	cout << "int 최댓값 - " << num << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 622
+2022-03-10 15:04:57 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 랜덤엔진과 분포를 사용하여 랜덤값을 생성한다.
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// [문제] 엔진과 분포를 사용하여 int개를 화면에 출력하라
+
+default_random_engine dre;
+
+//---------
+int main( )
+//---------
+{
+	cout << "엔진 크기 - " << sizeof( dre ) << endl;
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 656
+2022-03-10 15:08:03 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 랜덤엔진과 분포를 사용하여 랜덤값을 생성한다.
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// [문제] 엔진과 분포를 사용하여 int개를 화면에 출력하라
+
+default_random_engine dre;
+
+//---------
+int main( )
+//---------
+{
+	uniform_int_distribution uid;
+
+	cout << "분포 크기 - " << sizeof( uid ) << endl;
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 647
+2022-03-10 15:09:27 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 랜덤엔진과 분포를 사용하여 랜덤값을 생성한다.
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// [문제] 엔진과 분포를 사용하여 int개를 화면에 출력하라
+
+default_random_engine dre;
+
+//---------
+int main( )
+//---------
+{
+	uniform_int_distribution uid;
+
+	cout <<	uid( dre );
+
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 647
+2022-03-10 15:09:40 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 랜덤엔진과 분포를 사용하여 랜덤값을 생성한다.
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// [문제] 엔진과 분포를 사용하여 int개를 화면에 출력하라
+
+default_random_engine dre;
+
+//---------
+int main( )
+//---------
+{
+	uniform_int_distribution uid;
+
+	cout <<	uid( dre );
+
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 675
+2022-03-10 15:11:10 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 랜덤엔진과 분포를 사용하여 랜덤값을 생성한다.
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// [문제] 엔진과 분포를 사용하여 int개를 화면에 출력하라
+
+random_device rd;
+default_random_engine dre { rd() };
+
+//---------
+int main( )
+//---------
+{
+	uniform_int_distribution uid;
+
+	cout <<	uid( dre );
+
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 711
+2022-03-10 15:12:08 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 랜덤엔진과 분포를 사용하여 랜덤값을 생성한다.
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// [문제] 엔진과 분포를 사용하여 int개를 화면에 출력하라
+
+random_device rd;
+default_random_engine dre { rd() };
+
+//---------
+int main( )
+//---------
+{
+	uniform_int_distribution uid;
+
+	for ( int i = 0; i < 1000; ++i )
+		cout <<	uid( dre );
+
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 719
+2022-03-10 15:13:13 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 랜덤엔진과 분포를 사용하여 랜덤값을 생성한다.
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include "save.h"
+using namespace std;
+
+// [문제] 엔진과 분포를 사용하여 int개를 화면에 출력하라
+
+random_device rd;
+default_random_engine dre { rd() };
+
+//---------
+int main( )
+//---------
+{
+	uniform_int_distribution uid;
+
+	for ( int i = 0; i < 1000; ++i )
+		cout <<	uid( dre ) << '\t';
+
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 874
+2022-03-10 15:17:36 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 랜덤엔진과 분포를 사용하여 랜덤값을 생성한다.
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <fstream>
+#include "save.h"
+using namespace std;
+
+// [문제] 엔진과 분포를 사용하여 만든 int 1000개를 
+// "int 천개.txt" 파일에 저장하라
+
+random_device rd;
+default_random_engine dre { rd() };
+
+//---------
+int main( )
+//---------
+{
+	uniform_int_distribution uid;
+
+	ofstream out{ "int 천개.txt" };
+	cout << "파일 스트림 객체의 크기 - " << sizeof( out ) << endl;
+
+//	for ( int i = 0; i < 1000; ++i )
+//		cout <<	uid( dre ) << '\t';
+
+	cout << endl;
+
+	save( "소스.cpp" );
+}
+
+
+
+파일이름: 소스.cpp
+파일크기: 803
+2022-03-10 15:19:47 GMT+9
+
+//-----------------------------------------------------------------------------
+// 2022년 1학기 STL		3.10 목56          수910목56                  (2주 1일)
+//
+// 랜덤엔진과 분포를 사용하여 랜덤값을 생성한다.
+// 대량의 자료를 생성 저장 조작
+//-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <random>
+#include <fstream>
+#include "save.h"
+using namespace std;
+
+// [문제] 엔진과 분포를 사용하여 만든 int 1000개를 
+// "int 천개.txt" 파일에 저장하라
+
+random_device rd;
+default_random_engine dre { rd() };
+
+//---------
+int main( )
+//---------
+{
+	uniform_int_distribution uid;
+
+	ofstream out{ "int 천개.txt" };
+
+	for ( int i = 0; i < 1000; ++i )
+		out <<	uid( dre ) << '\t';
+
+	out << endl;
+
+	save( "소스.cpp" );
+}
