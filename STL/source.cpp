@@ -33,7 +33,7 @@ void show(Iter xxx) {
 }
 
 template <class Iter, class value>
-Iter my_find(Iter begin, Iter end, value toFInd) {
+Iter my_find(Iter begin, Iter end, value toFind) {
 	while (begin != end) {
 		if (*begin == toFind)
 			return begin;
@@ -45,9 +45,10 @@ Iter my_find(Iter begin, Iter end, value toFInd) {
 
 int main() {
 
-
 	STRING word;
+	std::cout << "단어를 입력하세요: ";
 	std::cin >> word;
+
 
 	// [문제] 어떤 문자가 입력받은 단어의 몇 번째 문자인지 출력하라
 
@@ -59,13 +60,12 @@ int main() {
 		auto found = my_find(word.begin(), word.end(), c);
 		if (found == word.end()) {
 			std::cout << "없음" << std::endl;
-			continue;
+			break;
 		}
 		std::cout << c << "는 " << std::distance(word.begin(), found) + 1
 			<< "번째 문자입니다.";
 	}
 	
-
-	//save("source.cpp", "STL_0428.txt");
+	save("source.cpp", "STL_0504.txt");
 }
 
