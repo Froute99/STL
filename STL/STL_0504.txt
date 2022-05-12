@@ -1,0 +1,339 @@
+
+
+파일이름: source.cpp
+파일크기: 1343
+2022-05-04 18:43:19 GMT+9
+
+/*
+ * 2022. 05. 04
+ * STL Class
+ *
+ *
+ *  오늘 알아볼 것
+ *  - 제네릭 프로그래밍의 재미
+ *
+ *
+ *	5.5 수업
+ */
+
+ // <	같음을 판정	-> 상등(equivalence)	(equivalent)
+ // ==	같음을 판정	-> 항등(equality)	(equal)
+
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class SrcIter, class Dest>
+void my_copy(SrcIter begin, SrcIter end, Dest dest) {
+	while (begin != end) {
+		*dest = *begin;
+		++begin;
+		++dest;
+	}
+}
+
+template <class SrcIter, class Dest, class UnaryPredicate>
+void my_copy_if(SrcIter begin, SrcIter end, Dest dest, UnaryPredicate p) {
+	while (begin != end) {
+		if (p(*begin)) {
+			*dest = *begin;
+		}
+		++begin;
+		++dest;
+	}
+}
+
+
+int main() {
+
+	// [문제] 키보드에서 입력한 글자를 벡터에 저장하라
+	// copy 알고리즘을 사용할 것
+
+	std::vector<char> v;
+	v.reserve(100);
+	my_copy(std::istream_iterator<char>{std::cin}, {}, v.begin());
+
+	for (auto x : v) {
+		std::cout << x << " ";
+	}
+	//my_copy(std::istream_iterator<char>{std::cin}, {}, std::back_insert_iterator{ v });
+	//my_copy_if(std::istream_iterator<char>{std::cin}, {}, std::ostream_iterator<char>{std::cout, "\n"},
+	//	[](char c) {
+	//		return isupper(c);
+	//	});
+
+
+	save("source.cpp", "STL_0504.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1342
+2022-05-04 18:46:10 GMT+9
+
+/*
+ * 2022. 05. 04
+ * STL Class
+ *
+ *
+ *  오늘 알아볼 것
+ *  - 제네릭 프로그래밍의 재미
+ *
+ *
+ *	5.5 수업
+ */
+
+ // <	같음을 판정	-> 상등(equivalence)	(equivalent)
+ // ==	같음을 판정	-> 항등(equality)	(equal)
+
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class SrcIter, class Dest>
+void my_copy(SrcIter begin, SrcIter end, Dest dest) {
+	while (begin != end) {
+		*dest = *begin;
+		++begin;
+		++dest;
+	}
+}
+
+template <class SrcIter, class Dest, class UnaryPredicate>
+void my_copy_if(SrcIter begin, SrcIter end, Dest dest, UnaryPredicate p) {
+	while (begin != end) {
+		if (p(*begin)) {
+			*dest = *begin;
+		}
+		++begin;
+		++dest;
+	}
+}
+
+
+int main() {
+
+	// [문제] 키보드에서 입력한 글자를 벡터에 저장하라
+	// copy 알고리즘을 사용할 것
+
+	std::vector<char> v;
+	v.resize(100);
+	my_copy(std::istream_iterator<char>{std::cin}, {}, v.begin());
+
+	for (auto x : v) {
+		std::cout << x << " ";
+	}
+	//my_copy(std::istream_iterator<char>{std::cin}, {}, std::back_insert_iterator{ v });
+	//my_copy_if(std::istream_iterator<char>{std::cin}, {}, std::ostream_iterator<char>{std::cout, "\n"},
+	//	[](char c) {
+	//		return isupper(c);
+	//	});
+
+
+	save("source.cpp", "STL_0504.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1359
+2022-05-04 18:47:01 GMT+9
+
+/*
+ * 2022. 05. 04
+ * STL Class
+ *
+ *
+ *  오늘 알아볼 것
+ *  - 제네릭 프로그래밍의 재미
+ *
+ *
+ *	5.5 수업
+ */
+
+ // <	같음을 판정	-> 상등(equivalence)	(equivalent)
+ // ==	같음을 판정	-> 항등(equality)	(equal)
+
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+template <class SrcIter, class Dest>
+void my_copy(SrcIter begin, SrcIter end, Dest dest) {
+	while (begin != end) {
+		*dest = *begin;
+		++begin;
+		++dest;
+	}
+}
+
+template <class SrcIter, class Dest, class UnaryPredicate>
+void my_copy_if(SrcIter begin, SrcIter end, Dest dest, UnaryPredicate p) {
+	while (begin != end) {
+		if (p(*begin)) {
+			*dest = *begin;
+		}
+		++begin;
+		++dest;
+	}
+}
+
+
+int main() {
+
+	// [문제] 키보드에서 입력한 글자를 벡터에 저장하라
+	// copy 알고리즘을 사용할 것
+
+	std::vector<char> v;
+	v.reserve(100);
+	my_copy(std::istream_iterator<char>{std::cin}, {}, v.begin());
+
+	for (int i = 0; i < 100; ++i) {
+		std::cout << v[i] << " ";
+	}
+	//my_copy(std::istream_iterator<char>{std::cin}, {}, std::back_insert_iterator{ v });
+	//my_copy_if(std::istream_iterator<char>{std::cin}, {}, std::ostream_iterator<char>{std::cout, "\n"},
+	//	[](char c) {
+	//		return isupper(c);
+	//	});
+
+
+	save("source.cpp", "STL_0504.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 805
+2022-05-04 19:05:48 GMT+9
+
+/*
+ * 2022. 05. 04
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  C++20 span - 꿈꾸는 개발자
+ *				contiguous 컨테이너를 일관된 방식으로 다루기 위해 만든 view
+ *				T[], array<T, N>, vector<T>, string, STRING
+ * 
+ * 
+ *  공부할 것들
+ *  C+20 span
+ *
+ *
+ *	5.5 수업
+ */
+
+// 기말고사 예상 : back_inser_iterator 로 vector 클래스 만들기
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+void print(int[10]);
+
+void print(int a[10]) {
+	for (int i = 0; i < 10; ++i) {
+		std::cout << a[i] << std::endl;
+	}
+}
+
+int main() {
+	
+	int a[10]{ 1,2,3,4,5 };
+	
+	// [문제] print는 a를 인자로 받아 전체 원소를 출력한다
+	// a를 선언 및 정의하고 호출하라
+
+	
+
+
+
+	save("source.cpp", "STL_0504.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 814
+2022-05-04 19:06:01 GMT+9
+
+/*
+ * 2022. 05. 04
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  C++20 span - 꿈꾸는 개발자
+ *				contiguous 컨테이너를 일관된 방식으로 다루기 위해 만든 view
+ *				T[], array<T, N>, vector<T>, string, STRING
+ * 
+ * 
+ *  공부할 것들
+ *  C+20 span
+ *
+ *
+ *	5.5 수업
+ */
+
+// 기말고사 예상 : back_inser_iterator 로 vector 클래스 만들기
+
+#include <iostream>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+void print(int[10]);
+
+void print(int a[10]) {
+	for (int i = 0; i < 10; ++i) {
+		std::cout << a[i] << std::endl;
+	}
+}
+
+int main() {
+	
+	int a[10]{ 1,2,3,4,5 };
+	
+	// [문제] print는 a를 인자로 받아 전체 원소를 출력한다
+	// a를 선언 및 정의하고 호출하라
+
+	print(a);
+
+
+
+	save("source.cpp", "STL_0504.txt");
+}
+
+=======================================================

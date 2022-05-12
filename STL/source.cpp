@@ -1,71 +1,52 @@
 /*
- * 2022. 04. 28
+ * 2022. 05. 11
  * STL Class
  *
  * 
- *  1. Sequence container
- *  2. Associative container
- * 
- *  iterator -	iterators are a generalization of pointers
- *				that allow a C++ program to work with differnt data structures
- *				(for example, container sand ranges) in a uniform manner.
- *  reverse iterator -	반드시 class로 만들어야 한다
- *						++연산이 실제로는 왼쪽으로 가야되기 때문
- * 
- * 
- *	5.5 수업
+ * map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
  */
 
-
 #include <iostream>
-#include <fstream>
 #include <vector>
-#include <algorithm>
+#include <map>
 #include "save.h"
 #include "STRING.h"
 
 extern bool isMessageToggle;
 
-template <class Iter>
-void show(Iter xxx) {
-	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
-
-}
-
-template <class Iter, class value>
-Iter my_find(Iter begin, Iter end, value toFind) {
-	while (begin != end) {
-		if (*begin == toFind)
-			return begin;
-		++begin;
-	}
-	return end;
-}
-
 
 int main() {
+	std::map<std::string, std::vector<std::string>> gameCompany{ {"넥슨", {"바람의 나라", "메이플스토리"}} };
 
-	STRING word;
-	std::cout << "단어를 입력하세요: ";
-	std::cin >> word;
+	std::pair<std::string, std::vector<std::string>> p{ "엔씨", {"리니지"} };
+	gameCompany.insert(p);
+	gameCompany.insert(std::make_pair("펄어비스", std::vector<std::string>{ "검은사막" }));
 
-
-	// [문제] 어떤 문자가 입력받은 단어의 몇 번째 문자인지 출력하라
-
-	while (true) {
-		std::cout << "문자를 입력하세요: ";
-		char c;
-		std::cin >> c;
-
-		auto found = my_find(word.begin(), word.end(), c);
-		if (found == word.end()) {
-			std::cout << "없음" << std::endl;
-			break;
+	// 리스트 전체 출력
+	
+	for (const auto& [회사, 게임들] : gameCompany) {
+		std::cout << 회사 << " - ";
+		for (const auto& 게임 : 게임들) {
+			std::cout << 게임 << " ";
 		}
-		std::cout << c << "는 " << std::distance(word.begin(), found) + 1
-			<< "번째 문자입니다.";
+		std::cout << std::endl;
+	}
+
+	std::string company;
+	// [문제] 사용자가 입력한 회사의 게임을 출력
+	while (true) {
+		std::cout << "찾을 회사는? ";
+		std::cin >> company;
+
+		// 있으면 출력
+		// 없으면 없다고 출력
 	}
 	
-	save("source.cpp", "STL_0504.txt");
+
+	//save("source.cpp", "STL_0511.txt");
 }
 

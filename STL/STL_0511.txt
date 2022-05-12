@@ -1,0 +1,879 @@
+
+
+파일이름: source.cpp
+파일크기: 1060
+2022-05-11 18:06:58 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <set>
+#include <list>
+#include <string>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::default_random_engine dre;
+std::uniform_int_distribution<int> uid{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 10000 };
+
+class Dog {
+	std::string name;
+	int num;
+
+public:
+	Dog() {
+		for (int i = 0; i < 10; ++i) {
+			name += uid(dre);
+		}
+		num = uidNum(dre);
+	}
+
+	bool operator<(const Dog& rhs) const	// 기본 정렬기준
+	{
+		return num < rhs.num;
+	}
+
+	std::string GetName() const { return name; }
+	int GetNum() const { return num; }
+
+	void Show() const {
+		std::cout << name << " - " << num << std::endl;
+	}
+};
+
+
+int main() {
+
+	std::set<Dog> s;
+	s.insert(Dog());
+
+	// 1. less<Dog>가 있나 찾는다.
+	// 2. operator<(Dog, Dog)가 있나 찾는다.
+	//  2.1 멤버함수로
+	//	2.2 전역함수로도 가능
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1147
+2022-05-11 18:13:19 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <set>
+#include <list>
+#include <string>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::default_random_engine dre;
+std::uniform_int_distribution<int> uid{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 10000 };
+
+class Dog {
+	std::string name;
+	int num;
+
+public:
+	Dog() {
+		for (int i = 0; i < 10; ++i) {
+			name += uid(dre);
+		}
+		num = uidNum(dre);
+	}
+
+	bool operator<(const Dog& rhs) const {	// 기본 정렬기준
+		return num < rhs.num;
+	}
+
+	std::string GetName() const { return name; }
+	int GetNum() const { return num; }
+
+	void Show() const {
+		std::cout << name << " - " << num << std::endl;
+	}
+};
+
+
+int main() {
+
+	std::set<Dog> s;
+	
+	for (int i = 0; i < 1000; ++i) {
+		s.emplace();
+	}
+
+	for (const Dog& dog : s) {
+		dog.Show();
+	}
+
+	// 1. less<Dog>가 있나 찾는다.
+	// 2. operator<(Dog, Dog)가 있나 찾는다.
+	//  2.1 멤버함수로
+	//	2.2 전역함수로도 가능
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1354
+2022-05-11 18:18:04 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <set>
+#include <list>
+#include <string>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::default_random_engine dre;
+std::uniform_int_distribution<int> uid{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 10000 };
+
+class Dog {
+	std::string name;
+	int num;
+
+public:
+	Dog() {
+		for (int i = 0; i < 10; ++i) {
+			name += uid(dre);
+		}
+		num = uidNum(dre);
+	}
+
+	bool operator<(const Dog& rhs) const {	// 기본 정렬기준
+		return num < rhs.num;
+	}
+
+	std::string GetName() const { return name; }
+	int GetNum() const { return num; }
+
+	void Show() const {
+		std::cout << name << " - " << num << std::endl;
+	}
+};
+
+class 정렬기준 {
+public:
+};
+
+auto 정렬기준 = [](const Dog& a, const Dog& b) {
+	return a.GetName() < b.GetName();
+};
+
+int main() {
+
+
+	std::set<Dog, decltype(정렬기준)> s;
+	
+	for (int i = 0; i < 1000; ++i) {
+		s.emplace();
+	}
+
+	for (const Dog& dog : s) {
+		dog.Show();
+	}
+
+	// 1. less<Dog>가 있나 찾는다.
+	// 2. operator<(Dog, Dog)가 있나 찾는다.
+	//  2.1 멤버함수로
+	//	2.2 전역함수로도 가능
+	// 3. 정렬기준을 직접 알려준다. 템플릿의 인자로 타입을 전달
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1342
+2022-05-11 18:20:07 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <set>
+#include <list>
+#include <string>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::default_random_engine dre;
+std::uniform_int_distribution<int> uid{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 10000 };
+
+class Dog {
+	std::string name;
+	int num;
+
+public:
+	Dog() {
+		for (int i = 0; i < 10; ++i) {
+			name += uid(dre);
+		}
+		num = uidNum(dre);
+	}
+
+	bool operator<(const Dog& rhs) const {	// 기본 정렬기준
+		return num < rhs.num;
+	}
+
+	std::string GetName() const { return name; }
+	int GetNum() const { return num; }
+
+	void Show() const {
+		std::cout << name << " - " << num << std::endl;
+	}
+};
+
+class 정렬기준 {
+public:
+	bool operator()(const Dog& a, const Dog& b) const { return a.GetName() < b.GetName(); }
+};
+
+int main() {
+
+
+	std::set<Dog, 정렬기준> s;
+	
+	for (int i = 0; i < 1000; ++i) {
+		s.emplace();
+	}
+
+	for (const Dog& dog : s) {
+		dog.Show();
+	}
+
+	// 1. less<Dog>가 있나 찾는다.
+	// 2. operator<(Dog, Dog)가 있나 찾는다.
+	//  2.1 멤버함수로
+	//	2.2 전역함수로도 가능
+	// 3. 정렬기준을 직접 알려준다. 템플릿의 인자로 타입을 전달
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 720
+2022-05-11 18:25:12 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 키보드 단어를 set<string>에 저장하라
+// set<string>은  단어의 길이기준 오름차순으로 정렬한다
+// 출력
+
+class Standard {
+public:
+	bool operator()(const std::string& s1, const std::string& s2) const {
+		return s1.size() < s2.size();
+	}
+};
+
+int main() {
+
+	std::set<std::string, Standard> strs;
+
+	std::string s;
+	while (std::cin >> s) {
+		strs.emplace(s);
+	}
+
+	for (const auto& s : strs) {
+		std::cout << s << std::endl;
+	}
+	
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 720
+2022-05-11 18:26:02 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 키보드 단어를 set<string>에 저장하라
+// set<string>은  단어의 길이기준 오름차순으로 정렬한다
+// 출력
+
+class Standard {
+public:
+	bool operator()(const std::string& s1, const std::string& s2) const {
+		return s1.size() < s2.size();
+	}
+};
+
+int main() {
+
+	std::set<std::string, Standard> strs;
+
+	std::string s;
+	while (std::cin >> s) {
+		strs.emplace(s);
+	}
+
+	for (const auto& x : strs) {
+		std::cout << x << std::endl;
+	}
+	
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 720
+2022-05-11 18:32:31 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 키보드 단어를 set<string>에 저장하라
+// set<string>은  단어의 길이기준 오름차순으로 정렬한다
+// 출력
+
+class Standard {
+public:
+	bool operator()(const std::string& s1, const std::string& s2) const {
+		return s1.size() <= s2.size();
+	}
+};
+
+int main() {
+
+	std::set<std::string, Standard> strs;
+
+	std::string s;
+	while (std::cin >> s) {
+		strs.insert(s);
+	}
+
+	for (const auto& s : strs) {
+		std::cout << s << std::endl;
+	}
+	
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 704
+2022-05-11 18:36:37 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 키보드 단어를 set<string>에 저장하라
+// set<string>은  단어의 길이기준 오름차순으로 정렬한다
+// 출력
+
+class Standard {
+public:
+	bool operator()(const std::string& s1, const std::string& s2) const {
+		return s1.size() <= s2.size();
+	}
+};
+
+int main() {
+
+	std::set<std::string, Standard> strs{ std::istream_iterator<std::string>{std::cin}, {} };
+
+	for (const auto& s : strs) {
+		std::cout << s << std::endl;
+	}
+	
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 708
+2022-05-11 18:38:37 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 키보드 단어를 set<string>에 저장하라
+// set<string>은  단어의 길이기준 오름차순으로 정렬한다
+// 출력
+
+class Standard {
+public:
+	bool operator()(const std::string& s1, const std::string& s2) const {
+		return s1.size() < s2.size();
+	}
+};
+
+int main() {
+
+	std::multiset<std::string, Standard> strs{ std::istream_iterator<std::string>{std::cin}, {} };
+
+	for (const auto& s : strs) {
+		std::cout << s << std::endl;
+	}
+	
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 565
+2022-05-11 18:56:18 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ * 
+ * map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 게임회사와 게임들을 map으로 관리
+
+int main() {
+	std::map<std::string, std::vector<std::string>> company{ {"넥슨", {"바람의 나라", "메이플스토리"}} };
+
+	std::pair<std::string, std::vector<std::string>> p;
+	company.insert(p);
+
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 587
+2022-05-11 18:59:20 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ * 
+ * map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 게임회사와 게임들을 map으로 관리
+
+int main() {
+	std::map<std::string, std::vector<std::string>> company{ {"넥슨", {"바람의 나라", "메이플스토리"}} };
+
+	std::pair<std::string, std::vector<std::string>> p{ "엔씨", {"리니지"} };
+	company.insert(p);
+
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 671
+2022-05-11 19:02:13 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ * 
+ * map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 게임회사와 게임들을 map으로 관리
+
+int main() {
+	std::map<std::string, std::vector<std::string>> company{ {"넥슨", {"바람의 나라", "메이플스토리"}} };
+
+	std::pair<std::string, std::vector<std::string>> p{ "엔씨", {"리니지"} };
+	company.insert(p);
+	company.insert(std::make_pair("펄어비스", std::vector<std::string>{ "검은사막" }));
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 860
+2022-05-11 19:04:38 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ * 
+ * map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 게임회사와 게임들을 map으로 관리
+
+int main() {
+	std::map<std::string, std::vector<std::string>> company{ {"넥슨", {"바람의 나라", "메이플스토리"}} };
+
+	std::pair<std::string, std::vector<std::string>> p{ "엔씨", {"리니지"} };
+	company.insert(p);
+	company.insert(std::make_pair("펄어비스", std::vector<std::string>{ "검은사막" }));
+
+	// 리스트 전체 출력
+	
+	for (const auto& pair : company) {
+		std::cout << pair.first << " - ";
+		for (const auto& title : p.second) {
+			std::cout << title << std::endl;
+		}
+	}
+
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 874
+2022-05-11 19:05:05 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ * 
+ * map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 게임회사와 게임들을 map으로 관리
+
+int main() {
+	std::map<std::string, std::vector<std::string>> company{ {"넥슨", {"바람의 나라", "메이플스토리"}} };
+
+	std::pair<std::string, std::vector<std::string>> p{ "엔씨", {"리니지"} };
+	company.insert(p);
+	company.insert(std::make_pair("펄어비스", std::vector<std::string>{ "검은사막" }));
+
+	// 리스트 전체 출력
+	
+	for (const auto& pair : company) {
+		std::cout << pair.first << " - ";
+		for (const auto& title : p.second) {
+			std::cout << title;
+		}
+		std::cout << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 877
+2022-05-11 19:05:49 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ * 
+ * map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 게임회사와 게임들을 map으로 관리
+
+int main() {
+	std::map<std::string, std::vector<std::string>> company{ {"넥슨", {"바람의 나라", "메이플스토리"}} };
+
+	std::pair<std::string, std::vector<std::string>> p{ "엔씨", {"리니지"} };
+	company.insert(p);
+	company.insert(std::make_pair("펄어비스", std::vector<std::string>{ "검은사막" }));
+
+	// 리스트 전체 출력
+	
+	for (const auto& pair : company) {
+		std::cout << pair.first << " - ";
+		for (const auto& title : pair.second) {
+			std::cout << title;
+		}
+		std::cout << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 881
+2022-05-11 19:06:46 GMT+9
+
+/*
+ * 2022. 05. 11
+ * STL Class
+ *
+ * 
+ * map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+// [문제] 게임회사와 게임들을 map으로 관리
+
+int main() {
+	std::map<std::string, std::vector<std::string>> company{ {"넥슨", {"바람의 나라", "메이플스토리"}} };
+
+	std::pair<std::string, std::vector<std::string>> p{ "엔씨", {"리니지"} };
+	company.insert(p);
+	company.insert(std::make_pair("펄어비스", std::vector<std::string>{ "검은사막" }));
+
+	// 리스트 전체 출력
+	
+	for (const auto& [회사, 게임들] : company) {
+		std::cout << 회사 << " - ";
+		for (const auto& 게임 : 게임들) {
+			std::cout << 게임 << " ";
+		}
+		std::cout << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0511.txt");
+}
+
+=======================================================

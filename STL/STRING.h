@@ -98,7 +98,7 @@ public:
 		return reverse_iterator(dataPtr);
 	}
 
-	size_t getNumber() const { return num; }
+	size_t GetNum() const { return num; }
 	char* GetName() const { return dataPtr; }
 
 	void print(const char* s) const;
