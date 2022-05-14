@@ -790,3 +790,476 @@ int main() {
 }
 
 =======================================================
+
+
+파일이름: source.cpp
+파일크기: 1389
+2022-05-14 11:53:54 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	// [문제] 이 소설에 사용된 단어와 개수를 출력하라.
+	// 앞에서부터 20개만 출력하라
+	// 개수 오름차순으로 정렬하라
+
+	std::map<std::string, int> wordNum;
+
+	for (const std::string& word : v)
+		wordNum[word]++;
+
+	std::map<int, std::string, std::greater<int>> numWord;
+	for (auto [단어, 개수] : wordNum)
+		numWord[개수] = 단어;
+
+	auto p = wordNum.begin();
+	for (int i = 0; i < 20; ++i, ++p) {
+		std::cout << p->first << " - " << p->second << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1531
+2022-05-14 11:56:02 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	// [문제] 이 소설에 사용된 단어와 개수를 출력하라.
+	// 앞에서부터 20개만 출력하라
+	// 개수 오름차순으로 정렬하라
+
+	std::map<std::string, int> wordNum;
+	for (const std::string& word : v)
+		wordNum[word]++;
+
+	std::map<int, std::string, std::greater<int>> numWord;
+	for (auto [단어, 개수] : wordNum)
+		numWord[개수] = 단어;
+
+	auto p = wordNum.begin();
+	for (int i = 0; i < 20; ++i, ++p) {
+		std::cout << p->first << " - " << p->second << std::endl;
+	}
+
+	// 단어 개수 확인
+	int count = 0;
+	for (auto [개수, null] : numWord)
+		count += 개수;
+	std::cout << "단어 개수 - " << count << std::endl;
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1531
+2022-05-14 11:57:04 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	// [문제] 이 소설에 사용된 단어와 개수를 출력하라.
+	// 앞에서부터 20개만 출력하라
+	// 개수 오름차순으로 정렬하라
+
+	std::map<std::string, int> wordNum;
+	for (const std::string& word : v)
+		wordNum[word]++;
+
+	std::map<int, std::string, std::greater<int>> numWord;
+	for (auto [단어, 개수] : wordNum)
+		numWord[개수] = 단어;
+
+	auto p = wordNum.begin();
+	for (int i = 0; i < 20; ++i, ++p) {
+		std::cout << p->second << " - " << p->first << std::endl;
+	}
+
+	// 단어 개수 확인
+	int count = 0;
+	for (auto [개수, null] : numWord)
+		count += 개수;
+	std::cout << "단어 개수 - " << count << std::endl;
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1531
+2022-05-14 11:57:25 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	// [문제] 이 소설에 사용된 단어와 개수를 출력하라.
+	// 앞에서부터 20개만 출력하라
+	// 개수 오름차순으로 정렬하라
+
+	std::map<std::string, int> wordNum;
+	for (const std::string& word : v)
+		wordNum[word]++;
+
+	std::map<int, std::string, std::greater<int>> numWord;
+	for (auto [단어, 개수] : wordNum)
+		numWord[개수] = 단어;
+
+	auto p = numWord.begin();
+	for (int i = 0; i < 20; ++i, ++p) {
+		std::cout << p->second << " - " << p->first << std::endl;
+	}
+
+	// 단어 개수 확인
+	int count = 0;
+	for (auto [개수, null] : numWord)
+		count += 개수;
+	std::cout << "단어 개수 - " << count << std::endl;
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1532
+2022-05-14 12:00:19 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	// [문제] 이 소설에 사용된 단어와 개수를 출력하라.
+	// 앞에서부터 20개만 출력하라
+	// 개수 오름차순으로 정렬하라
+
+	std::map<std::string, int> wordNum;
+	for (const std::string& word : v)
+		wordNum[word]++;
+
+	std::map<int, std::string, std::greater<int>> numWord;
+	for (auto [단어, 개수] : wordNum)
+		numWord[개수] = 단어;
+
+	auto p = wordNum.rbegin();
+	for (int i = 0; i < 20; ++i, ++p) {
+		std::cout << p->second << " - " << p->first << std::endl;
+	}
+
+	// 단어 개수 확인
+	int count = 0;
+	for (auto [개수, null] : numWord)
+		count += 개수;
+	std::cout << "단어 개수 - " << count << std::endl;
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1547
+2022-05-14 12:00:58 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	// [문제] 이 소설에 사용된 단어와 개수를 출력하라.
+	// 앞에서부터 20개만 출력하라
+	// 개수 오름차순으로 정렬하라
+
+	std::map<std::string, int> wordNum;
+	for (const std::string& word : v)
+		wordNum[word]++;
+
+	std::multimap<int, std::string, std::greater<int>> numWord;
+	for (auto [단어, 개수] : wordNum)
+		numWord.insert({ 개수, 단어 });
+
+	auto p = wordNum.rbegin();
+	for (int i = 0; i < 20; ++i, ++p) {
+		std::cout << p->second << " - " << p->first << std::endl;
+	}
+
+	// 단어 개수 확인
+	int count = 0;
+	for (auto [개수, null] : numWord)
+		count += 개수;
+	std::cout << "단어 개수 - " << count << std::endl;
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 446
+2022-05-14 12:01:18 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
