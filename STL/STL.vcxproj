@@ -143,10 +143,6 @@
   <ItemGroup>
     <ClCompile Include="save.cpp" />
     <ClCompile Include="source.cpp" />
-    <ClCompile Include="sourceX.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="STRING.cpp" />
   </ItemGroup>
   <ItemGroup>

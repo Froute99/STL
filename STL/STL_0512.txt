@@ -1,0 +1,792 @@
+
+
+파일이름: source.cpp
+파일크기: 1443
+2022-05-13 18:05:29 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 게임 회사와 게임들을 맵으로 관리한다.
+	std::map<std::string, std::vector<std::string>> gameC{ {"Nexon", {"메이플스토리", "바람의 나라"}} };
+
+	std::pair<std::string, std::vector<std::string>>p{"NC", {"리니지"}};
+	gameC.insert(p);
+	gameC.insert(std::make_pair("펄어비스", std::vector<std::string>{ "검은사막" }));
+
+	// 리스트 출력
+	for (const auto& [회사, 게임들] : gameC) {
+		std::cout << 회사 << " - ";
+		for (const auto& 게임 : 게임들)
+			std::cout << 게임 << ' ';
+		std::cout << std::endl;
+	}
+
+	save("source.cpp", "STL_0512.txt");
+	// [문제] 사용자가 입력한 회사의 게임을 출력한다.
+	while (true)
+	{
+		std::cout << "찾으실 회사는? ";
+		std::string company;
+		std::cin >> company;
+		//있으면 출력, 없으면 없다고 출력
+		if (gameC.find(company) != gameC.end()) {
+			std::cout << gameC.find(company)->first << " - ";
+			for (auto i = gameC.find(company)->second.begin(); i != gameC.find(company)->second.end(); ++i) {
+				std::cout << *i << " ";
+			}
+		}
+		std::cout << std::endl;
+	}
+
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 765
+2022-05-13 18:11:49 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <map>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	std::map<std::string, double> sd;
+	sd.insert(std::pair<std::string, double>{"애플", 7});		// 정석 형식, pair로 안써도 가능
+	sd.insert(std::make_pair("샤인머스켓", 12.5));
+	sd["바나나"] = 9.3;
+	sd.operator[]("바나나") = 9.3;
+
+	for (const auto& [과일, 당도] : sd) {
+		std::cout << 과일 << " : " << 당도 << std::endl;
+	}
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 743
+2022-05-13 18:14:55 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+// [문제] e-class에서 소설을 다운받아
+// std::vector<string> 에 저장하라
+// 모두 몇 단어인지 출력하라
+
+
+int main() {
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{std::istream_iterator<std::string>{in}, {}};
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 959
+2022-05-13 18:17:56 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)
+ * 5/30 ~ 6/20
+ *
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{std::istream_iterator<std::string>{in}, {}};
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v) {
+		for (char letter : word) {
+			alphaNum[letter]++;
+		}
+	}
+
+	for (auto [글자, 개수] : alphaNum) {
+		std::cout << "[" << 글자 << "] : " << 개수 << std::endl;
+	}
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1340
+2022-05-13 18:56:19 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v) {
+		for (char letter : word) {
+			alphaNum[letter]++;
+		}
+	}
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+	for (auto [글자, 개수] : alphaNum) {
+		std::cout << "[" << 글자 << "] : " << 개수 << std::endl;
+	}
+
+	// [문제] 개수 내림차순으로 출력하라
+
+	std::vector<std::pair<char, int>> civ{ alphaNum.begin(), alphaNum.end() };
+
+	std::sort(civ.begin(), civ.end(),
+		[](const auto& a, const auto& b) {
+			return a.second > b.second;
+		});
+
+	for (auto [글자, 개수] : civ) {
+		std::cout << "[" << 글자 << "] : " << 개수 << std::endl;
+	}
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1292
+2022-05-13 19:19:05 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+	//for (auto [글자, 개수] : alphaNum) {
+	//	std::cout << "[" << 글자 << "] : " << 개수 << std::endl;
+	//}
+
+	// [문제] 개수 내림차순으로 출력하라
+	std::map<int, char, std::greater<int>> numAlpha;
+
+	for (auto [글자, 개수] : alphaNum)
+		numAlpha.insert({ 개수, 글자 });
+
+	for (auto [글자, 개수] : numAlpha)
+		std::cout << "[" << 글자 << "] : " << 개수 << std::endl;
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1232
+2022-05-13 19:20:55 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::ofstream out{ "길이11.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+	//for (auto [글자, 개수] : alphaNum)
+	//	std::cout << "[" << 글자 << "] : " << 개수 << std::endl;
+
+
+	// [문제] 길이가 11인 단어를 "길이11.txt"에 기록하라
+	std::map<int, char, std::greater<int>> numAlpha;
+
+	for (std::string s : v)
+		if (s.length() == 11)
+			out << s;
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1240
+2022-05-13 19:21:30 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::ofstream out{ "길이11.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+	//for (auto [글자, 개수] : alphaNum)
+	//	std::cout << "[" << 글자 << "] : " << 개수 << std::endl;
+
+
+	// [문제] 길이가 11인 단어를 "길이11.txt"에 기록하라
+	std::map<int, char, std::greater<int>> numAlpha;
+
+	for (std::string s : v)
+		if (s.length() == 11)
+			out << s << "\n";
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1247
+2022-05-13 19:22:49 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::ofstream out{ "길이11.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+	//for (auto [글자, 개수] : alphaNum)
+	//	std::cout << "[" << 글자 << "] : " << 개수 << std::endl;
+
+
+	// [문제] 길이가 11인 단어를 "길이11.txt"에 기록하라
+	std::map<int, char, std::greater<int>> numAlpha;
+
+	for (const std::string& s : v)
+		if (s.length() == 11)
+			out << s << "\n";
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1389
+2022-05-13 21:24:17 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::ofstream out{ "길이11.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+	//for (auto [글자, 개수] : alphaNum)
+	//	std::cout << "[" << 글자 << "] : " << 개수 << std::endl;
+
+	// [문제] 길이가 11인 단어를 "길이11.txt"에 기록하라
+	// STL에서는 루프 사용 비권장. 알고리즘이 표현력이 더 좋음
+	std::copy_if(v.begin(), v.end(), std::ostream_iterator<std::string>{out, "\n"},
+		[](const std::string& s) {
+			return s.length() == 15;
+		});
+	// 이 알고리즘이 기존 loop보다 더 빠르진 않지만 표현력이 더 좋다.
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1284
+2022-05-13 21:28:08 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::ofstream out{ "길이11.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	// [문제] 이 소설에 사용된 단어와 개수를 출력하라.
+	// 앞에서부터 20개만 출력하라.
+
+	std::map<std::string, int> wordNum;
+
+	for (const std::string& word : v) {
+		wordNum[word]++;
+	}
+
+	auto p = wordNum.begin();
+	
+	for (int i = 0; i < 20; ++i, ++p) {
+		std::cout << p->first << " - " << p->second << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1246
+2022-05-13 21:29:35 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	// [문제] 이 소설에 사용된 단어와 개수를 출력하라.
+	// 앞에서부터 20개만 출력하라.
+
+	std::map<std::string, int> wordNum;
+
+	for (const std::string& word : v) {
+		wordNum[word]++;
+	}
+
+	auto p = wordNum.begin();
+	for (int i = 0; i < 1000; ++i, ++p) {
+		std::cout << p->first << " - " << p->second << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1474
+2022-05-13 21:33:45 GMT+9
+
+/*
+ * 2022. 05. 12
+ * STL Class
+ *
+ * Containers are objects that store other objects.
+ * 1. Sequence container
+ * 2. Associative container - set/multi_set/map/multi_map
+ * 
+ *		map<key, value, key_compare>
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ * 
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include "save.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	// [문제] 알파벳과 빈도수를 화면에 출력하라
+	// std::map<알파벳, 개수>
+
+	std::ifstream in{ "Frankenstein.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::map<char, int> alphaNum;
+
+	for (const auto& word : v)
+		for (char letter : word)
+			if (isalpha(letter))
+				alphaNum[letter]++;
+
+
+	std::cout << "단어 갯수 - " << v.size() << std::endl;
+
+	// [문제] 이 소설에 사용된 단어와 개수를 출력하라.
+	// 앞에서부터 20개만 출력하라
+	// 개수 오름차순으로 정렬하라
+
+	std::map<std::string, int> wordNum;
+
+	for (const std::string& word : v) {
+		wordNum[word]++;
+	}
+
+	std::vector<std::pair<std::string, int>> civ{ wordNum.begin(), wordNum.end() };
+	std::sort(civ.begin(), civ.end(),
+		[](const auto& a, const auto& b) {
+			return a.second > b.second;
+		});
+
+	auto p = wordNum.begin();
+	for (int i = 0; i < 1000; ++i, ++p) {
+		std::cout << p->first << " - " << p->second << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0512.txt");
+}
+
+=======================================================

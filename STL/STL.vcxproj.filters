@@ -4,7 +4,6 @@
     <ClCompile Include="save.cpp" />
     <ClCompile Include="source.cpp" />
     <ClCompile Include="STRING.cpp" />
-    <ClCompile Include="sourceX.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="save.h" />
