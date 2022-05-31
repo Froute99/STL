@@ -1,0 +1,1208 @@
+
+
+파일이름: source.cpp
+파일크기: 611
+2022-05-26 13:40:28 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+
+int main() {
+	// 반복자간의 거리를 계산하는 distance 함수가 있다.
+	// -> concept -> range
+
+	std::vector<int> v{ 1,2,3,4,5 };
+
+	std::cout << std::distance(v.begin(), v.end()) << std::endl;
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 611
+2022-05-26 13:41:33 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+
+int main() {
+	// 반복자간의 거리를 계산하는 distance 함수가 있다.
+	// -> concept -> range
+
+	std::vector<int> v{ 1,2,3,4,5 };
+
+	std::cout << std::distance(v.end(), v.begin()) << std::endl;
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 626
+2022-05-26 13:42:08 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+
+int main() {
+	// 반복자간의 거리를 계산하는 distance 함수가 있다.
+	// -> concept -> range
+
+	std::list<int> v{ 1,2,3,4,5 };
+
+	std::cout << std::distance(v.end(), v.begin()) << std::endl;
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 626
+2022-05-26 13:43:33 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+
+int main() {
+	// 반복자간의 거리를 계산하는 distance 함수가 있다.
+	// -> concept -> range
+
+	std::list<int> v{ 1,2,3,4,5 };
+
+	std::cout << std::distance(v.begin(), v.end()) << std::endl;
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 659
+2022-05-26 13:44:10 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include <forward_list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+
+int main() {
+	// 반복자간의 거리를 계산하는 distance 함수가 있다.
+	// -> concept -> range
+
+	std::forward_list<int> v{ 1,2,3,4,5 };
+
+	std::cout << std::distance(v.begin(), v.end()) << std::endl;
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 659
+2022-05-26 13:44:33 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include <forward_list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+
+int main() {
+	// 반복자간의 거리를 계산하는 distance 함수가 있다.
+	// -> concept -> range
+	save("source.cpp", "STL_0526.txt");
+
+	std::forward_list<int> v{ 1,2,3,4,5 };
+
+	std::cout << std::distance(v.end(), v.begin()) << std::endl;
+
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 770
+2022-05-26 13:47:20 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include <forward_list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+ptrdiff_t dist(Iter begin, Iter end) {
+	return end - begin;
+}
+
+
+
+int main() {
+	// 반복자간의 거리를 계산하는 distance 함수가 있다.
+	// -> concept -> range
+
+	std::vector<int> v{ 1,2,3,4,5 };
+
+	// 템플릿 함수 dist를 작성하라.
+	std::cout << dist(v.begin(), v.end()) << std::endl;
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 810
+2022-05-26 13:52:28 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include <forward_list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+ptrdiff_t dist(Iter begin, Iter end) {
+	return end - begin;
+}
+
+
+int main() {
+	// 반복자간의 거리를 계산하는 distance 함수가 있다.
+	// -> concept -> range
+
+	std::vector<int> v{ 1,2,3,4,5 };
+
+	// 템플릿 함수 dist를 작성하라.
+	std::cout << dist(v.begin(), v.end()) << std::endl;
+	std::cout << dist(1, 100) << std::endl;
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1084
+2022-05-26 14:18:26 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include <forward_list>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+long long dist(Iter begin, Iter end) {
+	// Iter가 반복자인지 판정한다.
+	// Iter가 input_iterator_tag를 상속했나 판단한다.
+
+	if (std::is_base_of_v<std::input_iterator_tag,
+		typename std::iterator_traits<Iter>::iterator_category>)
+		std::cout << "반복자가 맞다" << std::endl;
+	else
+		std::cout << "반복자가 아니다" << std::endl;
+
+	return 1;
+}
+
+
+int main() {
+	// 반복자간의 거리를 계산하는 distance 함수가 있다.
+	// -> concept -> range
+
+	std::vector<int> v{ 1,2,3,4,5 };
+
+	// 템플릿 함수 dist를 작성하라.
+	std::cout << dist(v.begin(), v.end()) << std::endl;
+	
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 864
+2022-05-26 14:27:45 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <list>
+#include <forward_list>
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <std::contiguous_iterator Iter>
+void cf(Iter begin, Iter end) {
+	std::cout << "continguous 메모리" << std::endl;
+}
+
+int main() {
+
+	// contiguous한 메모리에서만 작업하는 cf 함수
+	std::vector<int> v;
+	std::deque<int> d;
+
+	cf(v.begin(), v.end());			// contiguous 맞다
+	//cf(d.begin(), d.end());			// random-access라 아니다
+	
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 836
+2022-05-26 14:30:04 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <list>
+#include <forward_list>
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <std::contiguous_iterator Iter>
+void cf(Iter begin, Iter end) {
+	std::cout << "continguous 메모리" << std::endl;
+}
+
+int main() {
+
+	// contiguous한 메모리에서만 작업하는 cf 함수
+	std::vector<int> v;
+
+	cf(v.begin(), v.end());			// contiguous 맞다
+	
+	int a[10];
+	cf(std::begin(a), std::end(a));
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 720
+2022-05-26 14:32:14 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <list>
+#include <forward_list>
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <std::input_iterator Iter>
+void f(Iter begin) {
+	std::cout << "반복자 전달" << std::endl;
+}
+
+int main() {
+	
+	// 반복자일때만 실행되는 함수
+
+	STRING s;
+	
+	f(s.begin());
+	//f(1);
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1070
+2022-05-26 14:51:30 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <list>
+#include <forward_list>
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <std::input_iterator Iter>
+long long dist(Iter begin, Iter end) {
+	// 만일 random_access 반복자라면 -로 계산
+	if (std::is_same_v<typename std::iterator_traits<Iter>::iterator_category,
+		std::random_access_iterator_tag>) {
+		return end - begin;
+	}
+
+
+	// 아니라면
+	long long step = 0;
+	while (begin != end) {
+		++step;
+		++begin;
+	}
+	return step;
+}
+
+
+int main() {
+	// 표준 dist를 구현한다.
+	std::vector<int> v{ 1,2,3 };
+
+	std::cout << dist(v.begin(), v.end()) << std::endl;
+	//dist(1, 100);		// 제약조건 만족 실패
+
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1162
+2022-05-26 14:52:20 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <list>
+#include <forward_list>
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <std::input_iterator Iter>
+long long dist(Iter begin, Iter end) {
+	// 만일 random_access 반복자라면 -로 계산
+	if (std::is_same_v<typename std::iterator_traits<Iter>::iterator_category,
+		std::random_access_iterator_tag>) {
+		std::cout << "-로 계산" << std::endl;
+		return end - begin;
+	}
+
+
+	// 아니라면
+	long long step = 0;
+	while (begin != end) {
+		++step;
+		++begin;
+	}
+	std::cout << "한 걸음씩 세서 계산" << std::endl;
+	return step;
+}
+
+
+int main() {
+	// 표준 dist를 구현한다.
+	std::vector<int> v{ 1,2,3 };
+
+	std::cout << dist(v.begin(), v.end()) << std::endl;
+	//dist(1, 100);		// 제약조건 만족 실패
+
+
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1520
+2022-05-26 15:01:14 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <list>
+#include <forward_list>
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <std::input_iterator Iter>
+long long dist(Iter begin, Iter end) {
+	// 만일 random_access 반복자라면 -로 계산
+	if constexpr (std::is_same_v<typename std::iterator_traits<Iter>::iterator_category,
+		std::random_access_iterator_tag>) {
+		std::cout << "-로 계산" << std::endl;
+		return end - begin;
+	}
+
+	// 아니라면
+	// 이 코드만 남으면 좋은데 list 반복자가 전달될때 위의 end - begin 코드도 생성된다
+	// --> list 반복자가 - 연산을 지원하지 않기 때문에 compile 오류
+	// C++17이전 - tag dispatching으로 해결한다
+	// C++17이후 - constexpr if (선택적 코드생성)로 해결가능
+
+	else {
+		long long step = 0;
+		while (begin != end) {
+			++step;
+			++begin;
+		}
+		std::cout << "한 걸음씩 세서 계산" << std::endl;
+		return step;
+	}
+}
+
+
+int main() {
+	// 표준 dist를 구현한다.
+	std::vector<int> v{ 1,2,3 };
+
+	std::cout << dist(v.begin(), v.end()) << std::endl;
+	//dist(1, 100);		// 제약조건 만족 실패
+
+	std::list<int> l;
+	std::cout << dist(l.end(), l.begin()) << std::endl;
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1585
+2022-05-26 15:02:05 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <list>
+#include <forward_list>
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <std::input_iterator Iter>
+long long dist(Iter begin, Iter end) {
+	// 만일 random_access 반복자라면 -로 계산
+	if constexpr (std::is_same_v<typename std::iterator_traits<Iter>::iterator_category,
+		std::random_access_iterator_tag>) {
+		std::cout << "-로 계산" << std::endl;
+		return end - begin;
+	}
+
+	// 아니라면
+	// 이 코드만 남으면 좋은데 list 반복자가 전달될때 위의 end - begin 코드도 생성된다
+	// --> list 반복자가 - 연산을 지원하지 않기 때문에 compile 오류
+	// C++17이전 - tag dispatching으로 해결한다
+	// C++17이후 - constexpr if (선택적 코드생성)로 해결가능
+
+	else {
+		long long step = 0;
+		while (begin != end) {
+			++step;
+			++begin;
+		}
+		std::cout << "한 걸음씩 세서 계산" << std::endl;
+		return step;
+	}
+}
+
+
+int main() {
+	// 표준 dist를 구현한다.
+	std::vector<int> v{ 1,2,3 };
+
+	std::cout << dist(v.begin(), v.end()) << std::endl;
+	//dist(1, 100);		// 제약조건 만족 실패
+
+	std::list<int> l;
+	//std::cout << dist(l.end(), l.begin()) << std::endl;
+	std::cout << std::distance(l.end(), l.begin()) << std::endl;
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1594
+2022-05-26 15:02:33 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <list>
+#include <forward_list>
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <std::input_iterator Iter>
+long long dist(Iter begin, Iter end) {
+	// 만일 random_access 반복자라면 -로 계산
+	if constexpr (std::is_same_v<typename std::iterator_traits<Iter>::iterator_category,
+		std::random_access_iterator_tag>) {
+		std::cout << "-로 계산" << std::endl;
+		return end - begin;
+	}
+
+	// 아니라면
+	// 이 코드만 남으면 좋은데 list 반복자가 전달될때 위의 end - begin 코드도 생성된다
+	// --> list 반복자가 - 연산을 지원하지 않기 때문에 compile 오류
+	// C++17이전 - tag dispatching으로 해결한다
+	// C++17이후 - constexpr if (선택적 코드생성)로 해결가능
+
+	else {
+		long long step = 0;
+		while (begin != end) {
+			++step;
+			++begin;
+		}
+		std::cout << "한 걸음씩 세서 계산" << std::endl;
+		return step;
+	}
+}
+
+
+int main() {
+	// 표준 dist를 구현한다.
+	std::vector<int> v{ 1,2,3 };
+
+	std::cout << dist(v.begin(), v.end()) << std::endl;
+	//dist(1, 100);		// 제약조건 만족 실패
+
+	std::list<int> l{ 1,2,3 };
+	//std::cout << dist(l.end(), l.begin()) << std::endl;
+	std::cout << std::distance(l.end(), l.begin()) << std::endl;
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1594
+2022-05-26 15:02:41 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <list>
+#include <forward_list>
+#include <concepts>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <std::input_iterator Iter>
+long long dist(Iter begin, Iter end) {
+	// 만일 random_access 반복자라면 -로 계산
+	if constexpr (std::is_same_v<typename std::iterator_traits<Iter>::iterator_category,
+		std::random_access_iterator_tag>) {
+		std::cout << "-로 계산" << std::endl;
+		return end - begin;
+	}
+
+	// 아니라면
+	// 이 코드만 남으면 좋은데 list 반복자가 전달될때 위의 end - begin 코드도 생성된다
+	// --> list 반복자가 - 연산을 지원하지 않기 때문에 compile 오류
+	// C++17이전 - tag dispatching으로 해결한다
+	// C++17이후 - constexpr if (선택적 코드생성)로 해결가능
+
+	else {
+		long long step = 0;
+		while (begin != end) {
+			++step;
+			++begin;
+		}
+		std::cout << "한 걸음씩 세서 계산" << std::endl;
+		return step;
+	}
+}
+
+
+int main() {
+	// 표준 dist를 구현한다.
+	std::vector<int> v{ 1,2,3 };
+
+	std::cout << dist(v.begin(), v.end()) << std::endl;
+	//dist(1, 100);		// 제약조건 만족 실패
+
+	std::list<int> l{ 1,2,3 };
+	std::cout << dist(l.end(), l.begin()) << std::endl;
+	//std::cout << std::distance(l.end(), l.begin()) << std::endl;
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 680
+2022-05-26 15:15:23 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include <algorithm>
+#include <concepts>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+
+	std::vector<int> v{ 1,2,3,4,5 };
+
+	std::ranges::sort(v, {}, {});
+
+	for (int n : v) {
+		std::cout << n << " ";
+	}
+	std::cout << std::endl;
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 697
+2022-05-26 15:16:03 GMT+9
+
+/*
+ * 2022. 05. 26
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * C++20의 핵심
+ * concepts
+ * range/view
+ *		coroutine	- 
+ *		module		- ixx
+ * 
+ * 
+ * type traits
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <list>
+#include <algorithm>
+#include <concepts>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+
+	std::vector<int> v{ 1,2,3,4,5 };
+
+	std::ranges::sort(v, std::greater<int>(), {});
+
+	for (int n : v) {
+		std::cout << n << " ";
+	}
+	std::cout << std::endl;
+
+	save("source.cpp", "STL_0526.txt");
+}
+
+=======================================================

@@ -87,6 +87,11 @@ public:
 			rhs.begin(), rhs.end());
 	}
 
+	// 2022. 5. 18 unordered_set이 요구하는 == 코딩
+	bool operator==(const STRING& rhs) const {
+		return std::string(begin(), end()) == std::string(rhs.begin(), rhs.end());
+	}
+
 	// 2022. 4. 21 begin(), end() 제공
 	iterator begin() const { return iterator{ dataPtr }; }
 	iterator end() const { return iterator{ dataPtr + num }; };

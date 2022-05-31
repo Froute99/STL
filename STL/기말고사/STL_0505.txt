@@ -1,0 +1,1428 @@
+
+
+파일이름: source.cpp
+파일크기: 930
+2022-05-05 13:37:45 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  C++20 span - 꿈꾸는 개발자
+ *				contiguous 컨테이너를 일관된 방식으로 다루기 위해 만든 view
+ *				T[], array<T, N>, vector<T>, string, STRING
+ * 
+ * 
+ *  공부할 것들
+ *  C+20 span
+ *
+ *
+ */
+
+// 기말고사 예상 : back_inser_iterator 로 vector 클래스 만들기
+
+#include <iostream>
+#include <span>				// c++20
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+void print(std::span<int>);
+
+void print(std::span<int> a) {
+	std::cout << "a가 차지한 메모리 크기 : " << a.size_bytes() << std::endl;
+	for (int i = 0; i < a.size(); ++i) {
+		std::cout << a[i] << std::endl;
+	}
+}
+
+int main() {
+	
+	
+
+	int a[10]{ 1,2,3,4,5 };
+	
+	// [문제] print는 a를 인자로 받아 전체 원소를 출력한다
+	// a를 선언 및 정의하고 호출하라
+
+	print(a);
+
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 879
+2022-05-05 13:39:03 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  C++20 span - 꿈꾸는 개발자
+ *				contiguous 컨테이너를 일관된 방식으로 다루기 위해 만든 view
+ *				T[], array<T, N>, vector<T>, string, STRING
+ * 
+ * 
+ *  공부할 것들
+ *  C+20 span
+ *
+ *
+ */
+
+// 기말고사 예상 : back_inser_iterator 로 vector 클래스 만들기
+
+#include <iostream>
+#include <span>				// c++20
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+void print(std::span<int>);
+
+void print(std::span<int> a) {
+	std::cout << "a가 차지한 메모리 크기 : " << a.size_bytes() << std::endl;
+	for (int i = 0; i < a.size(); ++i) {
+		std::cout << a[i] << " ";
+	}
+}
+
+int main() {
+	
+	
+
+	int a[10]{ 1,2,3,4,5 };
+	
+	// int [10] -> span<int> 로 변환되어 전달된다.
+	print(a);
+
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 943
+2022-05-05 13:40:03 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  C++20 span - 꿈꾸는 개발자
+ *				contiguous 컨테이너를 일관된 방식으로 다루기 위해 만든 view
+ *				T[], array<T, N>, vector<T>, string, STRING
+ * 
+ * 
+ *  공부할 것들
+ *  C+20 span
+ *
+ *
+ */
+
+// 기말고사 예상 : back_inser_iterator 로 vector 클래스 만들기
+
+#include <iostream>
+#include <vector>
+#include <span>				// c++20
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+void print(std::span<int>);
+
+void print(std::span<int> a) {
+	std::cout << "a가 차지한 메모리 크기 : " << a.size_bytes() << std::endl;
+	for (int i = 0; i < a.size(); ++i) {
+		std::cout << a[i] << " ";
+	}
+}
+
+int main() {
+	
+	
+
+	int a[10]{ 1,2,3,4,5 };
+	
+	// int [10] -> span<int> 로 변환되어 전달된다.
+	print(a);
+
+	std::vector v{ 1,3,5,7,9,11 };
+	print(v);
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1005
+2022-05-05 13:41:22 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  C++20 span - 꿈꾸는 개발자
+ *				contiguous 컨테이너를 일관된 방식으로 다루기 위해 만든 view
+ *				T[], array<T, N>, vector<T>, string, STRING
+ * 
+ * 
+ *  공부할 것들
+ *  C+20 span
+ *
+ *
+ */
+
+// 기말고사 예상 : back_inser_iterator 로 vector 클래스 만들기
+
+#include <iostream>
+#include <vector>
+#include <span>				// c++20
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+void print(std::span<int>);
+
+void print(std::span<int> a) {
+	std::cout << "연속된 메모리가 차지한 크기 : " << a.size_bytes() << std::endl;
+	for (int i = 0; i < a.size(); ++i) {
+		std::cout << a[i] << " ";
+	}
+	std::cout << std::endl;
+}
+
+int main() {
+	
+	
+
+	int a[10]{ 1,2,3,4,5 };
+	
+	// int [10] -> span<int> 로 변환되어 전달된다.
+	print(a);
+
+	std::vector v{ 1,3,5,7,9,11 };
+	print(std::span<int>{v.begin() + 1, 3});
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1337
+2022-05-05 13:45:56 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container
+ * 
+ *  C++20 span - 꿈꾸는 개발자
+ *				contiguous 컨테이너를 일관된 방식으로 다루기 위해 만든 view
+ *				T[], array<T, N>, vector<T>, string, STRING
+ * 
+ * 
+ *  공부할 것들
+ *  C+20 span
+ *
+ *
+ */
+
+// 기말고사 예상 : back_inser_iterator 로 vector 클래스 만들기
+
+#include <iostream>
+#include <vector>
+#include <span>				// c++20
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+void print(std::span<int>);
+
+void print(std::span<int> a) {
+	std::cout << "std::span<int> 가 차지한 메모리 크기 : " << a.size_bytes() << std::endl;
+	for (int i = 0; i < a.size(); ++i) {
+		std::cout << a[i] << " ";
+	}
+	std::cout << std::endl;
+}
+
+void print(std::span<char> a) {
+	std::cout << "std::span<char> 가 차지한 메모리 크기 : " << a.size_bytes() << std::endl;
+	for (int i = 0; i < a.size(); ++i) {
+		std::cout << a[i] << " ";
+	}
+	std::cout << std::endl;
+}
+
+int main() {
+	
+	
+
+	int a[10]{ 1,2,3,4,5 };
+	
+	// int [10] -> span<int> 로 변환되어 전달된다.
+	print(a);
+
+	std::vector v{ 1,3,5,7,9,11 };
+	print(std::span<int>{v.begin() + 1, 3});
+
+	STRING s{ "Standard Template Library" };
+	print(std::span<char>{&(*s.begin()), s.GetNum() });
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 664
+2022-05-05 14:16:01 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <vector>
+#include <random>
+#include <numeric>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	
+	std::vector<int> v(100);
+
+	for (int n : v) {
+		std::cout << std::format("{:4}", n) << std::endl;
+	}
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 665
+2022-05-05 14:16:17 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <vector>
+#include <random>
+#include <numeric>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	
+	std::vector<int> v(100);
+
+	for (int n : v) {
+		std::cout << std::format("{:<4}", n) << std::endl;
+	}
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 717
+2022-05-05 14:17:16 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <vector>
+#include <random>
+#include <numeric>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+	
+	std::vector<int> v(100);
+
+	std::iota(v.begin(), v.end(), 1);
+
+	for (int n : v) {
+		std::cout << std::format("{:4}", n);
+	}
+	std::cout << std::endl;
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 827
+2022-05-05 14:19:00 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <vector>
+#include <random>
+#include <numeric>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+
+int main() {
+	
+	std::vector<int> v(100);
+
+	std::iota(v.begin(), v.end(), 1);
+	std::shuffle(v.begin(), v.end(), dre);
+
+	for (int n : v) {
+		std::cout << std::format("{:4}", n);
+	}
+	std::cout << std::endl;
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 827
+2022-05-05 14:19:30 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <vector>
+#include <random>
+#include <numeric>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+
+int main() {
+	
+	std::vector<int> v(100);
+
+	std::iota(v.begin(), v.end(), 1);
+	std::shuffle(v.begin(), v.end(), dre);
+
+	for (int n : v) {
+		std::cout << std::format("{:4}", n);
+	}
+	std::cout << std::endl;
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 827
+2022-05-05 14:20:13 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <vector>
+#include <random>
+#include <numeric>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+
+int main() {
+	
+	std::vector<int> v(100);
+
+	std::iota(v.begin(), v.end(), 1);
+	std::shuffle(v.begin(), v.end(), dre);
+
+	for (int n : v) {
+		std::cout << std::format("{:4}", n);
+	}
+	std::cout << std::endl;
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 915
+2022-05-05 14:21:01 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <vector>
+#include <random>
+#include <numeric>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+
+int main() {
+	
+	std::vector<int> v(100);
+
+	std::iota(v.begin(), v.end(), 1);
+	std::shuffle(v.begin(), v.end(), dre);
+
+	// [문제] v의 원소를 set에 넣고 출력한다
+	std::set<int> s{ v.begin(), v.end() };
+
+
+	for (int n : s) {
+		std::cout << std::format("{:4}", n);
+	}
+	std::cout << std::endl;
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 957
+2022-05-05 14:23:12 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <vector>
+#include <random>
+#include <numeric>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+
+int main() {
+	
+	std::vector<int> v(100);
+
+	std::iota(v.begin(), v.end(), 1);
+	std::shuffle(v.begin(), v.end(), dre);
+
+	// [문제] v의 원소를 내림차순으로 정렬하는 set에 넣고 출력한다
+	std::set<int, std::greater<int>> s{ v.begin(), v.end() };
+
+	
+	for (int n : s) {
+		std::cout << std::format("{:4}", n);
+	}
+	std::cout << std::endl;
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1082
+2022-05-05 14:24:52 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <vector>
+#include <list>
+#include <random>
+#include <numeric>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+
+int main() {
+
+	std::list<int> l{ 1,2,3,4,5 };
+
+	for (auto x : l) {
+		std::cout << x << " ";
+	}
+	
+	//std::vector<int> v(100);
+
+	//std::iota(v.begin(), v.end(), 1);
+	//std::shuffle(v.begin(), v.end(), dre);
+
+	//// [문제] v의 원소를 내림차순으로 정렬하는 set에 넣고 출력한다
+	//std::set<int, std::greater<int>> s{ v.begin(), v.end() };
+
+	//
+	//for (int n : s) {
+	//	std::cout << std::format("{:4}", n);
+	//}
+	//std::cout << std::endl;
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 844
+2022-05-05 14:40:32 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <fstream>
+#include <set>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+
+	// [문제] "source.cpp"의 단어를 set에 저장하라
+	std::set<std::string> s;
+
+	std::ifstream in{ "source.cpp" };
+
+	std::string str;
+	while (in >> str) {
+		s.insert(str);
+	}
+
+	// 한 단어당 한 줄씩 화면 중앙에 출력하라
+	for (const std::string& x : s) {
+		std::cout << std::format({ "{:^80}" }, x) << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 871
+2022-05-05 14:41:32 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <fstream>
+#include <set>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+
+	// [문제] "source.cpp"의 단어를 set에 저장하라
+	std::set<std::string, std::greater<std::string>> s;
+
+	std::ifstream in{ "source.cpp" };
+
+	std::string str;
+	while (in >> str) {
+		s.insert(str);
+	}
+
+	// 한 단어당 한 줄씩 화면 중앙에 출력하라
+	for (const std::string& x : s) {
+		std::cout << std::format({ "{:^80}" }, x) << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 889
+2022-05-05 14:42:25 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <fstream>
+#include <set>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+
+	// [문제] "source.cpp"의 단어를 set에 저장하라
+	std::set<std::string, std::greater<std::string>> s;
+
+	std::ifstream in{ "source.cpp" };
+
+	std::string str;
+	while (in >> str) {
+		s.insert(str);
+	}
+
+	// 역순으로 한 단어 한 줄씩 화면 중앙에 출력하라
+	for (const std::string& x : s) {
+		std::cout << std::format({ "{:^80}" }, x);
+	}
+	std::cout << std::endl;
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 885
+2022-05-05 14:43:14 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <fstream>
+#include <set>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+
+	// [문제] "source.cpp"의 단어를 set에 저장하라
+
+	std::ifstream in{ "source.cpp" };
+
+	std::set<std::string, std::greater<std::string>> s{ std::istream_iterator<std::string>{in}, {} };
+
+	// 역순으로 한 단어 한 줄씩 화면 중앙에 출력하라
+	for (const std::string& x : s) {
+		std::cout << std::format({ "{:^80}" }, x) << std::endl;
+	}
+	std::cout << std::endl;
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 882
+2022-05-05 14:43:28 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <fstream>
+#include <set>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+
+	// [문제] "source.cpp"의 단어를 set에 저장하라
+
+	std::ifstream in{ "source.cpp" };
+
+	std::set<std::string, std::less<std::string>> s{ std::istream_iterator<std::string>{in}, {} };
+
+	// 역순으로 한 단어 한 줄씩 화면 중앙에 출력하라
+	for (const std::string& x : s) {
+		std::cout << std::format({ "{:^80}" }, x) << std::endl;
+	}
+	std::cout << std::endl;
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1004
+2022-05-05 14:45:32 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ * 
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ * 
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <fstream>
+#include <set>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+int main() {
+
+	// [문제] "source.cpp"의 단어를 set에 저장하라
+
+	std::ifstream in{ "source.cpp" };
+
+	std::set<std::string, std::less<std::string>> s{ std::istream_iterator<std::string>{in}, {} };
+
+	// 역순으로 한 단어 한 줄씩 화면 중앙에 출력하라
+	for (const std::string& x : s) {
+		std::cout << std::format({ "{:^80}" }, x) << std::endl;
+	}
+	std::cout << std::endl;
+
+	//for (auto i = s.cbegin(); i != s.cend(); ++i) {
+	//	std::cout << std::format({ "{:^80}" }, *i) << std::endl;
+	//}
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1014
+2022-05-05 15:10:46 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ *
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ *
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <list>
+#include <string>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::random_device(rd);
+std::default_random_engine(dre);
+std::uniform_int_distribution<int> uid{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 10000 };
+
+class Dog {
+	std::string name;
+	int num;
+
+public:
+	Dog() {
+		for (int i = 0; i < 10; ++i) {
+			name += uid(dre);
+		}
+		num = uidNum(dre);
+	}
+
+	void Show() const {
+		std::cout << name << " - " << num << std::endl;
+	}
+
+};
+
+int main() {
+
+	std::list<Dog> s(1000);
+
+	for (const Dog& d : s) {
+		d.Show();
+	}
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1014
+2022-05-05 15:11:01 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ *
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ *
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <list>
+#include <string>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::random_device(rd);
+std::default_random_engine(dre);
+std::uniform_int_distribution<int> uid{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 10000 };
+
+class Dog {
+	std::string name;
+	int num;
+
+public:
+	Dog() {
+		for (int i = 0; i < 10; ++i) {
+			name += uid(dre);
+		}
+		num = uidNum(dre);
+	}
+
+	void Show() const {
+		std::cout << name << " - " << num << std::endl;
+	}
+
+};
+
+int main() {
+
+	std::list<Dog> s(1000);
+
+	for (const Dog& d : s) {
+		d.Show();
+	}
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1154
+2022-05-05 15:14:12 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ *
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ *
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <list>
+#include <string>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::default_random_engine dre;
+std::uniform_int_distribution<int> uid{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 10000 };
+
+class Dog {
+	std::string name;
+	int num;
+
+public:
+	Dog() {
+		for (int i = 0; i < 10; ++i) {
+			name += uid(dre);
+		}
+		num = uidNum(dre);
+	}
+
+	void Show() const {
+		std::cout << name << " - " << num << std::endl;
+	}
+
+	auto operator<=>(const Dog& rhs) const {
+		return num <=> rhs.num;
+	}
+};
+
+int main() {
+	std::set<Dog> s;
+
+	// [문제] s에 Dog 1000개를 집어넣어라
+	for (int i = 0; i < 1000; ++i) {
+		s.insert(Dog());
+	}
+
+	for (const Dog& d : s) {
+		d.Show();
+	}
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1295
+2022-05-05 15:21:27 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ *
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ *
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <list>
+#include <string>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::default_random_engine dre;
+std::uniform_int_distribution<int> uid{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 10000 };
+
+class Dog {
+	std::string name;
+	int num;
+
+public:
+	Dog() {
+		for (int i = 0; i < 10; ++i) {
+			name += uid(dre);
+		}
+		num = uidNum(dre);
+	}
+
+	std::string GetName() const { return name; }
+
+	void Show() const {
+		std::cout << name << " - " << num << std::endl;
+	}
+};
+
+class 정렬가능한타입 {
+public:
+	bool operator()(const Dog & a, const Dog & b) const {
+		return a.GetName() < b.GetName();
+	}
+};
+
+int main() {
+	std::set<Dog, 정렬가능한타입> s;
+
+	// [문제] s에 Dog 1000개를 집어넣어라 - 이름 오름차순
+	for (int i = 0; i < 1000; ++i) {
+		s.insert(Dog());
+	}
+
+	for (const Dog& d : s) {
+		d.Show();
+	}
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1295
+2022-05-11 16:36:30 GMT+9
+
+/*
+ * 2022. 05. 05
+ * STL Class
+ *
+ *
+ *  1. Sequence container
+ *  2. Associative container - set/multi_set/map/multi_map
+ *
+ *  오늘 알아볼 것
+ *  set - key를 compare로 정렬하고 있다. 찾기/제거/추가 동작이 O(log_N)
+ *		- set의 주요 동작을 알아본다
+ *		- set에 내가 만든 Dog를 넣어본다
+ */
+
+#include <iostream>
+#include <set>
+#include <list>
+#include <string>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::default_random_engine dre;
+std::uniform_int_distribution<int> uid{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 10000 };
+
+class Dog {
+	std::string name;
+	int num;
+
+public:
+	Dog() {
+		for (int i = 0; i < 10; ++i) {
+			name += uid(dre);
+		}
+		num = uidNum(dre);
+	}
+
+	std::string GetName() const { return name; }
+
+	void Show() const {
+		std::cout << name << " - " << num << std::endl;
+	}
+};
+
+class 정렬가능한타입 {
+public:
+	bool operator()(const Dog & a, const Dog & b) const {
+		return a.GetName() < b.GetName();
+	}
+};
+
+int main() {
+	std::set<Dog, 정렬가능한타입> s;
+
+	// [문제] s에 Dog 1000개를 집어넣어라 - 이름 오름차순
+	for (int i = 0; i < 1000; ++i) {
+		s.insert(Dog());
+	}
+
+	for (const Dog& d : s) {
+		d.Show();
+	}
+
+	save("source.cpp", "STL_0505.txt");
+}
+
+=======================================================

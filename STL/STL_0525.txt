@@ -1,0 +1,1995 @@
+
+
+파일이름: source.cpp
+파일크기: 519
+2022-05-25 17:38:26 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	save("source.cpp", "STL_0525.txt");
+
+	// copy는 왜 mutating 알고리즘으로 분류하나?
+
+	std::vector v{ 1,2,3,4,5 };
+	std::copy(v.begin(), v.end(), std::ostream_iterator<int>{std::cout, " "});
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 490
+2022-05-25 17:40:47 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	save("source.cpp", "STL_0525.txt");
+
+	// copy는 왜 mutating 알고리즘으로 분류하나?
+
+	std::vector v{ 1,2,3,4,5 };
+	std::copy(v.begin(), v.end(), v.begin() + 2);
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 568
+2022-05-25 17:41:31 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	save("source.cpp", "STL_0525.txt");
+
+	// copy는 왜 mutating 알고리즘으로 분류하나?
+
+	std::vector v{ 1,2,3,4,5 };
+	std::copy(v.begin(), v.end(), v.begin() + 2);
+
+	for (int n : v) {
+		std::cout << n << " ";
+	}
+	std::cout << std::endl;
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 717
+2022-05-25 17:45:22 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+//template <class InIt, class OutIt>
+//void my_copy(InIt b, InIt e, OutIt d) {
+//	while (b != e) {
+//		*o = *d;
+//	}
+//}
+
+
+int main() {
+	save("source.cpp", "STL_0525.txt");
+
+	// copy는 왜 mutating 알고리즘으로 분류하나?
+
+	std::vector v{ 1,2,3,4,5 };
+	std::copy(v.begin(), v.end(), std::inserter(v, v.begin() + 2));
+
+	for (int n : v) {
+		std::cout << n << " ";
+	}
+	std::cout << std::endl;
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 719
+2022-05-25 17:47:55 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class InIt, class OutIt>
+void my_copy(InIt b, InIt e, OutIt d) {
+	while (b != e) {
+		*d = *b;
+		++d;
+		++b;
+	}
+}
+
+
+int main() {
+	save("source.cpp", "STL_0525.txt");
+
+	// copy는 왜 mutating 알고리즘으로 분류하나?
+
+	std::vector v{ 1,2,3,4,5 };
+	my_copy(v.begin(), v.end(), std::inserter(v, v.begin() + 2));
+
+	for (int n : v) {
+		std::cout << n << " ";
+	}
+	std::cout << std::endl;
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 742
+2022-05-25 17:50:50 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class InIt, class OutIt>
+void my_copy(InIt b, InIt e, OutIt d) {
+	while (b != e) {
+		*d = *b;
+		++d;
+		++b;
+	}
+}
+
+
+int main() {
+	save("source.cpp", "STL_0525.txt");
+
+
+	// unique - 옆에 있는 중복된 값을 제거
+	std::vector v{ 1,2,3,3,3,4,5,5,3 };
+			//	v{ 1,2,3,4,5,3,5,5,3 }
+
+	v.erase(std::unique(v.begin(), v.end()), v.end());
+
+	for (int n : v) {
+		std::cout << n << " ";
+	}
+	std::cout << std::endl;
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 676
+2022-05-25 17:55:45 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	save("source.cpp", "STL_0525.txt");
+
+
+	// [문제] Frankenstein.txt에 사용된 단어 가짓수는?
+	std::ifstream in{ "Frankenstein.txt" };
+
+	std::vector v{ std::istream_iterator<std::string>{in}, {} };
+	
+	std::sort(v.begin(), v.end());
+
+	v.erase(std::unique(v.begin(), v.end()), v.end());
+
+	std::cout << v.size() << std::endl;
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 767
+2022-05-25 17:58:30 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	save("source.cpp", "STL_0525.txt");
+
+
+	// [문제] Frankenstein.txt에 사용된 단어 가짓수는?
+	std::ifstream in{ "Frankenstein.txt" };
+
+	std::vector v{ std::istream_iterator<std::string>{in}, {} };
+	
+	std::sort(v.begin(), v.end());
+
+	//v.erase(std::unique(v.begin(), v.end()), v.end());
+	std::cout << std::distance(v.begin(), std::unique(v.begin(), v.end())) << std::endl;
+
+	//std::cout << v.size() << std::endl;
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 917
+2022-05-25 18:11:40 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100);			// int {}를 100번 호출
+	std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1133
+2022-05-25 18:13:59 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::default_random_engine dre;
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100);			// int {}를 100번 호출
+	std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	{	// 기준에 따라 분리
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제]
+
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1346
+2022-05-25 18:16:47 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::default_random_engine dre;
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100);			// int {}를 100번 호출
+	std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	{	// 기준에 따라 분리
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제]
+		std::partition(v.begin(), v.end(),
+			[](int n) {
+				return n % 2;
+			});
+		std::cout << "partition 이후" << std::endl;
+		print(v.begin(), v.end());
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1445
+2022-05-25 18:19:03 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::default_random_engine dre;
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100);			// int {}를 100번 호출
+	std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	{	// 기준에 따라 분리
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제]
+		auto p = std::partition(v.begin(), v.end(),
+			[](int n) {
+				return n % 2;
+			});
+		std::cout << "partition 이후" << std::endl;
+		std::cout << "홀수" << std::endl;
+		print(v.begin(), p);
+		std::cout << "짝수" << std::endl;
+		print(p, v.end());
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1888
+2022-05-25 18:30:02 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::default_random_engine dre;
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100);			// int {}를 100번 호출
+	std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	{	// 기준에 따라 분리
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제]
+		auto p = std::partition(v.begin(), v.end(),
+			[](int n) {
+				return n % 2;
+			});
+		std::cout << "partition 이후" << std::endl;
+		std::cout << "홀수" << std::endl;
+		print(v.begin(), p);
+		std::cout << "짝수" << std::endl;
+		print(p, v.end());
+	}
+
+	{	// 선착순 20등까지만 통과 - 1등부터 20등까지 순서는 상관없다
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 20등까지만 통과시켜라
+		std::nth_element(v.begin(), v.begin() + 20, v.end());
+		std::cout << "기준선 통과" << std::endl;
+		print(v.begin(), v.begin() + 20);
+		std::cout << "통과못함" << std::endl;
+		print(v.begin() + 20, v.end());
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1950
+2022-05-25 18:31:36 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100);			// int {}를 100번 호출
+	std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	//{	// 기준에 따라 분리
+	//	std::shuffle(v.begin(), v.end(), dre);
+	//	std::cout << "partition 이전" << std::endl;
+	//	print(v.begin(), v.end());
+
+	//	// [문제]
+	//	auto p = std::partition(v.begin(), v.end(),
+	//		[](int n) {
+	//			return n % 2;
+	//		});
+	//	std::cout << "partition 이후" << std::endl;
+	//	std::cout << "홀수" << std::endl;
+	//	print(v.begin(), p);
+	//	std::cout << "짝수" << std::endl;
+	//	print(p, v.end());
+	//}
+
+	{	// 선착순 20등까지만 통과 - 1등부터 20등까지 순서는 상관없다
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 20등까지만 통과시켜라
+		std::nth_element(v.begin(), v.begin() + 20, v.end());
+		std::cout << "기준선 통과" << std::endl;
+		print(v.begin(), v.begin() + 20);
+		std::cout << "통과못함" << std::endl;
+		print(v.begin() + 20, v.end());
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1950
+2022-05-25 18:32:32 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100);			// int {}를 100번 호출
+	std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	//{	// 기준에 따라 분리
+	//	std::shuffle(v.begin(), v.end(), dre);
+	//	std::cout << "partition 이전" << std::endl;
+	//	print(v.begin(), v.end());
+
+	//	// [문제]
+	//	auto p = std::partition(v.begin(), v.end(),
+	//		[](int n) {
+	//			return n % 2;
+	//		});
+	//	std::cout << "partition 이후" << std::endl;
+	//	std::cout << "홀수" << std::endl;
+	//	print(v.begin(), p);
+	//	std::cout << "짝수" << std::endl;
+	//	print(p, v.end());
+	//}
+
+	{	// 선착순 20등까지만 통과 - 1등부터 50등까지 순서는 상관없다
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 50등까지만 통과시켜라
+		std::nth_element(v.begin(), v.begin() + 50, v.end());
+		std::cout << "기준선 통과" << std::endl;
+		print(v.begin(), v.begin() + 50);
+		std::cout << "통과못함" << std::endl;
+		print(v.begin() + 50, v.end());
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1956
+2022-05-25 18:34:31 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100, 50);			// int {}를 100번 호출
+	//std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	//{	// 기준에 따라 분리
+	//	std::shuffle(v.begin(), v.end(), dre);
+	//	std::cout << "partition 이전" << std::endl;
+	//	print(v.begin(), v.end());
+
+	//	// [문제]
+	//	auto p = std::partition(v.begin(), v.end(),
+	//		[](int n) {
+	//			return n % 2;
+	//		});
+	//	std::cout << "partition 이후" << std::endl;
+	//	std::cout << "홀수" << std::endl;
+	//	print(v.begin(), p);
+	//	std::cout << "짝수" << std::endl;
+	//	print(p, v.end());
+	//}
+
+	{	// 선착순 20등까지만 통과 - 1등부터 50등까지 순서는 상관없다
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 50등까지만 통과시켜라
+		std::nth_element(v.begin(), v.begin() + 50, v.end());
+		std::cout << "기준선 통과" << std::endl;
+		print(v.begin(), v.begin() + 50);
+		std::cout << "통과못함" << std::endl;
+		print(v.begin() + 50, v.end());
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1926
+2022-05-25 18:34:39 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100, 50);			// int {}를 100번 호출
+	//std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	{	// 기준에 따라 분리
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제]
+		auto p = std::partition(v.begin(), v.end(),
+			[](int n) {
+				return n % 2;
+			});
+		std::cout << "partition 이후" << std::endl;
+		std::cout << "홀수" << std::endl;
+		print(v.begin(), p);
+		std::cout << "짝수" << std::endl;
+		print(p, v.end());
+	}
+
+	{	// 선착순 20등까지만 통과 - 1등부터 50등까지 순서는 상관없다
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 50등까지만 통과시켜라
+		std::nth_element(v.begin(), v.begin() + 50, v.end());
+		std::cout << "기준선 통과" << std::endl;
+		print(v.begin(), v.begin() + 50);
+		std::cout << "통과못함" << std::endl;
+		print(v.begin() + 50, v.end());
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1938
+2022-05-25 18:35:28 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100, 50);			// int {}를 100번 호출
+	v[1] = 5;
+	//std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	{	// 기준에 따라 분리
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제]
+		auto p = std::partition(v.begin(), v.end(),
+			[](int n) {
+				return n % 2;
+			});
+		std::cout << "partition 이후" << std::endl;
+		std::cout << "홀수" << std::endl;
+		print(v.begin(), p);
+		std::cout << "짝수" << std::endl;
+		print(p, v.end());
+	}
+
+	{	// 선착순 20등까지만 통과 - 1등부터 50등까지 순서는 상관없다
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 50등까지만 통과시켜라
+		std::nth_element(v.begin(), v.begin() + 50, v.end());
+		std::cout << "기준선 통과" << std::endl;
+		print(v.begin(), v.begin() + 50);
+		std::cout << "통과못함" << std::endl;
+		print(v.begin() + 50, v.end());
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 2352
+2022-05-25 18:38:06 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100);			// int {}를 100번 호출
+	std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	{	// 기준에 따라 분리
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제]
+		auto p = std::partition(v.begin(), v.end(),
+			[](int n) {
+				return n % 2;
+			});
+		std::cout << "partition 이후" << std::endl;
+		std::cout << "홀수" << std::endl;
+		print(v.begin(), p);
+		std::cout << "짝수" << std::endl;
+		print(p, v.end());
+	}
+
+	{	// 선착순 20등까지만 통과 - 1등부터 50등까지 순서는 상관없다
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 50등까지만 통과시켜라
+		std::nth_element(v.begin(), v.begin() + 50, v.end());
+		std::cout << "기준선 통과" << std::endl;
+		print(v.begin(), v.begin() + 50);
+		std::cout << "통과못함" << std::endl;
+		print(v.begin() + 50, v.end());
+	}
+
+	{	// 1등부터 50등까지는 정렬 - 나머지는 상관없다.
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "partial_sort 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 50등까지만 통과시켜라
+		std::partial_sort(v.begin(), v.begin() + 50, v.end());
+		std::cout << "50등까지 정렬" << std::endl;
+		print(v.begin(), v.begin() + 50);
+		std::cout << "나머지" << std::endl;
+		print(v.begin() + 50, v.end());
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 2619
+2022-05-25 18:42:37 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort
+ *  5. stable_sort
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <format>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+template <class Iter>
+void print(Iter b, Iter e) {
+	while (b != e) {
+		std::cout << std::format("{:4d}", *b);
+		++b;
+	}
+	std::cout << std::endl << std::endl;
+}
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+int main() {
+	// 데이터 준비
+	std::vector<int> v(100);			// int {}를 100번 호출
+	std::iota(v.begin(), v.end(), 1);
+
+	std::cout << "vector<int>의 값들" << std::endl;
+	print(v.begin(), v.end());
+
+	{	// 기준에 따라 분리
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제]
+		auto p = std::partition(v.begin(), v.end(),
+			[](int n) {
+				return n % 2;
+			});
+		std::cout << "partition 이후" << std::endl;
+		std::cout << "홀수" << std::endl;
+		print(v.begin(), p);
+		std::cout << "짝수" << std::endl;
+		print(p, v.end());
+	}
+
+	{	// 선착순 20등까지만 통과 - 1등부터 50등까지 순서는 상관없다
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 50등까지만 통과시켜라
+		std::nth_element(v.begin(), v.begin() + 50, v.end());
+		std::cout << "기준선 통과" << std::endl;
+		print(v.begin(), v.begin() + 50);
+		std::cout << "통과못함" << std::endl;
+		print(v.begin() + 50, v.end());
+	}
+
+	{	// 1등부터 50등까지는 정렬 - 나머지는 상관없다.
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "partial_sort 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 50등까지만 통과시켜라
+		std::partial_sort(v.begin(), v.begin() + 50, v.end());
+		std::cout << "50등까지 정렬" << std::endl;
+		print(v.begin(), v.begin() + 50);
+		std::cout << "나머지" << std::endl;
+		print(v.begin() + 50, v.end());
+	}
+
+	{	// 전체 정렬
+		std::shuffle(v.begin(), v.end(), dre);
+		std::cout << "sort 이전" << std::endl;
+		print(v.begin(), v.end());
+
+		// [문제] 정렬하라
+		std::sort(v.begin(), v.end());
+		std::cout << "sort 이후" << std::endl;
+		print(v.begin(), v.end());
+	}
+	
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1093
+2022-05-25 18:51:41 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort			- N log(N)
+ *  5. stable_sort	- N log(N*N)
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+std::uniform_int_distribution<int> uidChar{ 'a', 'e' };
+std::uniform_int_distribution<int> uidNum{ 1, 9 };
+
+struct Dog {
+	int num;
+	std::string name;
+
+	Dog() {
+		for (int i = 0; i < 2; ++i) {
+			name += uidChar(dre);
+		}
+		num = uidNum(dre);
+	}
+};
+
+
+int main() {
+	std::vector<Dog> v(20);			// Dog{}를 20번 호출
+
+	for (const Dog& dog : v) {
+		std::cout << dog.name << " - " << dog.num << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1093
+2022-05-25 18:52:47 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort			- N log(N)
+ *  5. stable_sort	- N log(N*N)
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+std::uniform_int_distribution<int> uidChar{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 9 };
+
+struct Dog {
+	int num;
+	std::string name;
+
+	Dog() {
+		for (int i = 0; i < 2; ++i) {
+			name += uidChar(dre);
+		}
+		num = uidNum(dre);
+	}
+};
+
+
+int main() {
+	std::vector<Dog> v(20);			// Dog{}를 20번 호출
+
+	for (const Dog& dog : v) {
+		std::cout << dog.name << " - " << dog.num << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1226
+2022-05-25 18:54:04 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort			- N log(N)
+ *  5. stable_sort	- N log(N*N)
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+std::uniform_int_distribution<int> uidChar{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 9 };
+
+struct Dog {
+	int num;
+	std::string name;
+
+	Dog() {
+		for (int i = 0; i < 2; ++i) {
+			name += uidChar(dre);
+		}
+		num = uidNum(dre);
+	}
+};
+
+
+int main() {
+	std::vector<Dog> v(20);			// Dog{}를 20번 호출
+
+
+	// name 오름차순 정렬
+	std::sort(v.begin(), v.end(),
+		[](const Dog& a, const Dog& b) {
+			return a.name < b.name;
+		});
+
+
+	for (const Dog& dog : v) {
+		std::cout << dog.name << " - " << dog.num << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1350
+2022-05-25 18:55:09 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort			- N log(N)
+ *  5. stable_sort	- N log(N*N)
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+std::uniform_int_distribution<int> uidChar{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 9 };
+
+struct Dog {
+	int num;
+	std::string name;
+
+	Dog() {
+		for (int i = 0; i < 2; ++i) {
+			name += uidChar(dre);
+		}
+		num = uidNum(dre);
+	}
+};
+
+
+int main() {
+	std::vector<Dog> v(20);			// Dog{}를 20번 호출
+
+
+	// name 오름차순 정렬
+	std::sort(v.begin(), v.end(),
+		[](const Dog& a, const Dog& b) {
+			return a.name < b.name;
+		});
+
+	// num 오름차순 정렬
+	std::sort(v.begin(), v.end(),
+		[](const Dog& a, const Dog& b) {
+			return a.num < b.num;
+		});
+
+	for (const Dog& dog : v) {
+		std::cout << dog.name << " - " << dog.num << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1358
+2022-05-25 18:56:00 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort			- N log(N)
+ *  5. stable_sort	- N log(N*N)
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+std::uniform_int_distribution<int> uidChar{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 9 };
+
+struct Dog {
+	int num;
+	std::string name;
+
+	Dog() {
+		for (int i = 0; i < 2; ++i) {
+			name += uidChar(dre);
+		}
+		num = uidNum(dre);
+	}
+};
+
+
+int main() {
+	std::vector<Dog> v(20);			// Dog{}를 20번 호출
+
+
+	// name 오름차순 정렬
+	std::sort(v.begin(), v.end(),
+		[](const Dog& a, const Dog& b) {
+			return a.name < b.name;
+		});
+
+	// num 오름차순 정렬
+	std::sort(v.begin(), v.end(),
+		[](const Dog& a, const Dog& b) {
+			return a.num < b.num;
+		});
+
+	for (const Dog& dog : v) {
+		std::cout << "\t" << dog.name << " - " << dog.num << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1359
+2022-05-25 18:59:13 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort			- N log(N)
+ *  5. stable_sort	- N log(N*N)
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+std::uniform_int_distribution<int> uidChar{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 9 };
+
+struct Dog {
+	int num;
+	std::string name;
+
+	Dog() {
+		for (int i = 0; i < 2; ++i) {
+			name += uidChar(dre);
+		}
+		num = uidNum(dre);
+	}
+};
+
+
+int main() {
+	std::vector<Dog> v(100);			// Dog{}를 20번 호출
+
+
+	// name 오름차순 정렬
+	std::sort(v.begin(), v.end(),
+		[](const Dog& a, const Dog& b) {
+			return a.name < b.name;
+		});
+
+	// num 오름차순 정렬
+	std::sort(v.begin(), v.end(),
+		[](const Dog& a, const Dog& b) {
+			return a.num < b.num;
+		});
+
+	for (const Dog& dog : v) {
+		std::cout << "\t" << dog.name << " - " << dog.num << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1388
+2022-05-25 19:01:40 GMT+9
+
+/*
+ * 2022. 05. 25
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 분리와 정렬  -  Complexity가 커지는 순서로 적음
+ *  1. partition
+ *  2. nth_element
+ *  3. partial_sort
+ *  4. sort			- N log(N)
+ *  5. stable_sort	- N log(N*N)
+ * 
+ *		0이 들어간 숫자 기준 파티션 => 시험문제로 나옴
+ * 
+ * 
+ * 
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+std::uniform_int_distribution<int> uidChar{ 'a', 'z' };
+std::uniform_int_distribution<int> uidNum{ 1, 9 };
+
+struct Dog {
+	int num;
+	std::string name;
+
+	Dog() {
+		for (int i = 0; i < 2; ++i) {
+			name += uidChar(dre);
+		}
+		num = uidNum(dre);
+	}
+};
+
+
+int main() {
+	std::vector<Dog> v(100);			// Dog{}를 20번 호출
+
+
+	// name 오름차순 정렬
+	std::sort(v.begin(), v.end(),
+		[](const Dog& a, const Dog& b) {
+			return a.name < b.name;
+		});
+
+	// 기존 순서를 유지한 채 num 오름차순 정렬
+	std::stable_sort(v.begin(), v.end(),
+		[](const Dog& a, const Dog& b) {
+			return a.num < b.num;
+		});
+
+	for (const Dog& dog : v) {
+		std::cout << "\t" << dog.name << " - " << dog.num << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0525.txt");
+}
+
+=======================================================

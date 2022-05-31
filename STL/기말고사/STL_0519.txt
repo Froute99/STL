@@ -1,0 +1,517 @@
+
+
+파일이름: source.cpp
+파일크기: 816
+2022-05-19 14:13:43 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ *
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	
+	std::vector<STRING> v{ "Standard", "Template", "Library" };
+
+	// [문제] v에 있는 원소가 전부 5글자 이상인가?
+	if (std::all_of(v.begin(), v.end(),
+		[](const STRING& str) {
+			return str.GetNum() >= 5;
+		})) {
+		std::cout << "ㅇㅇ\n";
+	}
+	else {
+		std::cout << "ㄴㄴ\n";
+	}
+
+
+	save("source.cpp", "STL_0519.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 858
+2022-05-19 14:14:03 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	
+	std::vector<STRING> v{ "Standard", "Template", "Library", "aa"};
+
+	// [문제] v에 있는 원소가 전부 5글자 이상인가?
+	std::cout << "전부 5글자 이상?\n";
+	if (std::all_of(v.begin(), v.end(),
+		[](const STRING& str) {
+			return str.GetNum() >= 5;
+		})) {
+		std::cout << "ㅇㅇ\n";
+	}
+	else {
+		std::cout << "ㄴㄴ\n";
+	}
+
+
+	save("source.cpp", "STL_0519.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 862
+2022-05-19 14:14:09 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	
+	std::vector<STRING> v{ "Standard", "Template", "Library", "ㅁㅁㅁ"};
+
+	// [문제] v에 있는 원소가 전부 5글자 이상인가?
+	std::cout << "전부 5글자 이상?\n";
+	if (std::all_of(v.begin(), v.end(),
+		[](const STRING& str) {
+			return str.GetNum() >= 5;
+		})) {
+		std::cout << "ㅇㅇ\n";
+	}
+	else {
+		std::cout << "ㄴㄴ\n";
+	}
+
+
+	save("source.cpp", "STL_0519.txt");
+}
+
+=======================================================
+
+
+
+
+파일이름: source.cpp
+파일크기: 790
+2022-05-19 14:51:17 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <format>
+#include <thread>
+#include <chrono>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+
+	std::string str{ "Google’s Russian branch plans to file for bankruptcy" };
+
+	save("source.cpp", "STL_0519.txt");
+	
+	// [문제] str을 전광판처럼 계속 흘러가게 출력하라
+	for (int i = 0; i < 10; ++i)
+		std::cout << std::endl;
+
+	while (true) {
+		std::cout << std::format("{:^78}", str) << "\r";
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		std::rotate(str.begin(), str.begin() + 1, str.end());
+	}
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 789
+2022-05-19 14:51:38 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <format>
+#include <thread>
+#include <chrono>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+
+	std::string str{ "Google’s Russian branch plans to file for bankruptcy " };
+
+	save("source.cpp", "STL_0519.txt");
+	
+	// [문제] str을 전광판처럼 계속 흘러가게 출력하라
+	for (int i = 0; i < 10; ++i)
+		std::cout << std::endl;
+
+	while (true) {
+		std::cout << std::format("{:^78}", str) << "\r";
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		std::rotate(str.begin(), str.end() - 1, str.end());
+	}
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 794
+2022-05-19 14:51:55 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <format>
+#include <thread>
+#include <chrono>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+
+	std::string str{ "Google’s Russian branch plans to file for bankruptcy " };
+
+	save("source.cpp", "STL_0519.txt");
+	
+	// [문제] str을 전광판처럼 계속 흘러가게 출력하라
+	for (int i = 0; i < 10; ++i)
+		std::cout << std::endl;
+
+	while (true) {
+		std::cout << std::format("{:^78}", str) << "\r";
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		std::rotate(str.rbegin(), str.rbegin() + 1, str.rend());
+	}
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 623
+2022-05-19 15:00:57 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	save("source.cpp", "STL_0519.txt");
+
+
+	std::string s1{"abcdefghi"};
+	std::string s2{"abcdefhij"};
+
+
+	auto [s1의다른위치, s2의다른위치] = std::mismatch(s1.begin(), s1.end(), s2.begin());
+
+	std::string s3{ s1의다른위치, s1.end() };
+	std::string s4{ s2의다른위치, s2.end() };
+
+	std::cout << s3 << std::endl << s4 << std::endl;
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 619
+2022-05-19 15:01:30 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	save("source.cpp", "STL_0519.txt");
+
+
+	std::string s1{"abcdefghi"};
+	std::string s2{"abcde"};
+
+
+	auto [s1의다른위치, s2의다른위치] = std::mismatch(s1.begin(), s1.end(), s2.begin());
+
+	std::string s3{ s1의다른위치, s1.end() };
+	std::string s4{ s2의다른위치, s2.end() };
+
+	std::cout << s3 << std::endl << s4 << std::endl;
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 603
+2022-05-19 15:07:57 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	save("source.cpp", "STL_0519.txt");
+
+
+	std::vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// [문제] v에서 짝수를 제거하라.
+	v.erase(std::remove_if(v.begin(), v.end(),
+		[](int n) {
+			return !(n % 2);
+		}), v.end());
+
+
+	for (int n : v)		// std::for_each로 변경
+		std::cout << n << " ";
+	
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 567
+2022-05-19 15:09:16 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+
+int main() {
+	save("source.cpp", "STL_0519.txt");
+
+
+	std::vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+
+	// [문제] v에서 짝수를 제거하라.
+	std::erase_if(v,
+		[](int n) {
+			return !(n % 2);
+		});
+
+
+	for (int n : v)		// std::for_each로 변경
+		std::cout << n << " ";
+	
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 735
+2022-05-19 15:18:30 GMT+9
+
+/*
+ * 2022. 05. 19
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 
+ * 5/25(수) - 졸업연구설명회(? 2시30)	지도교수 5/30 ~ 6/20
+ * 6.15 기말고사
+ */
+
+#include <iostream>
+#include <array>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <random>
+#include "save.h"
+#include "STRING.h"
+
+extern bool isMessageToggle;
+
+std::random_device rd;
+std::default_random_engine dre{ rd() };
+
+int main() {
+	save("source.cpp", "STL_0519.txt");
+
+
+	// [문제] lotto
+	// sample 사용
+
+	std::vector<int> v(45);
+
+	std::iota(v.begin(), v.end(), 1);
+
+
+	std::array<int, 6> balls;
+	std::sample(v.begin(), v.end(), balls.begin(), 6, dre);
+
+	for (int n : balls)
+		std::cout << n << " ";
+	std::cout << std::endl;
+
+}
+
+=======================================================
