@@ -249,7 +249,7 @@ int main() {
  *	5.5 수업
  */
 
-// 기말고사 예상 : back_inser_iterator 로 vector 클래스 만들기
+// 기말고사 예상 : back_insert_iterator 로 vector 클래스 만들기
 
 #include <iostream>
 #include "save.h"

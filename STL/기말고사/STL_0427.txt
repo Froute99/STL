@@ -30,7 +30,6 @@ extern bool isMessageToggle;
 template <class Iter>
 void show(Iter xxx) {
 	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
-
 }
 
 

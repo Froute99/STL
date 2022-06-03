@@ -56,61 +56,6 @@ int main() {
 
 
 파일이름: source.cpp
-파일크기: 949
-2022-04-28 14:21:05 GMT+9
-
-/*
- * 2022. 04. 28
- * STL Class
- *
- * 
- *  1. Sequence container
- *  2. Associative container
- * 
- *  iterator -	iterators are a generalization of pointers
- *				that allow a C++ program to work with differnt data structures
- *				(for example, container sand ranges) in a uniform manner.
- *  reverse iterator -	반드시 class로 만들어야 한다
- *						++연산이 실제로는 왼쪽으로 가야되기 때문
- * 
- * 
- *	5.5 수업
- */
-
-
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include "save.h"
-#include "STRING.h"
-
-extern bool isMessageToggle;
-
-template <class Iter>
-void show(Iter xxx) {
-	std::cout << typeid(std::iterator_traits<Iter>::iterator_category).name() << std::endl;
-
-}
-
-
-int main() {
-
-	std::ifstream in{ "소스.cpp" };
-	
-	// [문제] 실행되게 하라
-	std::vector<STRING> v{ std::istream_iterator<STRING>{in}, {} };
-
-
-
-	save("source.cpp", "STL_0428.txt");
-}
-
-=======================================================
-
-
-파일이름: source.cpp
 파일크기: 1004
 2022-04-28 14:21:25 GMT+9
 

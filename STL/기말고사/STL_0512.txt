@@ -45,8 +45,7 @@ int main() {
 
 	save("source.cpp", "STL_0512.txt");
 	// [문제] 사용자가 입력한 회사의 게임을 출력한다.
-	while (true)
-	{
+	while (true) {
 		std::cout << "찾으실 회사는? ";
 		std::string company;
 		std::cin >> company;
