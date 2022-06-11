@@ -1,0 +1,1359 @@
+
+
+파일이름: source.cpp
+파일크기: 761
+2022-06-09 13:45:41 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+
+
+	save("source.cpp", "STL_0609.txt");
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 922
+2022-06-09 13:49:43 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	// [문제] v[30000]부터 100개를 화면에 출력하라.
+	for (int i = 30000; i < 30100; ++i)
+	{
+		std::cout << v[i].first << " --- " << v[i].second << std::endl;
+	}
+
+	save("source.cpp", "STL_0609.txt");
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 975
+2022-06-09 13:53:18 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	// [문제] 일부분을 화면에 출력하라.
+	for (const auto& [정렬, 원본] : v	| std::views::drop(100000)
+										| std::views::take(200))
+	{
+		std::cout << 정렬 << " - " << 원본 << std::endl;
+	}
+
+	save("source.cpp", "STL_0609.txt");
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 974
+2022-06-09 13:53:24 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	// [문제] 일부분을 화면에 출력하라.
+	for (const auto& [정렬, 원본] : v	| std::views::drop(30000)
+										| std::views::take(100))
+	{
+		std::cout << 정렬 << " - " << 원본 << std::endl;
+	}
+
+	save("source.cpp", "STL_0609.txt");
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1118
+2022-06-09 13:55:39 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	// [문제] first 기준으로 정렬하라
+	std::sort(v.begin(), v.end(),
+		[](const auto& wp1, const auto& wp2) {
+			return wp1 < wp2;
+		});
+	
+
+	// [문제] 일부분을 화면에 출력하라.
+	for (const auto& [정렬, 원본] : v	| std::views::drop(30000)
+										| std::views::take(100))
+	{
+		std::cout << 정렬 << " - " << 원본 << std::endl;
+	}
+
+	save("source.cpp", "STL_0609.txt");
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1130
+2022-06-09 13:55:57 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	// [문제] first 기준으로 정렬하라
+	std::sort(v.begin(), v.end(),
+		[](const auto& wp1, const auto& wp2) {
+			return wp1.first < wp2.first;
+		});
+	
+
+	// [문제] 일부분을 화면에 출력하라.
+	for (const auto& [정렬, 원본] : v	| std::views::drop(30000)
+										| std::views::take(100))
+	{
+		std::cout << 정렬 << " - " << 원본 << std::endl;
+	}
+
+	save("source.cpp", "STL_0609.txt");
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1192
+2022-06-09 14:05:30 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	// [문제] first 기준으로 정렬하라
+	std::ranges::sort(v, {}, &WP::first);
+
+	std::sort(v.begin(), v.end(),
+		[](const auto& wp1, const auto& wp2) {
+			return wp1.first < wp2.first;
+		});
+	//std::equal_range
+
+
+	// [문제] 일부분을 화면에 출력하라.
+	for (const auto& [정렬, 원본] : v	| std::views::drop(30000)
+										| std::views::take(100))
+	{
+		std::cout << 정렬 << " - " << 원본 << std::endl;
+	}
+
+	save("source.cpp", "STL_0609.txt");
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1200
+2022-06-09 14:05:46 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	// [문제] first 기준으로 정렬하라
+	std::ranges::sort(v, {}, &WP::first);
+
+	//std::sort(v.begin(), v.end(),
+	//	[](const auto& wp1, const auto& wp2) {
+	//		return wp1.first < wp2.first;
+	//	});
+	//std::equal_range
+
+
+	// [문제] 일부분을 화면에 출력하라.
+	for (const auto& [정렬, 원본] : v	| std::views::drop(30000)
+										| std::views::take(100))
+	{
+		std::cout << 정렬 << " - " << 원본 << std::endl;
+	}
+
+	save("source.cpp", "STL_0609.txt");
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1179
+2022-06-09 14:05:52 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	// [문제] first 기준으로 정렬하라
+	std::ranges::sort(v, {}, &WP::first);
+
+	//std::sort(v.begin(), v.end(),
+	//	[](const auto& wp1, const auto& wp2) {
+	//		return wp1.first < wp2.first;
+	//	});
+
+
+	// [문제] 일부분을 화면에 출력하라.
+	for (const auto& [정렬, 원본] : v	| std::views::drop(30000)
+										| std::views::take(100))
+	{
+		std::cout << 정렬 << " - " << 원본 << std::endl;
+	}
+
+	save("source.cpp", "STL_0609.txt");
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1434
+2022-06-09 14:42:52 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ *
+ * 14주 강의 - Anagram
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	save("source.cpp", "STL_0609.txt");
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	// [문제] first 기준으로 정렬하라
+	std::ranges::sort(v, {}, &WP::first);
+
+	//std::sort(v.begin(), v.end(),
+	//	[](const auto& wp1, const auto& wp2) {
+	//		return wp1.first < wp2.first;
+	//	});
+
+
+	// [문제] 일부분을 화면에 출력하라.
+	//for (const auto& [정렬, 원본] : v	| std::views::drop(30000)
+	//									| std::views::take(100))
+	//{
+	//	std::cout << 정렬 << " - " << 원본 << std::endl;
+	//}
+
+
+	// [문제] 전체 anagram 쌍을 화면에 출력하라
+
+	int n;
+	std::cin >> n;
+
+	auto b = v.cbegin();
+	while (true)
+	{
+		auto i = std::adjacent_find(b, v.cend(),
+			[](const WP& a, const WP& b) {
+				return a.first == b.first;
+			});
+	}
+
+
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1517
+2022-06-09 14:47:52 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ *
+ * 14주 강의 - Anagram
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	save("source.cpp", "STL_0609.txt");
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	std::ranges::sort(v, {}, &WP::first);
+
+	//std::sort(v.begin(), v.end(),
+	//	[](const auto& wp1, const auto& wp2) {
+	//		return wp1.first < wp2.first;
+	//	});
+
+
+	// [문제] 전체 anagram 쌍을 화면에 출력하라
+	auto b = v.cbegin();
+	int cnt{};
+	while (true)
+	{
+		auto i = std::adjacent_find(b, v.cend(),
+			[](const WP& a, const WP& b) {
+				return a.first == b.first;
+			});
+		if (i == v.cend())
+		{
+			break;
+		}
+		auto j = std::find_if_not(i + 1, v.cend(),
+			[i](const WP& a) {
+				return a.first == i->first;
+			});
+		// [i, j)는 에너그램 구간이다.
+		std::cout << "[ " << ++cnt << " ] - ";
+		for (auto p = i; p < j; ++p)
+		{
+			std::cout << p->second << "  ";
+		}
+		std::cout << std::endl;
+
+		b = j;
+	}
+
+
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1544
+2022-06-09 14:50:47 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ *
+ * 14주 강의 - Anagram
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	save("source.cpp", "STL_0609.txt");
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	std::ranges::sort(v, {}, &WP::first);
+
+	//std::sort(v.begin(), v.end(),
+	//	[](const auto& wp1, const auto& wp2) {
+	//		return wp1.first < wp2.first;
+	//	});
+
+
+	// [문제] 전체 anagram 쌍을 화면에 출력하라
+	auto b = v.cbegin();
+	int cnt{};
+
+	std::ofstream out{ "애너그램들.txt" };
+
+	while (true)
+	{
+		auto i = std::adjacent_find(b, v.cend(),
+			[](const WP& a, const WP& b) {
+				return a.first == b.first;
+			});
+		if (i == v.cend())
+		{
+			break;
+		}
+		auto j = std::find_if_not(i + 1, v.cend(),
+			[i](const WP& a) {
+				return a.first == i->first;
+			});
+		// [i, j)는 애너그램 구간이다.
+		out << "[ " << ++cnt << " ] - ";
+		for (auto p = i; p < j; ++p)
+		{
+			out << p->second << "  ";
+		}
+		out << std::endl;
+
+		b = j;
+	}
+
+
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 2404
+2022-06-09 15:04:10 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ *
+ * 14주 강의 - Anagram
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	save("source.cpp", "STL_0609.txt");
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	std::ranges::sort(v, {}, &WP::first);
+
+	//std::sort(v.begin(), v.end(),
+	//	[](const auto& wp1, const auto& wp2) {
+	//		return wp1.first < wp2.first;
+	//	});
+
+
+	// [문제] 전체 anagram 쌍을 화면에 출력하라
+	auto b = v.cbegin();
+	//int cnt{};
+
+	std::ofstream out{ "애너그램들.txt" };
+
+	// [문제] 가장 갯수가 많은 애너그램은 몇 개?
+	// [문제] 애너그램 갯수 순으로 출력하라
+	std::vector<std::pair<int, std::vector<std::string>>> ia;
+
+	while (true)
+	{
+		auto i = std::adjacent_find(b, v.cend(),
+			[](const WP& a, const WP& b) {
+				return a.first == b.first;
+			});
+		if (i == v.cend())
+		{
+			break;
+		}
+		auto j = std::find_if_not(i + 1, v.cend(),
+			[i](const WP& a) {
+				return a.first == i->first;
+			});
+		// [i, j)는 애너그램 구간이다.
+		int anagramNum = std::distance(i, j);
+		std::vector<std::string> anagrams;
+
+		for (auto p = i; p < j; ++p)
+		{
+			anagrams.push_back(p->second);
+		}
+		ia.push_back(std::make_pair(anagramNum, anagrams));
+
+		//std:out << "[ " << ++cnt << " ] - ";
+		//for (auto p = i; p < j; ++p)
+		//{
+		//	out << p->second << "  ";
+		//}
+		//out << std::endl;
+
+		b = j;
+	}
+
+	auto p = std::max_element(ia.begin(), ia.end(),
+		[](const auto& a, const auto& b) {
+			return a.first < b.first;
+		});
+
+	std::cout << p->first << std::endl;
+
+	std::sort(ia.begin(), ia.end(),
+		[](const auto& a, const auto& b) {
+			return a.first < b.first;
+		});
+
+	for (const auto& [개수, 애너그램들] : ia)
+	{
+		std::cout << 개수 << " - ";
+		for (const auto& 애너그램 : 애너그램들)
+		{
+			std::cout << 애너그램 << "  ";
+		}
+		std::cout << std::endl;
+	}
+
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1931
+2022-06-09 15:11:31 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ *
+ * 14주 강의 - Anagram
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <list>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	save("source.cpp", "STL_0609.txt");
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	std::ranges::sort(v, {}, &WP::first);
+
+	//std::sort(v.begin(), v.end(),
+	//	[](const auto& wp1, const auto& wp2) {
+	//		return wp1.first < wp2.first;
+	//	});
+
+
+	// [문제] 전체 anagram 쌍을 화면에 출력하라
+	auto b = v.cbegin();
+	//int cnt{};
+
+	std::ofstream out{ "애너그램들.txt" };
+
+	// [문제] 가장 갯수가 많은 애너그램은 몇 개?
+	// [문제] 애너그램 갯수 순으로 출력하라
+	std::vector<std::list<std::string>> vs;
+	vs.reserve(31000);
+
+	while (true)
+	{
+		auto i = std::adjacent_find(b, v.cend(),
+			[](const WP& a, const WP& b) {
+				return a.first == b.first;
+			});
+		if (i == v.cend())
+		{
+			break;
+		}
+		auto j = std::find_if_not(i + 1, v.cend(),
+			[i](const WP& a) {
+				return a.first == i->first;
+			});
+		// [i, j)는 애너그램 구간이다.
+		std::list<std::string> ls;
+		for (auto p = i; p < j; ++p)
+		{
+			ls.push_back(p->second);
+		}
+		vs.push_back(ls);
+
+		b = j;
+	}
+
+	// vs를 개수 내림차순으로 정렬
+	std::sort(vs.begin(), vs.end(),
+		[](const auto& a, const auto& b) {
+			return a.size() > b.size();
+		});
+
+	std::cout << "가장 많은 애너그램 - " << vs.begin()->size() << std::endl;
+
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 2148
+2022-06-09 15:13:36 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ *
+ * 14주 강의 - Anagram
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <list>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	save("source.cpp", "STL_0609.txt");
+
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	std::ranges::sort(v, {}, &WP::first);
+
+	//std::sort(v.begin(), v.end(),
+	//	[](const auto& wp1, const auto& wp2) {
+	//		return wp1.first < wp2.first;
+	//	});
+
+
+	// [문제] 전체 anagram 쌍을 화면에 출력하라
+	auto b = v.cbegin();
+	//int cnt{};
+
+	std::ofstream out{ "애너그램들.txt" };
+
+	// [문제] 가장 갯수가 많은 애너그램은 몇 개?
+	// [문제] 애너그램 갯수 순으로 출력하라
+	std::vector<std::list<std::string>> vs;
+	vs.reserve(31000);
+
+	while (true)
+	{
+		auto i = std::adjacent_find(b, v.cend(),
+			[](const WP& a, const WP& b) {
+				return a.first == b.first;
+			});
+		if (i == v.cend())
+		{
+			break;
+		}
+		auto j = std::find_if_not(i + 1, v.cend(),
+			[i](const WP& a) {
+				return a.first == i->first;
+			});
+		// [i, j)는 애너그램 구간이다.
+		std::list<std::string> ls;
+		for (auto p = i; p < j; ++p)
+		{
+			ls.push_back(p->second);
+		}
+		vs.push_back(ls);
+
+		b = j;
+	}
+
+	// vs를 개수 내림차순으로 정렬
+	std::sort(vs.begin(), vs.end(),
+		[](const std::list<std::string>& a, const std::list<std::string>& b) {
+			return a.size() > b.size();
+		});
+
+	std::cout << "가장 많은 애너그램 - " << vs.begin()->size() << std::endl;
+
+	for (const std::list<std::string>& ls : vs | std::views::take(10))
+	{
+		for (const std::string& s : ls)
+		{
+			std::cout << s << "  ";
+		}
+		std::cout << std::endl;
+	}
+
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 2149
+2022-06-09 15:14:03 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ *
+ * 14주 강의 - Anagram
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <list>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	save("source.cpp", "STL_0609.txt");
+
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	std::ranges::sort(v, {}, &WP::first);
+
+	//std::sort(v.begin(), v.end(),
+	//	[](const auto& wp1, const auto& wp2) {
+	//		return wp1.first < wp2.first;
+	//	});
+
+
+	// [문제] 전체 anagram 쌍을 화면에 출력하라
+	auto b = v.cbegin();
+	//int cnt{};
+
+	std::ofstream out{ "애너그램들.txt" };
+
+	// [문제] 가장 갯수가 많은 애너그램은 몇 개?
+	// [문제] 애너그램 갯수 순으로 출력하라
+	std::vector<std::list<std::string>> vs;
+	vs.reserve(31000);
+
+	while (true)
+	{
+		auto i = std::adjacent_find(b, v.cend(),
+			[](const WP& a, const WP& b) {
+				return a.first == b.first;
+			});
+		if (i == v.cend())
+		{
+			break;
+		}
+		auto j = std::find_if_not(i + 1, v.cend(),
+			[i](const WP& a) {
+				return a.first == i->first;
+			});
+		// [i, j)는 애너그램 구간이다.
+		std::list<std::string> ls;
+		for (auto p = i; p < j; ++p)
+		{
+			ls.push_back(p->second);
+		}
+		vs.push_back(ls);
+
+		b = j;
+	}
+
+	// vs를 개수 내림차순으로 정렬
+	std::sort(vs.begin(), vs.end(),
+		[](const std::list<std::string>& a, const std::list<std::string>& b) {
+			return a.size() > b.size();
+		});
+
+	std::cout << "가장 많은 애너그램 - " << vs.begin()->size() << std::endl;
+
+	for (const std::list<std::string>& ls : vs | std::views::take(100))
+	{
+		for (const std::string& s : ls)
+		{
+			std::cout << s << "  ";
+		}
+		std::cout << std::endl;
+	}
+
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 2180
+2022-06-09 15:14:54 GMT+9
+
+/*
+ * 2022. 06. 09
+ * STL Class
+ * JH Kim
+ *
+ *
+ * 14주 강의 - Anagram
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <list>
+#include <algorithm>
+#include <ranges>
+#include "save.h"
+#include "STRING.h"
+
+
+struct WP : public std::pair<std::string, std::string> {
+	WP(const std::string& s) : std::pair<std::string, std::string>{ s, s } {
+		std::sort(first.begin(), first.end());
+	}
+};
+
+
+
+int main()
+{
+	save("source.cpp", "STL_0609.txt");
+
+	std::ifstream in{ "단어들.txt" };
+
+	std::vector<WP> v{ std::istream_iterator<std::string>{in}, {} };	// operator<<
+	std::cout << "단어 개수 - " << v.size() << std::endl;				// 369882
+
+	std::ranges::sort(v, {}, &WP::first);
+
+	//std::sort(v.begin(), v.end(),
+	//	[](const auto& wp1, const auto& wp2) {
+	//		return wp1.first < wp2.first;
+	//	});
+
+
+	// [문제] 전체 anagram 쌍을 화면에 출력하라
+	auto b = v.cbegin();
+	//int cnt{};
+
+	std::ofstream out{ "애너그램들.txt" };
+
+	// [문제] 가장 갯수가 많은 애너그램은 몇 개?
+	// [문제] 애너그램 갯수 순으로 출력하라
+	std::vector<std::list<std::string>> vs;
+	vs.reserve(31000);
+
+	while (true)
+	{
+		auto i = std::adjacent_find(b, v.cend(),
+			[](const WP& a, const WP& b) {
+				return a.first == b.first;
+			});
+		if (i == v.cend())
+		{
+			break;
+		}
+		auto j = std::find_if_not(i + 1, v.cend(),
+			[i](const WP& a) {
+				return a.first == i->first;
+			});
+		// [i, j)는 애너그램 구간이다.
+		std::list<std::string> ls;
+		for (auto p = i; p < j; ++p)
+		{
+			ls.push_back(p->second);
+		}
+		vs.push_back(ls);
+
+		b = j;
+	}
+
+	// vs를 개수 내림차순으로 정렬
+	std::sort(vs.begin(), vs.end(),
+		[](const std::list<std::string>& a, const std::list<std::string>& b) {
+			return a.size() > b.size();
+		});
+
+	std::cout << "가장 많은 애너그램 - " << vs.begin()->size() << std::endl;
+
+	for (const std::list<std::string>& ls : vs 
+		| std::views::drop(100)
+		| std::views::take(100))
+	{
+		for (const std::string& s : ls)
+		{
+			std::cout << s << "  ";
+		}
+		std::cout << std::endl;
+	}
+
+
+}
+
+=======================================================

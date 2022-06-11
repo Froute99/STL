@@ -1,0 +1,929 @@
+
+
+파일이름: source.cpp
+파일크기: 697
+2022-06-08 17:50:14 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <ranges>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+
+bool 소수(int num)
+{
+	for (int i = 2; i <= num / 2; ++i)
+	{
+		if (num % i == 0)
+		{
+			return false; //num이 i의 배수면 소수가 아니므로 false
+		}
+	}
+	return true;
+}
+
+int main()
+{
+	// [문제] 소수 (prime number)를 100개만 출력하라
+	for (int n : std::views::iota(2)| std::views::filter(소수)
+									| std::views::take(100))
+	{
+		std::cout << std::format("{:8}", n);
+	}
+	
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 719
+2022-06-08 17:51:25 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <ranges>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+
+bool 소수(int num)
+{
+	for (int i = 2; i <= num / 2; ++i)
+	{
+		if (num % i == 0)
+		{
+			return false; //num이 i의 배수면 소수가 아니므로 false
+		}
+	}
+	return true;
+}
+
+int main()
+{
+	// [문제] 10000부터 정수 중 소수 (prime number)를 100개만 출력하라
+	for (int n : std::views::iota(10000)| std::views::filter(소수)
+									| std::views::take(100))
+	{
+		std::cout << std::format("{:8}", n);
+	}
+	
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 753
+2022-06-08 17:51:56 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <ranges>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+
+bool 소수(int num)
+{
+	for (int i = 2; i <= num / 2; ++i)
+	{
+		if (num % i == 0)
+		{
+			return false; //num이 i의 배수면 소수가 아니므로 false
+		}
+	}
+	return true;
+}
+
+int main()
+{
+	// [문제] 10000부터 정수 중 소수 (prime number)를 100개만 출력하라
+	for (int n : std::views::iota(10000)| std::views::filter(소수)
+										| std::views::take(100)
+										| std::views::reverse)
+	{
+		std::cout << std::format("{:8}", n);
+	}
+	
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 766
+2022-06-08 17:54:49 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <ranges>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+
+bool 소수(int num)
+{
+	for (int i = 2; i <= num / 2; ++i)
+	{
+		if (num % i == 0)
+		{
+			return false; //num이 i의 배수면 소수가 아니므로 false
+		}
+	}
+	return true;
+}
+
+int main()
+{
+	// [문제] 소수 (prime number)를 100개만 출력하라
+	for (int n : std::views::iota(1)| std::views::drop(100)
+										| std::views::filter(소수)
+										| std::views::take(100)
+										| std::views::reverse)
+	{
+		std::cout << std::format("{:8}", n);
+	}
+	
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 765
+2022-06-08 17:54:59 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <ranges>
+#include <format>
+#include "save.h"
+#include "STRING.h"
+
+
+bool 소수(int num)
+{
+	for (int i = 2; i <= num / 2; ++i)
+	{
+		if (num % i == 0)
+		{
+			return false; //num이 i의 배수면 소수가 아니므로 false
+		}
+	}
+	return true;
+}
+
+int main()
+{
+	// [문제] 소수 (prime number)를 100개만 출력하라
+	for (int n : std::views::iota(1)| std::views::drop(100)
+										| std::views::filter(소수)
+										| std::views::take(10)
+										| std::views::reverse)
+	{
+		std::cout << std::format("{:8}", n);
+	}
+	
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 518
+2022-06-08 18:11:58 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	// [문제] "단어들.txt"에 몇 단어가 있나 출력하라.
+	std::ifstream in{ "단어들.txt" };
+	std::vector v{ std::istream_iterator<std::string>{in}, {} };
+
+	std::cout << v.size() << std::endl;
+
+	
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 634
+2022-06-08 18:22:27 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << v.size() << std::endl;		// 369882
+
+	
+	// [문제] 단어들.txt는 정렬되어 있나?
+	std::cout << std::boolalpha << std::is_sorted(v.begin(), v.end()) << std::endl;
+
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 660
+2022-06-08 18:24:51 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << v.size() << std::endl;		// 369882
+
+	
+	// [문제] 단어들.txt는 정렬되어 있나?
+	std::cout << std::boolalpha << std::is_sorted(v.begin(), v.end(), std::less<std::string>{}) << std::endl;
+
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 690
+2022-06-08 18:25:42 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+	
+	// [문제] 단어들.txt는 정렬되어 있나?
+	std::cout << "정렬? " << std::boolalpha << std::is_sorted(v.begin(), v.end(), std::less<std::string>{}) << std::endl;
+
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 693
+2022-06-08 18:26:28 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+	
+	// [문제] 단어들.txt는 정렬되어 있나?
+	std::cout << "정렬? " << std::boolalpha << std::is_sorted(v.begin(), v.end(), std::greater<std::string>{}) << std::endl;
+
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 810
+2022-06-08 18:29:19 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+	std::cout << "정렬? " << std::boolalpha << std::is_sorted(v.begin(), v.end()) << std::endl;
+
+	// [문제] 중복된 단어가 있나?
+	auto p = std::unique(v.begin(), v.end());
+	if (p == v.end())
+	{
+		std::cout << "중복 없음" << std::endl;
+	} // 없음이라고 나올거기 때문에 여기까지만
+
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 704
+2022-06-08 18:31:35 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+	// [문제] 중복된 단어가 있나?
+	std::set<std::string> s{ v.begin(), v.end() };
+
+	if (s.size() == v.size())
+	{
+		std::cout << "중복 없음" << std::endl;
+	}
+
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 747
+2022-06-08 18:43:13 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+	// [문제] 가장 긴 단어를 출력하라
+	std::max_element(v.begin(), v.end(),
+		[](const std::string& s1, const std::string& s2) {
+			return s1.size() < s2.size();
+		});
+
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 772
+2022-06-08 18:43:59 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+	// [문제] 가장 긴 단어를 출력하라
+	std::cout << *std::max_element(v.begin(), v.end(),
+		[](const std::string& s1, const std::string& s2) {
+			return s1.size() < s2.size();
+		}) << std::endl;
+
+	save("source.cpp", "STL_0608.txt");
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1328
+2022-06-08 19:04:41 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+	// [문제] 가장 긴 단어를 출력하라
+	std::cout << *std::max_element(v.begin(), v.end(),
+		[](const std::string& s1, const std::string& s2) {
+			return s1.size() < s2.size();
+		}) << std::endl;
+
+
+	save("source.cpp", "STL_0608.txt");
+
+
+	while (true) {
+		std::string word;
+		std::cout << "찾을 단어는? ";
+		std::cin >> word;
+
+		// 사전에 있나 확인?
+		if (std::binary_search(v.begin(), v.end(), word))
+		{
+			// 애너그램을 찾아 출력한다
+			// 입력한 단어를 정렬한다
+			std::sort(word.begin(), word.end());
+			
+			do {
+				std::cout << word << std::endl;
+			} while (std::next_permutation(word.begin(), word.end()));
+			// 가능한 모든 순열을 만들어 사전에 있는 단어이면 화면에 출력한다
+
+
+		}
+		else
+		{
+			std::cout << "사전에 없는 단어이다" << std::endl;
+		}
+	}
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1323
+2022-06-08 19:05:18 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+	// [문제] 가장 긴 단어를 출력하라
+	std::cout << *std::max_element(v.begin(), v.end(),
+		[](const std::string& s1, const std::string& s2) {
+			return s1.size() < s2.size();
+		}) << std::endl;
+
+
+	save("source.cpp", "STL_0608.txt");
+
+
+	while (true) {
+		std::string word;
+		std::cout << "찾을 단어는? ";
+		std::cin >> word;
+
+		// 사전에 있나 확인?
+		if (std::binary_search(v.begin(), v.end(), word))
+		{
+			// 애너그램을 찾아 출력한다
+			// 입력한 단어를 정렬한다
+			std::sort(word.begin(), word.end());
+			
+			do {
+				std::cout << word << "\r";
+			} while (std::next_permutation(word.begin(), word.end()));
+			// 가능한 모든 순열을 만들어 사전에 있는 단어이면 화면에 출력한다
+
+
+		}
+		else
+		{
+			std::cout << "사전에 없는 단어이다" << std::endl;
+		}
+	}
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1328
+2022-06-08 19:06:35 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+	// [문제] 가장 긴 단어를 출력하라
+	std::cout << *std::max_element(v.begin(), v.end(),
+		[](const std::string& s1, const std::string& s2) {
+			return s1.size() < s2.size();
+		}) << std::endl;
+
+
+	save("source.cpp", "STL_0608.txt");
+
+
+	while (true) {
+		std::string word;
+		std::cout << "찾을 단어는? ";
+		std::cin >> word;
+
+		// 사전에 있나 확인?
+		if (std::binary_search(v.begin(), v.end(), word))
+		{
+			// 애너그램을 찾아 출력한다
+			// 입력한 단어를 정렬한다
+			std::sort(word.begin(), word.end());
+			
+			do {
+				std::cout << word << std::endl;
+			} while (std::next_permutation(word.begin(), word.end()));
+			// 가능한 모든 순열을 만들어 사전에 있는 단어이면 화면에 출력한다
+
+
+		}
+		else
+		{
+			std::cout << "사전에 없는 단어이다" << std::endl;
+		}
+	}
+
+}
+
+=======================================================
+
+
+파일이름: source.cpp
+파일크기: 1445
+2022-06-08 19:08:09 GMT+9
+
+/*
+ * 2022. 06. 08
+ * STL Class
+ * JH Kim
+ *
+ * 
+ * 14주 강의 - Anagram
+ * 
+ *
+ *		6.15 기말고사
+ *		6.16 강의 끝 - 한 학기 강의를 정리 책 소개
+ *		6.20 점수 공개 사무실 앞
+ */
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <set>
+#include "save.h"
+#include "STRING.h"
+
+
+int main()
+{
+	std::ifstream in{ "단어들.txt" };
+	std::vector<std::string> v{ std::istream_iterator<std::string>{in}, {} };
+	std::cout << "단어 개수 - " << v.size() << std::endl;		// 369882
+
+	// [문제] 가장 긴 단어를 출력하라
+	std::cout << *std::max_element(v.begin(), v.end(),
+		[](const std::string& s1, const std::string& s2) {
+			return s1.size() < s2.size();
+		}) << std::endl;
+
+
+	save("source.cpp", "STL_0608.txt");
+
+
+	while (true) {
+		std::string word;
+		std::cout << "찾을 단어는? ";
+		std::cin >> word;
+
+		// 사전에 있나 확인?
+		if (std::binary_search(v.begin(), v.end(), word))
+		{
+			// 애너그램을 찾아 출력한다
+			// 입력한 단어를 정렬한다
+			std::cout << word << " - ";
+			std::sort(word.begin(), word.end());
+			do {
+				if (std::binary_search(v.begin(), v.end(), word))
+				{
+					std::cout << word << " ";
+				}
+			} while (std::next_permutation(word.begin(), word.end()));
+			// 가능한 모든 순열을 만들어 사전에 있는 단어이면 화면에 출력한다
+			std::cout << std::endl;
+
+		}
+		else
+		{
+			std::cout << "사전에 없는 단어이다" << std::endl;
+		}
+	}
+
+}
+
+=======================================================
